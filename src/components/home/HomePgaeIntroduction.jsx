@@ -75,7 +75,7 @@ function HomePageIntroduction() {
           style={{ background: "linear-gradient(90deg, #C961DE, #2954A3)" }}
         >
           <a
-            href="https://drive.google.com/file/d/1M8vUIVPaYz7noQPg0U_GeVc6dI8yTKAj/view?usp=sharing"
+            href="https://drive.google.com/file/d/14lFwpTbgLwPKA6i1f6FjHKsBcu86g489/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-2 rounded-full text-sm font-semibold text-white hover:scale-105 transition cursor-pointer"
