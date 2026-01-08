@@ -4,8 +4,8 @@ import { Autoplay } from "swiper/modules"
 import "swiper/css"
 
 import weddingPlannerCover from "../../assets/images/projectImages/weddingPlannerCover.png"
-import MetroClapCover from "../../assets/images/projectImages/MetroClapCover.png"
-import MetroBuddyCover from "../../assets/images/projectImages/MetroBuddyCover.png"
+import MetroClapCover from "../../assets/images/projectImages/metroClapCover.png"
+import MetroBuddyCover from "../../assets/images/projectImages/metroBuddyCover.png"
 import CRMCover from "../../assets/images/projectImages/CRMCover.png"
 import designImg from "../../assets/images/projectImages/testImage.png"
 

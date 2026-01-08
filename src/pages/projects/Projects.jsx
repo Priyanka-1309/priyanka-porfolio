@@ -5,8 +5,8 @@ import Sidebar from "../../components/Sidebar"
 import ProjectCard from "../../components/projects/ProjectCard"
 
 import weddingPlannerCover from "../../assets/images/projectImages/weddingPlannerCover.png"
-import MetroClapCover from "../../assets/images/projectImages/MetroClapCover.png"
-import MetroBuddyCover from "../../assets/images/projectImages/MetroBuddyCover.png"
+import MetroClapCover from "../../assets/images/projectImages/metroClapCover.png"
+import MetroBuddyCover from "../../assets/images/projectImages/metroBuddyCover.png"
 import CRMCover from "../../assets/images/projectImages/CRMCover.png"
 import designImg from "../../assets/images/projectImages/testImage.png"
 
