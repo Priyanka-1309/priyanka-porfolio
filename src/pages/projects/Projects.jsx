@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 import Sidebar from "../../components/Sidebar"
 import ProjectCard from "../../components/projects/ProjectCard"
 
-import weddingPlannerCover from "../../assets/images/projectImages/weddingPlannerCover.png"
-import MetroClapCover from "../../assets/images/projectImages/metroClapCover.png"
-import MetroBuddyCover from "../../assets/images/projectImages/metroBuddyCover.png"
-import CRMCover from "../../assets/images/projectImages/crmCover.png"
-import designImg from "../../assets/images/projectImages/testImage.png"
+import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png"
+import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png"
+import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png"
+import CRMCover from "../../assets/images/projectsImage/crmCover.png"
+import designImg from "../../assets/images/projectsImage/testImage.png"
 
 /*  FRAMER MOTION VARIANTS */
 const containerVariants = {
