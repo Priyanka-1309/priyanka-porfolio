@@ -1,43 +1,60 @@
 import React from "react"
+import { motion } from "framer-motion"
+import { FaImages, FaArrowRight } from "react-icons/fa"
 
-function ProjectCard({ title, image, active, isMobile }) {
+function ProjectCard({ title, subtitle ,  image }) {
   return (
-    <div
+    // md:h-[300px] md:w-[300px] 
+    <motion.div
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.97 }}
       className="
-        relative overflow-hidden
+        relative overflow-hidden cursor-pointer
         transition-all duration-500 ease-out
         rounded-[28px] md:rounded-[36px] lg:rounded-[44px]
-       h-[270px] w-[260px]
-md:h-[300px] md:w-[300px]
-lg:h-[340px] lg:w-[340px]
-xl:h-[380px] xl:w-[380px]
-
-        bg-white/10 backdrop-blur-xl
-      "
+        h-[265px] w-[270px]
+        bg-black/20 backdrop-blur-xl
+        group
+        "
     >
       {/* IMAGE */}
-      <div className="absolute inset-0">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover object-top"
-        />
+      <img
+        src={image}
+        alt={title}
+        className="
+      w-full h-full
+      object-contain object-top
+      transition-transform duration-700 group-hover:scale-110
+    "
+      />
+
+      {/* GALLERY BADGE */}
+      <div className="
+        absolute top-4 left-4
+        flex items-center gap-2
+        bg-black/60 backdrop-blur
+        text-white text-xs px-3 py-1 rounded-full
+      ">
+        <FaImages size={14} />
+
       </div>
 
-      {/* ACTIVE GLOW */}
-      <div className="absolute inset-0 rounded-[40px] ring-1 ring-white/30" />
 
       {/* BOTTOM GLASS */}
       <div className="
         absolute bottom-0 left-0 right-0
-        bg-white/15 backdrop-blur-xl
-        px-[10px] py-4
-      ">
-        <h3 className="text-white text-lg font-semibold">
+        bg-black/15 backdrop-blur-xl
+        px-4 py-4
+">
+        <h3 className="text-[#C961DE] text-lg md:text-xl font-semibold">
           {title}
         </h3>
+        <h3 className="text-white text-[10px] md:text-[10px] font-semibold">
+          {subtitle}
+        </h3>
+
       </div>
-    </div>
+    </motion.div>
   )
 }
 

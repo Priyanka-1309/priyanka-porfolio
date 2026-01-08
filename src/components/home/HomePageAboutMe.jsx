@@ -4,8 +4,12 @@ import girlImage from "../../assets/images/girlImage.png";
 import diamond from "../../assets/images/diamond.png";
 import searchAndNewspaper from "../../assets/images/searchAndNewspaper.png";
 import ring1 from "../../assets/images/ring1.png";
+import { useNavigate } from 'react-router-dom';
 
 function HomePageAboutMe() {
+
+  const navigation = useNavigate();
+
   return (
     <div className="relative pb-[80px] pt-[40px]   sm:pt-30 md:pt-60 lg:pt-70 xl:pt-80 flex justify-center">
 
@@ -82,6 +86,9 @@ function HomePageAboutMe() {
          <button
         className="mt-6 px-6 py-2 rounded-full text-sm font-semibold text-white hover:scale-105 transition cursor-pointer"
         style={{ background: "linear-gradient(90deg, #C961DE, #2954A3)" }}
+        onClick={()=>{
+          navigation("/about")
+        }}
          >
            View More
             </button>

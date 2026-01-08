@@ -4,10 +4,11 @@ import { motion } from "framer-motion"
 import Sidebar from "../../components/Sidebar"
 import ProjectCard from "../../components/projects/ProjectCard"
 
-import img1 from "../../assets/images/projectImages/testImage.png"
-import img2 from "../../assets/images/projectImages/testImage.png"
-import img3 from "../../assets/images/projectImages/testImage.png"
-import img4 from "../../assets/images/projectImages/testImage.png"
+import weddingPlannerCover from "../../assets/images/projectImages/weddingPlannerCover.png"
+import MetroClapCover from "../../assets/images/projectImages/MetroClapCover.png"
+import MetroBuddyCover from "../../assets/images/projectImages/MetroBuddyCover.png"
+import CRMCover from "../../assets/images/projectImages/CRMCover.png"
+import designImg from "../../assets/images/projectImages/testImage.png"
 
 /*  FRAMER MOTION VARIANTS */
 const containerVariants = {
@@ -20,21 +21,101 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   },
 }
 
 function Projects() {
   const projects = [
-    { title: "Design Project", image: img1 },
-    { title: "UI Project", image: img2 },
-    { title: "Mockup Project", image: img3 },
-    { title: "Brand Project", image: img4 },
-  ]
 
+    {
+      title: "Wedding Planner💍",
+      subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
+      titleColor: "#C961DE",  // Wedding Planner title color
+      subtitleColor: "#FFFFFF", // Subtitle color
+      image: weddingPlannerCover,
+    },
+    {
+      title: "Furniture Website🛋️",
+      subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Shopping App🛒",
+      subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Valchron Ventures📈",
+      subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "CRM App📊",
+      subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: CRMCover,
+    },
+    {
+      title: "Landing Page🌐",
+      subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Variant Switch Animation",
+      subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Metro Buddy📍",
+      subtitle: "Metro Buddy – Discover Local Services Near You – Find what you need, close to home.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: MetroBuddyCover,
+    },
+    {
+      title: "Synexis Venture🏢",
+      subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Job Portal App💼",
+      subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Metro Clap🛠️",
+      subtitle: "Metro Clap – Local Services Marketplace – Book trusted professionals in minutes.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: MetroClapCover,
+    },
+    {
+      title: "Fresh Gro🥦",
+      subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+  ];
   return (
     <div className="bg-[#0F103F] min-h-screen">
       <Sidebar />
@@ -67,6 +148,7 @@ function Projects() {
             >
               <ProjectCard
                 title={item.title}
+                subtitle={item.subtitle}
                 image={item.image}
                 active={true}
                 isMobile={false}

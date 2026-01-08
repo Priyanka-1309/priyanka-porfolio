@@ -3,9 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
 import "swiper/css"
 
+import weddingPlannerCover from "../../assets/images/projectImages/weddingPlannerCover.png"
+import MetroClapCover from "../../assets/images/projectImages/MetroClapCover.png"
+import MetroBuddyCover from "../../assets/images/projectImages/MetroBuddyCover.png"
+import CRMCover from "../../assets/images/projectImages/CRMCover.png"
 import designImg from "../../assets/images/projectImages/testImage.png"
-import uiImg from "../../assets/images/projectImages/testImage.png"
-import mockupImg from "../../assets/images/projectImages/testImage.png"
+
 import prevIcon from "../../assets/images/backArrow.png"
 import nextIcon from "../../assets/images/forwardArrow.png"
 import ring2 from "../../assets/images/ring2.png"
@@ -15,115 +18,118 @@ import personOnChair from "../../assets/images/exploreWork/personOnChair.png";
 
 import ProjectCard from "./projectCard/ProjectCard"
 import { useNavigate } from "react-router-dom"
-
+ 
+ 
 function HomePageProjects() {
-    const [activeIndex, setActiveIndex] = useState(0)
-    const [isMobile, setIsMobile] = useState(false)
-    const swiperRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const swiperRef = useRef(null)
+  const navigate = useNavigate()
 
-    const navigate = useNavigate();
+  /* ================= PROJECT DATA ================= */
+ 
+      const projects = [
 
-    const projects = [
+    {
+      title: "Wedding Planner💍",
+      subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
+      titleColor: "#C961DE",  // Wedding Planner title color
+      subtitleColor: "#FFFFFF", // Subtitle color
+      image: weddingPlannerCover,
+    },
+    {
+      title: "Furniture Website🛋️",
+      subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Shopping App🛒",
+      subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Valchron Ventures📈",
+      subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "CRM App📊",
+      subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: CRMCover,
+    },
+    {
+      title: "Landing Page🌐",
+      subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Variant Switch Animation",
+      subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Metro Buddy📍",
+      subtitle: "Metro Buddy – Discover Local Services Near You – Find what you need, close to home.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: MetroBuddyCover,
+    },
+    {
+      title: "Synexis Venture🏢",
+      subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Job Portal App💼",
+      subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+    {
+      title: "Metro Clap🛠️",
+      subtitle: "Metro Clap – Local Services Marketplace – Book trusted professionals in minutes.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: MetroClapCover,
+    },
+    {
+      title: "Fresh Gro🥦",
+      subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
+      titleColor: "#C961DE",
+      subtitleColor: "#FFFFFF",
+      image: designImg,
+    },
+  ];
 
-  {
-    title: "Wedding Planner💍",
-    subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
-    titleColor: "#C961DE",  // Wedding Planner title color
-    subtitleColor: "#FFFFFF", // Subtitle color
-    image: designImg,
-  },
-  {
-    title: "Furniture Website🛋️",
-    subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Shopping App🛒",
-    subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Valchron Ventures📈",
-    subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "CRM App📊",
-    subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Landing Page🌐",
-    subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Variant Switch Animation🎨",
-    subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Metro Buddy📍",
-    subtitle: "Metro Buddy – Discover Local Services Near You – Find what you need, close to home.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Synexis Venture🏢",
-    subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Job Portal App💼",
-    subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Metro Clap🛠️",
-    subtitle: "Metro Clap – Local Services Marketplace – Book trusted professionals in minutes.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-  {
-    title: "Fresh Gro🥦",
-    subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
-    titleColor: "#C961DE",
-    subtitleColor: "#FFFFFF",
-    image: designImg,
-  },
-];
 
-    
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 768)
-        handleResize()
-        window.addEventListener("resize", handleResize)
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
+  /* ================= RESPONSIVE ================= */
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
-    const goPrev = () => swiperRef.current?.slidePrev()
-    const goNext = () => swiperRef.current?.slideNext()
+  const goPrev = () => swiperRef.current?.slidePrev()
+  const goNext = () => swiperRef.current?.slideNext()
 
-    return (
-        <section className="px-[5px] 
+  return (
+    <section className="px-[5px] 
                             md:mt-[180px]
                             pb-38 md:pb-52  
                             bg-[#0F103F] 
@@ -131,11 +137,11 @@ function HomePageProjects() {
                             mx-auto">
 
 
-            {/* RING — OUTSIDE CARD */}
-            <img
-                src={ring2}
-                alt="ring"
-                className="
+      {/* RING — OUTSIDE CARD */}
+      <img
+        src={ring2}
+        alt="ring"
+        className="
       hidden md:block
       absolute
       top-[-320px]
@@ -147,119 +153,110 @@ function HomePageProjects() {
       z-0
       opacity-40 
     "
-            />
+      />
 
-            {/* TITLE */}
-            <div className="text-center px-4">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold tracking-wide mb-3">
-          <span className="text-white">My </span>
-            <span className="text-[#C961DE]">Recent Work</span>
-</h2>
+      {/* TITLE */}
+      <div className="text-center px-4">
+        <h2 className="text-white text-3xl md:text-4xl font-bold mb-3">
+          My recent work
+        </h2>
+        <p className="text-gray-300 pb-5">
+          Explore my latest projects
+        </p>
+      </div>
 
-                <p className="text-gray-300 pb-5">
-                    Explore my latest projects
-                </p>
-            </div>
+      {/* SWIPER WRAPPER */}
+      <div className="relative  max-w-7xl lg:max-w-[950px]  mx-auto px-0 ">
 
-            {/* SWIPER WRAPPER */}
-            <div className="relative  max-w-8xl lg:max-w-[950px]  mx-auto px-0 ">
-
-                <Swiper
-                    slidesPerView={isMobile ? 1 : 3}
-                    centeredSlides
-                    loop
-                    onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    className="pb-16"
-                >
-                    {projects.map((item, index) => (
-                        <SwiperSlide
-                            key={index}
-                            className={`flex justify-center transition-all
-                                ${activeIndex === index ? "z-20" : "z-10"}
-                                 `}
-                        >
-                            <div
-                                className={`
-                                     flex justify-center
-                                     ${isMobile
-                                        ? "w-[75vw] sm:w-[80vw] md:w-[80vw] lg:w-[90vw] mx-auto"
-                                        : "w-[320px]"
-                                    }
+        <Swiper
+          slidesPerView={isMobile ? 1 : 3}
+          centeredSlides
+          loop
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="pb-16"
+          modules={[Autoplay]}
+        >
+          {projects.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              className={`flex justify-center transition-all
+                         ${activeIndex === index ? "z-20" : "z-10"}
+                          `}
+            >
+              <div
+                className={`
+                    flex justify-center cursor-pointer
+                    ${isMobile
+                    ? "w-[75vw] sm:w-[80vw] md:w-[80vw] lg:w-[90vw] mx-auto"
+                    : "w-[320px]"
+                  }
                                     `}
-                            >
-                                <ProjectCard
-                                    title={item.title}
-                                    subtitle={item.subtitle}
-                                    image={item.image}
-                                    active={activeIndex === index}
-                                    isMobile={isMobile}
-                                />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+              >
+                <ProjectCard
+                  title={item.title}
+                  subtitle={item.subtitle}
+                  image={item.image}
+                  isActive={activeIndex === index}
+                  isMobile={isMobile}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-                {/*  CUSTOM NAVIGATION (PARENT + SWIPER ) */}
-                <button
-                    onClick={goPrev}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-20
+        {/*  CUSTOM NAVIGATION (PARENT + SWIPER ) */}
+        <button
+          onClick={goPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20
           bg-white/20 backdrop-blur-md p-3 rounded-full hover:scale-110 transition 
-          ml-0 min-[500px]:ml-[10vw] md:ml-0"
-                >
-                    <img src={prevIcon} alt="prev" className="w-4 h-4" />
-                </button>
+          ml-0 min-[500px]:ml-[10vw] md:ml-0 cursor-pointer"
+        >
+          <img src={prevIcon} alt="prev" className="w-4 h-4" />
+        </button>
 
-                <button
-                    onClick={goNext}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-20
+        <button
+          onClick={goNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20
           bg-white/20 backdrop-blur-md p-3 rounded-full hover:scale-110 transition
-          mr-0 min-[500px]:mr-[10vw] md:mr-0"
-                >
-                    <img src={nextIcon} alt="next" className="w-4 h-4" />
-                </button>
+          mr-0 min-[500px]:mr-[10vw] md:mr-0  cursor-pointer"
+        >
+          <img src={nextIcon} alt="next" className="w-4 h-4" />
+        </button>
 
-            </div>
+      </div>
 
-            {/* INDICATOR */}
-            {/* <div className="text-center mt-6">
-        <span className="px-4 py-2 bg-white/10 rounded-full text-white text-sm">
-          {activeIndex + 1} / {projects.length}
-        </span>
-      </div> */}
+      {/* EXPLORE WORK IMAGES */}
+      <div className="relative mt-8 flex pl-[150px] justify-center cursor-pointer">
+        <div
+          onClick={() => navigate("/projects")}
+          className="absolute w-[250px] h-[200px]">
+          <img
+            src={exploreText}
+            alt="text"
+            className="absolute top-[5px] left-[-80px] h-[17px] w-[100px]"
+          />
 
-            {/* route to project page via image */}
-            {/* EXPLORE WORK IMAGES */}
-            <div className="relative mt-8 flex pl-[150px] justify-center">
-                <div
-                    onClick={() => navigate("/projects")}
-                    className="absolute w-[250px] h-[200px]">
-                    <img
-                        src={exploreText}
-                        alt="text"
-                        className="absolute top-[5px] left-[-80px] h-[17px] w-[100px]"
-                    />
-
-                    <img
-                        src={arrow}
-                        alt="arrow"
-                        className="absolute top-[5px] left-[20px]  h-[30px] w-[70px] "
-                    />
+          <img
+            src={arrow}
+            alt="arrow"
+            className="absolute top-[5px] left-[20px]  h-[30px] w-[70px] "
+          />
 
 
-                    <img
-                        src={personOnChair}
-                        alt="person"
-                        className="absolute top-[30px] left-[60px] h-[80px] w-[80px]"
-                    />
+          <img
+            src={personOnChair}
+            alt="person"
+            className="absolute top-[30px] left-[60px] h-[80px] w-[80px]"
+          />
 
-                </div>
-            </div>
+        </div>
+      </div>
 
 
-        </section>
-    )
+    </section>
+  )
 }
 
 export default HomePageProjects
