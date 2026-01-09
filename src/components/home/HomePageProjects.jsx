@@ -14,7 +14,7 @@ import synexisventureCover from "../../assets/images/projectsImage/synexisventur
 import variantSwitchAnimationCover from "../../assets/images/projectsImage/variantSwitchAnimationCover.png"
 import valchronVenture from "../../assets/images/projectsImage/ valchronVentureCover.png"
 import furnitureCover from "../../assets/images/projectsImage/furnitureCover"
-import designImg from "../../assets/images/projectsImage/testImage.png"
+
 
 import prevIcon from "../../assets/images/backArrow.png"
 import nextIcon from "../../assets/images/forwardArrow.png"

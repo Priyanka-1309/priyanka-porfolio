@@ -112,14 +112,18 @@ function AboutDetails() {
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          Hello! I’m Priyanka , I am a passionate UI/UX Designer with experience in creating intuitive, user-centric websites and mobile applications. Skilled in Figma, I have worked on diverse projects including wedding planner platforms, CRM systems, service websites, grocery apps, and job portals. I focus on combining usability, visual clarity, and strategy to deliver meaningful digital experiences that support both user needs and business goals. I’m always learning new things and improving my skills by working on different projects.
+          Hello! I’m a UI/UX Designer with hands-on experience in designing responsive websites and mobile applications. I have worked on multiple live projects across domains such as e-commerce, job portals, service platforms, and NGO websites.
+
+During my internship at CMT AI, I gained practical experience in creating wireframes, user flows, responsive layouts, and interactive prototypes using Figma. Currently, at Synexis Venture, I design intuitive and scalable web and mobile interfaces while closely collaborating with developers to deliver pixel-perfect and user-friendly products.
+
+I focus strongly on usability, consistency, and clean visual design, and I enjoy turning complex ideas into simple, meaningful digital experiences.
         </motion.p>
 
         {/* DIAMOND IMAGE */}
         <motion.img
           src={diamond}
           alt='diamond Image'
-          className='h-[460px] w-[320px] hidden md:block absolute right-[-80px] top-[350px] z-15'
+          className='h-[460px] w-[320px] hidden md:block absolute right-[-80px] top-[400px] z-15'
           variants={imageVariants}
         />
 
