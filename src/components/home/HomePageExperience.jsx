@@ -13,18 +13,11 @@ function HomePageExperience() {
     },
     {
       role: "UI/UX Designer",
-      company: "CMT AI",
-      duration: "September – December",
-      description:
-        "After my internship, I transitioned into a UI/UX Designer role where I took ownership of product design responsibilities. I designed intuitive interfaces for web and mobile platforms, focused on clean layouts, visual hierarchy, and seamless user flows, and collaborated closely with developers to ensure smooth implementation.",
-    },
-    {
-      role: "UI/UX Designer",
       company: "Synexis Venture",
       duration: "December – Present",
       description:
-        "Currently working as a UI/UX Designer at Synexis Venture, designing modern, scalable, and user-focused digital products. I collaborate with developers and stakeholders to translate requirements into intuitive interfaces, maintain design consistency, and deliver impactful user experiences that balance aesthetics with functionality.",
-    },
+       "Currently working as a UI/UX Designer at Synexis Venture, designing modern, scalable, and user-focused digital products for web and mobile platforms. I collaborate closely with developers and stakeholders to translate requirements into intuitive interfaces, maintain design consistency, and deliver impactful user experiences that balance aesthetics with functionality.",
+    }
   ]
 
   return (

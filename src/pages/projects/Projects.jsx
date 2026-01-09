@@ -7,7 +7,14 @@ import ProjectCard from "../../components/projects/ProjectCard"
 import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png"
 import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png"
 import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png"
-import CRMCover from "../../assets/images/projectsImage/crmCover.png"
+import jobSeekerCover from "../../assets/images/projectsImage/jobSeekerCover.png"
+import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png"
+import landingPageCover from "../../assets/images/projectsImage/ landingPageCover.png"
+import shoppingappcover from "../../assets/images/projectsImage/shoppingappcover .png"
+import synexisventureCover from "../../assets/images/projectsImage/synexisventureCover.png"
+import variantSwitchAnimationCover from "../../assets/images/projectsImage/variantSwitchAnimationCover.png"
+import valchronVenture from "../../assets/images/projectsImage/ valchronVentureCover.png"
+import furnitureCover from "../../assets/images/projectsImage/furnitureCover"
 import designImg from "../../assets/images/projectsImage/testImage.png"
 
 /*  FRAMER MOTION VARIANTS */
@@ -31,90 +38,90 @@ const cardVariants = {
 function Projects() {
   const projects = [
 
-    {
-      title: "Wedding Planner💍",
-      subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
-      titleColor: "#C961DE",  // Wedding Planner title color
-      subtitleColor: "#FFFFFF", // Subtitle color
-      image: weddingPlannerCover,
-    },
-    {
-      title: "Furniture Website🛋️",
-      subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
-    {
-      title: "Shopping App🛒",
-      subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
-    {
-      title: "Valchron Ventures📈",
-      subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
-    {
-      title: "CRM App📊",
-      subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: CRMCover,
-    },
-    {
-      title: "Landing Page🌐",
-      subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
-    {
-      title: "Variant Switch Animation",
-      subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
-    {
-      title: "Metro Buddy📍",
-      subtitle: "Metro Buddy – Discover Local Services Near You – Find what you need, close to home.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: MetroBuddyCover,
-    },
-    {
-      title: "Synexis Venture🏢",
-      subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
-    {
-      title: "Job Portal App💼",
-      subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
-    {
-      title: "Metro Clap🛠️",
-      subtitle: "Metro Clap – Local Services Marketplace – Book trusted professionals in minutes.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: MetroClapCover,
-    },
-    {
-      title: "Fresh Gro🥦",
-      subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: designImg,
-    },
+     {
+          title: "Wedding Planner💍",
+          subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
+          titleColor: "#C961DE",  // Wedding Planner title color
+          subtitleColor: "#FFFFFF", // Subtitle color
+          image: weddingPlannerCover,
+        },
+        {
+          title: "Furniture Website🛋️",
+          subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image: furnitureCover,
+        },
+        {
+          title: "Shopping App🛒",
+          subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image:shoppingappcover,
+        },
+        {
+          title: "Valchron Ventures📈",
+          subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image:valchronVenture,
+        },
+        {
+          title: "CRM App📊",
+          subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image: CRMCover,
+        },
+        {
+          title: "Landing Page🌐",
+          subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image:landingPageCover,
+        },
+        {
+          title: "Variant Switch Animation",
+          subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image:variantSwitchAnimationCover,
+        },
+        {
+          title: "Metro Buddy📍",
+          subtitle: "Metro Buddy – Discover Local Services Near You – Find what you need, close to home.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image: MetroBuddyCover,
+        },
+        {
+          title: "Synexis Venture🏢",
+          subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image:synexisventureCover,
+        },
+        {
+          title: "Job Portal App💼",
+          subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image:jobSeekerCover,
+        },
+        {
+          title: "Metro Clap🛠️",
+          subtitle: "Metro Clap – Local Services Marketplace – Book trusted professionals in minutes.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image: MetroClapCover,
+        },
+        {
+          title: "Fresh Gro🥦",
+          subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
+          titleColor: "#C961DE",
+          subtitleColor: "#FFFFFF",
+          image:freshGroCover,
+        },
   ];
   return (
     <div className="bg-[#0F103F] min-h-screen">

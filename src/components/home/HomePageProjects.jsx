@@ -6,7 +6,14 @@ import "swiper/css"
 import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png"
 import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png"
 import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png"
-import CRMCover from "../../assets/images/projectsImage/crmCover.png"
+import jobSeekerCover from "../../assets/images/projectsImage/jobSeekerCover.png"
+import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png"
+import landingPageCover from "../../assets/images/projectsImage/ landingPageCover.png"
+import shoppingappcover from "../../assets/images/projectsImage/shoppingappcover .png"
+import synexisventureCover from "../../assets/images/projectsImage/synexisventureCover.png"
+import variantSwitchAnimationCover from "../../assets/images/projectsImage/variantSwitchAnimationCover.png"
+import valchronVenture from "../../assets/images/projectsImage/ valchronVentureCover.png"
+import furnitureCover from "../../assets/images/projectsImage/furnitureCover"
 import designImg from "../../assets/images/projectsImage/testImage.png"
 
 import prevIcon from "../../assets/images/backArrow.png"
@@ -42,21 +49,21 @@ function HomePageProjects() {
       subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image: furnitureCover,
     },
     {
       title: "Shopping App🛒",
       subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image:shoppingappcover,
     },
     {
       title: "Valchron Ventures📈",
       subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image:valchronVenture,
     },
     {
       title: "CRM App📊",
@@ -70,14 +77,14 @@ function HomePageProjects() {
       subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image:landingPageCover,
     },
     {
       title: "Variant Switch Animation",
       subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image:variantSwitchAnimationCover,
     },
     {
       title: "Metro Buddy📍",
@@ -91,14 +98,14 @@ function HomePageProjects() {
       subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image:synexisventureCover,
     },
     {
       title: "Job Portal App💼",
       subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image:jobSeekerCover,
     },
     {
       title: "Metro Clap🛠️",
@@ -112,7 +119,7 @@ function HomePageProjects() {
       subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: designImg,
+      image:freshGroCover,
     },
   ];
 
