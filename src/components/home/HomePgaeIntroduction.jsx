@@ -7,10 +7,13 @@ import linkedin from '../../assets/images/linkedin.png'
 import github from '../../assets/images/github.png'
 import mail from '../../assets/images/mail.png'
 import download from '../../assets/images/download.png'
-// import resume from "../../assets/images/resume/"
-import resume from "../../assets/images/download.png"
+
+
+import { useNavigate } from 'react-router-dom'
 
 function HomePageIntroduction() {
+  const navigation = useNavigate();
+
   return (
     <>
       {/* top intro section and absolute image*/}
@@ -90,7 +93,10 @@ function HomePageIntroduction() {
 
         <button
           className="px-6 py-2 rounded-full text-sm font-semibold text-white hover:scale-105 transition cursor-pointer"
-          style={{ background: "linear-gradient(90deg, #C961DE, #2954A3)" }}
+          style={{ background: "linear-gradient(90deg, #C961DE, #2954A3)" }} 
+         onClick={()=>{
+          navigation("/contact")
+        }}
         >
           Hire Me
         </button>

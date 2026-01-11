@@ -8,12 +8,12 @@ import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png
 import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png"
 import jobSeekerCover from "../../assets/images/projectsImage/jobSeekerCover.png"
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png"
-import landingPageCover from "../../assets/images/projectsImage/ landingPageCover.png"
-import shoppingappcover from "../../assets/images/projectsImage/shoppingappcover .png"
+import shoppingappcover from "../../assets/images/projectsImage/shoppingappcover.png"
+import landingPageCover from "../../assets/images/projectsImage/landingPageCover.png"
 import synexisventureCover from "../../assets/images/projectsImage/synexisventureCover.png"
 import variantSwitchAnimationCover from "../../assets/images/projectsImage/variantSwitchAnimationCover.png"
-import valchronVenture from "../../assets/images/projectsImage/ valchronVentureCover.png"
-import furnitureCover from "../../assets/images/projectsImage/furnitureCover"
+import valchronVenture from "../../assets/images/projectsImage/valchronVentureCover.png"
+import furnitureCover from "../../assets/images/projectsImage/furnitureCover.png"
 
 
 import prevIcon from "../../assets/images/backArrow.png"
@@ -43,6 +43,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",  // Wedding Planner title color
       subtitleColor: "#FFFFFF", // Subtitle color
       image: weddingPlannerCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Furniture Website🛋️",
@@ -50,6 +52,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image: furnitureCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Shopping App🛒",
@@ -57,6 +61,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image:shoppingappcover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Valchron Ventures📈",
@@ -64,13 +70,17 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image:valchronVenture,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "CRM App📊",
       subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
-      image: CRMCover,
+      image: MetroBuddyCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Landing Page🌐",
@@ -78,6 +88,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image:landingPageCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Variant Switch Animation",
@@ -85,6 +97,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image:variantSwitchAnimationCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Metro Buddy📍",
@@ -92,6 +106,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image: MetroBuddyCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Synexis Venture🏢",
@@ -99,6 +115,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image:synexisventureCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Job Portal App💼",
@@ -106,6 +124,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image:jobSeekerCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Metro Clap🛠️",
@@ -113,6 +133,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image: MetroClapCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
     {
       title: "Fresh Gro🥦",
@@ -120,6 +142,8 @@ function HomePageProjects() {
       titleColor: "#C961DE",
       subtitleColor: "#FFFFFF",
       image:freshGroCover,
+          link:"https://portfolio-mocha-beta-97.vercel.app"
+
     },
   ];
 
@@ -201,6 +225,7 @@ function HomePageProjects() {
                   }
                                     `}
               >
+                 <a href={item.link} target="_blank">
                 <ProjectCard
                   title={item.title}
                   subtitle={item.subtitle}
@@ -208,6 +233,7 @@ function HomePageProjects() {
                   isActive={activeIndex === index}
                   isMobile={isMobile}
                 />
+                </a>
               </div>
             </SwiperSlide>
           ))}

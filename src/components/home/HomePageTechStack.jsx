@@ -5,22 +5,32 @@ import {
   SiJavascript,
   SiFigma,
   SiSketch,
-  SiInvision,
+  SiAdobexd,
+  SiAdobephotoshop,
+  SiCoreldraw,
+  SiCanva,
 } from "react-icons/si"
-import { FaMobileAlt } from "react-icons/fa" 
+import { FaMobileAlt } from "react-icons/fa"
+
 
 function HomePageTechStack() { 
   const stack = [
-    { name: "HTML", icon: SiHtml5, color: "text-orange-500" },
-    { name: "CSS", icon: SiCss3, color: "text-blue-500" },
-    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
- 
-    { name: "Figma", icon: SiFigma, color: "text-pink-500" },
-    { name: "Sketch", icon: SiSketch, color: "text-orange-400" },
-    { name: "InVision", icon: SiInvision, color: "text-red-500" },
- 
-    { name: "Responsive Design", icon: FaMobileAlt, color: "text-green-400" }, 
-  ]
+  { name: "HTML", icon: SiHtml5, color: "text-orange-500" },
+  { name: "CSS", icon: SiCss3, color: "text-blue-500" },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+
+  { name: "Figma", icon: SiFigma, color: "text-pink-500" },
+  { name: "Sketch", icon: SiSketch, color: "text-orange-400" },
+  
+
+  { name: "Adobe XD", icon: SiAdobexd, color: "text-purple-500" },
+  { name: "Adobe Photoshop", icon: SiAdobephotoshop, color: "text-blue-400" },
+  { name: "CorelDRAW", icon: SiCoreldraw, color: "text-green-500" },
+  { name: "Canva", icon: SiCanva, color: "text-sky-400" },
+
+  { name: "Responsive Design", icon: FaMobileAlt, color: "text-green-400" },
+]
+
 
 
   return (
