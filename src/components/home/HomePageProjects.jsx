@@ -5,6 +5,7 @@ import "swiper/css"
 
 import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png"
 import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png"
+import CrmCover from "../../assets/images/projectsImage/CrmCover.png"
 import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png"
 import jobSeekerCover from "../../assets/images/projectsImage/jobSeekerCover.png"
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png"
@@ -38,113 +39,112 @@ function HomePageProjects() {
       const projects = [
 
     {
-      title: "Wedding Planner💍",
-      subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
-      titleColor: "#C961DE",  // Wedding Planner title color
-      subtitleColor: "#FFFFFF", // Subtitle color
-      image: weddingPlannerCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Furniture Website🛋️",
-      subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: furnitureCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Shopping App🛒",
-      subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image:shoppingappcover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Valchron Ventures📈",
-      subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image:valchronVenture,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "CRM App📊",
-      subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: MetroBuddyCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Landing Page🌐",
-      subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image:landingPageCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Variant Switch Animation",
-      subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image:variantSwitchAnimationCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Metro Buddy📍",
-      subtitle: "Metro Buddy – Discover Local Services Near You – Find what you need, close to home.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: MetroBuddyCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Synexis Venture🏢",
-      subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image:synexisventureCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Job Portal App💼",
-      subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image:jobSeekerCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Metro Clap🛠️",
-      subtitle: "Metro Clap – Local Services Marketplace – Book trusted professionals in minutes.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image: MetroClapCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
-    {
-      title: "Fresh Gro🥦",
-      subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
-      titleColor: "#C961DE",
-      subtitleColor: "#FFFFFF",
-      image:freshGroCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
-
-    },
+              title: "Wedding Planner💍",
+              subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
+              titleColor: "#C961DE",  // Wedding Planner title color
+              subtitleColor: "#FFFFFF", // Subtitle color
+              image: weddingPlannerCover,
+              link:"https://www.figma.com/design/KdZTBrtz6etTiyHk9hBtoJ/wedding--planner?node-id=0-1&t=YYdxzJO9hDkVfLRF-1"
+            },
+            {
+              title: "Furniture Website🛋️",
+              subtitle: "Modern Furniture E-Shop – Discover stylish furniture for every corner of your home.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image: furnitureCover,
+              link:"https://www.figma.com/design/fazoJ7tEqOpdkO4xgrxqm5/Furniture-website--Community-?node-id=0-1&t=5YGLi68xPZhTGRNw-1"
+            
+            },
+            {
+              title: "Shopping App🛒",
+              subtitle: "Smart Shopping App – Seamless, user-friendly shopping at your fingertips.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:shoppingappcover,
+              link:"https://www.figma.com/design/lsdl2PkQqZkhyyOHZwpAcI/shopping-app?node-id=0-1&t=8jR3zIZ5p5qzTcag-1"
+    
+            },
+            {
+              title: "Valchron Ventures📈",
+              subtitle: "Valchron Ventures – Trading Made Simple – Track, trade, and grow your investments.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:valchronVenture,
+              link:"https://www.figma.com/design/xmBDaVPtMmsCVlgJTmR5Pc/Valchron-Ventures-LLC?node-id=336-499&t=6zqsn0Bge6reEb0S-1"
+    
+            },
+            {
+              title: "CRM App📊",
+              subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:CrmCover,
+              link:"https://www.figma.com/design/6mKbHEDmXAaqslBCPcDUqy/S2-HIVE-SCHOOL-UI?node-id=0-1&t=y64TTICHnb4ui2xq-1"
+    
+            },
+            {
+              title: "Landing Page🌐",
+              subtitle: "High-Converting Landing Page – Designed to grab attention and drive action.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:landingPageCover,
+              link:"https://www.figma.com/design/ydsQwgib6fspv6zjLJUczK/face-drop-landing-page?node-id=0-1&t=mnC4jsLd0XxxsT99-1"
+    
+            },
+            {
+              title: "Variant Switch Animation",
+              subtitle: "Interactive Variant Switch Animation – Engaging UI with smooth transitions.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:variantSwitchAnimationCover,
+              link:"https://www.figma.com/design/zjajRnhZYuBjPWXg3fGWd0/Variant-Switch-Animation?node-id=0-1&t=g6pC46iqVKQVFhh6-1"
+    
+            },
+            {
+              title: "Metro Buddy📍",
+              subtitle: "Metro Buddy – Discover Local Services Near You – Find what you need, close to home.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image: MetroBuddyCover,
+              link:"https://www.figma.com/design/UGbdSmQFIlMbFXF9kwOvww/Metro-buddy?node-id=0-1&t=vNyLK7i6VnMOxvTt-1"
+    
+            },
+            {
+              title: "Synexis Venture🏢",
+              subtitle: "Synexis Venture – Professional Services Website – Clean, modern design for service companies.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:synexisventureCover,
+              link:"https://www.figma.com/design/DNDTOMjkR9eDeFiJmg9DTA/synexis-venture?node-id=0-1&t=ErxO7NXiNQkZrfd2-1"
+    
+            },
+            {
+              title: "Job Portal App💼",
+              subtitle: "Smart Job Portal App – Helping users find their dream job effortlessly.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:jobSeekerCover,
+              link:"https://www.figma.com/design/K0J7tFedWx5fnBQMmkJgMB/Job-Portal-App?node-id=0-1&t=YlIKoXGKSLwXQev3-1"
+    
+            },
+            {
+              title: "Metro Clap🛠️",
+              subtitle: "Metro Clap – Local Services Marketplace – Book trusted professionals in minutes.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image: MetroClapCover,
+              link:"https://www.figma.com/design/pM03LsQlIWNLyGqpknMSFL/Metro-Clap?node-id=0-1&t=wHxMb7UPQ4NtvWCL-1"
+    
+            },
+            {
+              title: "Fresh Gro🥦",
+              subtitle: "Fresh Gro – Online Grocery Shopping – Fresh groceries delivered at your doorstep.",
+              titleColor: "#C961DE",
+              subtitleColor: "#FFFFFF",
+              image:freshGroCover,
+              link:"https://www.figma.com/design/qjhcxFEEVus6BqsI1jZmX8/fresh-gro?node-id=0-1&t=ISgZivQWQMWmOsmE-1"
+    
+            },
   ];
 
 
@@ -188,9 +188,14 @@ function HomePageProjects() {
 
       {/* TITLE */}
       <div className="text-center px-4">
-        <h2 className="text-white text-3xl md:text-4xl font-bold mb-3">
-          My recent work
-        </h2>
+         <h2 className="text-3xl md:text-4xl font-bold mb-3">
+  <span className="text-white">My </span>
+  <span className="text-[#C961DE]">
+    Recent work
+  </span>
+</h2>
+
+
         <p className="text-gray-300 pb-5">
           Explore my latest projects
         </p>

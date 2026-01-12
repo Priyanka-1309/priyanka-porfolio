@@ -6,16 +6,16 @@ import ProjectCard from "../../components/projects/ProjectCard"
 
 import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png"
 import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png"
+import CrmCover from "../../assets/images/projectsImage/CrmCover.png"
 import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png"
 import jobSeekerCover from "../../assets/images/projectsImage/jobSeekerCover.png"
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png"
-import landingPageCover from "../../assets/images/projectsImage/landingPageCover.png"
 import shoppingappcover from "../../assets/images/projectsImage/shoppingappcover.png"
+import landingPageCover from "../../assets/images/projectsImage/landingPageCover.png"
 import synexisventureCover from "../../assets/images/projectsImage/synexisventureCover.png"
 import variantSwitchAnimationCover from "../../assets/images/projectsImage/variantSwitchAnimationCover.png"
 import valchronVenture from "../../assets/images/projectsImage/valchronVentureCover.png"
 import furnitureCover from "../../assets/images/projectsImage/furnitureCover.png"
-
 
 /*  FRAMER MOTION VARIANTS */
 const containerVariants = {
@@ -44,7 +44,7 @@ function Projects() {
           titleColor: "#C961DE",  // Wedding Planner title color
           subtitleColor: "#FFFFFF", // Subtitle color
           image: weddingPlannerCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/KdZTBrtz6etTiyHk9hBtoJ/wedding--planner?node-id=0-1&t=YYdxzJO9hDkVfLRF-1"
         },
         {
           title: "Furniture Website🛋️",
@@ -52,7 +52,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image: furnitureCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/fazoJ7tEqOpdkO4xgrxqm5/Furniture-website--Community-?node-id=0-1&t=5YGLi68xPZhTGRNw-1"
         
         },
         {
@@ -61,7 +61,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image:shoppingappcover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/lsdl2PkQqZkhyyOHZwpAcI/shopping-app?node-id=0-1&t=8jR3zIZ5p5qzTcag-1"
 
         },
         {
@@ -70,7 +70,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image:valchronVenture,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/xmBDaVPtMmsCVlgJTmR5Pc/Valchron-Ventures-LLC?node-id=336-499&t=6zqsn0Bge6reEb0S-1"
 
         },
         {
@@ -78,8 +78,8 @@ function Projects() {
           subtitle: "Efficient CRM Solution – Streamlined customer management for modern businesses.",
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
-          image: MetroBuddyCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          image: CrmCover,
+          link:"https://www.figma.com/design/6mKbHEDmXAaqslBCPcDUqy/S2-HIVE-SCHOOL-UI?node-id=0-1&t=y64TTICHnb4ui2xq-1"
 
         },
         {
@@ -88,7 +88,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image:landingPageCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/ydsQwgib6fspv6zjLJUczK/face-drop-landing-page?node-id=0-1&t=mnC4jsLd0XxxsT99-1"
 
         },
         {
@@ -97,7 +97,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image:variantSwitchAnimationCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/zjajRnhZYuBjPWXg3fGWd0/Variant-Switch-Animation?node-id=0-1&t=g6pC46iqVKQVFhh6-1"
 
         },
         {
@@ -106,7 +106,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image: MetroBuddyCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/UGbdSmQFIlMbFXF9kwOvww/Metro-buddy?node-id=0-1&t=vNyLK7i6VnMOxvTt-1"
 
         },
         {
@@ -115,7 +115,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image:synexisventureCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/DNDTOMjkR9eDeFiJmg9DTA/synexis-venture?node-id=0-1&t=ErxO7NXiNQkZrfd2-1"
 
         },
         {
@@ -124,7 +124,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image:jobSeekerCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/K0J7tFedWx5fnBQMmkJgMB/Job-Portal-App?node-id=0-1&t=YlIKoXGKSLwXQev3-1"
 
         },
         {
@@ -133,7 +133,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image: MetroClapCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/pM03LsQlIWNLyGqpknMSFL/Metro-Clap?node-id=0-1&t=wHxMb7UPQ4NtvWCL-1"
 
         },
         {
@@ -142,7 +142,7 @@ function Projects() {
           titleColor: "#C961DE",
           subtitleColor: "#FFFFFF",
           image:freshGroCover,
-          link:"https://portfolio-mocha-beta-97.vercel.app"
+          link:"https://www.figma.com/design/qjhcxFEEVus6BqsI1jZmX8/fresh-gro?node-id=0-1&t=ISgZivQWQMWmOsmE-1"
 
         },
   ];

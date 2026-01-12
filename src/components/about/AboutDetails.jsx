@@ -47,7 +47,7 @@ function AboutDetails() {
       <motion.img
         src={searchAndNewspaper}
         alt='image'
-        className='h-[250px] w-[250px] hidden md:block absolute left-[0px] top-0 lg:top-20'
+        className='h-[200px] w-[200px] hidden md:block absolute left-[0px] top-0 lg:top-20'
         variants={imageVariants}
       />
 
@@ -86,11 +86,11 @@ function AboutDetails() {
         variants={containerVariants}
       >
 
-        {/* BOY IMAGE */}
+        {/* Girl IMAGE */}
         <motion.img
           src={girlImage}
           alt='girlImage'
-          className='h-[800px] w-[280px] hidden md:block absolute left-[-200px] top-[-80px] z-15'
+          className='h-[900px] w-[550px] hidden md:block absolute left-[-330px] top-[-190px] z-15'
           variants={imageVariants}
         />
 
@@ -106,17 +106,14 @@ function AboutDetails() {
         </motion.h2>
 
         <motion.p
-          className="text-white text-justify text-[14px] md:text-[18px] leading-relaxed md:pl-[50px] md:pr-[20px]"
+          className="text-white text-justify text-[14px] md:text-[18px] leading-relaxed md:pl-[30px] md:pr-[20px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          Hello! I’m a UI/UX Designer with hands-on experience in designing responsive websites and mobile applications. I have worked on multiple live projects across domains such as e-commerce, job portals, service platforms, and NGO websites.
-
-During my internship at CMT AI, I gained practical experience in creating wireframes, user flows, responsive layouts, and interactive prototypes using Figma. Currently, at Synexis Venture, I design intuitive and scalable web and mobile interfaces while closely collaborating with developers to deliver pixel-perfect and user-friendly products.
-
-I focus strongly on usability, consistency, and clean visual design, and I enjoy turning complex ideas into simple, meaningful digital experiences.
+         I’m a UI/UX Designer with hands-on experience in designing responsive websites 💻 and mobile applications 📱 across domains like e-commerce, job portals, service platforms, and NGO websites. I’ve worked on live projects using Figma 🎨 to create wireframes, user flows, and interactive prototypes.
+          Currently at Synexis Venture 🚀, I collaborate closely with developers to design intuitive, scalable, and user-friendly digital experiences with a strong focus on usability and clean visuals ✨.
         </motion.p>
 
         {/* DIAMOND IMAGE */}

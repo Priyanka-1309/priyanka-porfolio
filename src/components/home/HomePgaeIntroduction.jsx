@@ -4,7 +4,6 @@ import planetImage from '../../assets/images/planetImage2.png'
 // images for social media icons
 import instagram from '../../assets/images/instagram.png'
 import linkedin from '../../assets/images/linkedin.png'
-import github from '../../assets/images/github.png'
 import mail from '../../assets/images/mail.png'
 import download from '../../assets/images/download.png'
 

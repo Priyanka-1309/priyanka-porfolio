@@ -60,7 +60,7 @@ function HomePageAboutMe() {
         {/* middle section */}
        <h2 className="text-5xl font-serif font-bold tracking-wide -mt-10 mb-13  text-center ">
   <span className="text-white">About</span>{" "}
-  <span className="text-[#2954A3]">Me</span>
+  <span className="text-[#2955B9]">Me</span>
 </h2>
 
 <p className=" text-7xl text-justify text-white text-lg max-w-m ml-auto mr-4 leading-snug md:pl-9">
