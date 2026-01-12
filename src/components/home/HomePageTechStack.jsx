@@ -4,7 +4,6 @@ import {
   SiCss3,
   SiJavascript,
   SiFigma,
-  SiSketch,
   SiAdobexd,
   SiAdobephotoshop,
   SiCoreldraw,
@@ -20,9 +19,7 @@ function HomePageTechStack() {
   { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
 
   { name: "Figma", icon: SiFigma, color: "text-pink-500" },
-  { name: "Sketch", icon: SiSketch, color: "text-orange-400" },
-  
-
+ 
   { name: "Adobe XD", icon: SiAdobexd, color: "text-purple-500" },
   { name: "Adobe Photoshop", icon: SiAdobephotoshop, color: "text-blue-400" },
   { name: "CorelDRAW", icon: SiCoreldraw, color: "text-green-500" },
