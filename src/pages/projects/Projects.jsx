@@ -6,7 +6,7 @@ import ProjectCard from "../../components/projects/ProjectCard"
 
 import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png"
 import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png"
-import CrmCover from "../../assets/images/projectsImage/CrmCover.png"
+import CrmCover from "../../assets/images/projectsImage/crmCover.png"
 import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png"
 import jobSeekerCover from "../../assets/images/projectsImage/jobSeekerCover.png"
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png"
