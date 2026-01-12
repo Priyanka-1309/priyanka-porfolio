@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../../assets/images/planetImg1.png'
 import mode from '../../assets/images/lightMode.png'
-import modeLightText from "../../assets/images/lightModeText.png"
+// import modeLightText from "../../assets/images/lightModeText.png"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
@@ -38,11 +38,7 @@ const Navbar = () => {
 
         <div className="absolute top-[0px] right-[0px]">
           <img src={mode} alt="Mode" className="h-30 sm:h-30 lg:h-50 xl:h-60 w-auto" />
-          <img
-            src={modeLightText}
-            alt="Mode Text"
-            className="absolute top-[72px] right-[14px] md:top-[72px] md:right-[14px] lg:top-[115px] lg:right-[26px] xl:top-[138px] xl:right-[30px] h-6 sm:h-6 lg:h-9 xl:h-11 w-auto"
-          />
+          
         </div>
       </nav>
     {/* to take space on desktop and tablet */}

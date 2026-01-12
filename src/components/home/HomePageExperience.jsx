@@ -14,7 +14,7 @@ function HomePageExperience() {
     {
       role: "UI/UX Designer",
       company: "Synexis Venture",
-      duration: "December – Present",
+      duration: "September – Present",
       description:
        "Currently working as a UI/UX Designer at Synexis Venture, designing modern, scalable, and user-focused digital products for web and mobile platforms. I collaborate closely with developers and stakeholders to translate requirements into intuitive interfaces, maintain design consistency, and deliver impactful user experiences that balance aesthetics with functionality.",
     }
