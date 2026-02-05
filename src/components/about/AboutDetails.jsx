@@ -1,26 +1,26 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+import HomePageExperience from "../Home/HomePageExperience"
+import HomePageTechStack from "../Home/HomePageTechStack"
+
 import girlImage from "../../assets/images/girlImage.png"
 import diamond from "../../assets/images/diamond.png"
 import searchAndNewspaper from "../../assets/images/searchAndNewspaper.png"
 import ring1 from "../../assets/images/ring1.png"
 
-/* 🔥 VARIANTS */
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+/* ===== Motion Variants ===== */
+const sectionVariants = {
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 }
 
 const imageVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.95 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -30,102 +30,111 @@ const imageVariants = {
 
 function AboutDetails() {
   return (
-    <motion.div
-      className="
-        relative
-        pb-[20px] md:pb-[20px]
-        pt-[80px] md:pt-[40px]
-        flex justify-center
-      "
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
+    <div className="bg-[#0F103F] overflow-hidden">
 
-      {/* searchAndNewspaper */}
-      <motion.img
-        src={searchAndNewspaper}
-        alt='image'
-        className='h-[200px] w-[200px] hidden md:block absolute left-[0px] top-0 lg:top-20'
-        variants={imageVariants}
-      />
-
-      {/* RING */}
-      <motion.img
-        src={ring1}
-        alt="ring"
-        className="
-          hidden md:block
-          absolute
-          bottom-[10px]
-          left-1/2
-          -translate-x-1/2
-          w-[900px]
-          max-w-none
-          z-0
-          opacity-40 
-        "
-        variants={imageVariants}
-      />
-
-      {/* CARD */}
-      <motion.div
-        className="
-          relative
-          w-[500px] md:w-[600px]
-          min-h-[400px] md:h-[600px]
-          rounded-[20px] md:rounded-full 
-          bg-[linear-gradient(135deg,#C961DE,#2954A3)]
-          flex flex-col items-center 
-          py-[50px] md:py-[100px]
-          px-[10px] md:px-10 
-          mx-[15px] md:mx-5
-          md:my-[80px]
-        "
-        variants={containerVariants}
+      {/* ================= ABOUT SECTION ================= */}
+      <motion.section
+        className="relative flex justify-center pt-16 md:pt-28 pb-16 md:pb-24"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
       >
 
-        {/* Girl IMAGE */}
+        {/* Decorative Image */}
         <motion.img
-          src={girlImage}
-          alt='girlImage'
-          className='h-[900px] w-[550px] hidden md:block absolute left-[-330px] top-[-190px] z-15'
+          src={searchAndNewspaper}
+          alt=""
+          className="hidden md:block absolute left-0 top-16 h-[150px] opacity-80"
           variants={imageVariants}
         />
 
-        {/* CONTENT */}
-        <motion.h2
-          className="text-3xl font-bold text-white mb-10 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          About Me
-        </motion.h2>
-
-        <motion.p
-          className="text-white text-justify text-[14px] md:text-[18px] leading-relaxed md:pl-[30px] md:pr-[20px]"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-        >
-         I’m a UI/UX Designer with hands-on experience in designing responsive websites 💻 and mobile applications 📱 across domains like e-commerce, job portals, service platforms, and NGO websites. I’ve worked on live projects using Figma 🎨 to create wireframes, user flows, and interactive prototypes.
-          Currently at Synexis Venture 🚀, I collaborate closely with developers to design intuitive, scalable, and user-friendly digital experiences with a strong focus on usability and clean visuals ✨.
-        </motion.p>
-
-        {/* DIAMOND IMAGE */}
+        {/* Ring */}
         <motion.img
-          src={diamond}
-          alt='diamond Image'
-          className='h-[460px] w-[320px] hidden md:block absolute right-[-80px] top-[400px] z-15'
+          src={ring1}
+          alt=""
+          className="hidden md:block absolute bottom-[-40px] left-1/2 -translate-x-1/2 w-[780px] opacity-30"
           variants={imageVariants}
         />
 
-      </motion.div>
-    </motion.div>
+        {/* Main Card */}
+        <motion.div
+          className="
+            relative z-10
+            w-[92%] max-w-[640px]
+            rounded-[32px]
+            bg-[linear-gradient(135deg,#C961DE,#2954A3)]
+            px-6 md:px-12
+            py-12 md:py-16
+            text-center
+            shadow-2xl
+          "
+          variants={sectionVariants}
+        >
+
+          {/* Girl Image */}
+          <motion.img
+            src={girlImage}
+            alt=""
+            className="hidden md:block absolute -left-[260px] -top-[150px] w-[420px]"
+            variants={imageVariants}
+          />
+
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8">
+            About Me
+          </h2>
+
+          {/* Content */}
+          <p className="text-white/90 text-[15px] md:text-[17px] leading-relaxed text-justify">
+            I’m a passionate UI/UX Designer specializing in crafting responsive
+            websites 💻 and intuitive mobile applications 📱. I’ve worked across
+            multiple domains including e-commerce, job portals, service-based
+            platforms, and NGO websites—always focusing on user-centric and
+            visually refined design solutions.
+            <br /><br />
+            Currently working at{" "}
+            <span className="text-[#FFD6FF] font-semibold">
+              Synexis Venture
+            </span>{" "}
+            🚀, I collaborate closely with developers to transform ideas into
+            scalable, high-impact digital experiences with strong attention to
+            usability, clarity, and clean visual aesthetics ✨.
+          </p>
+
+          {/* Diamond */}
+          <motion.img
+            src={diamond}
+            alt=""
+            className="hidden md:block absolute -right-[240px] bottom-[-110px] w-[240px]"
+            variants={imageVariants}
+          />
+        </motion.div>
+      </motion.section>
+
+      {/* ================= EXPERIENCE ================= */}
+      <motion.section
+        className="mt-14 md:mt-20"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <HomePageExperience />
+      </motion.section>
+
+      {/* ================= TECH STACK ================= */}
+      <motion.section
+        className="mt-12 md:mt-16 pb-20"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <HomePageTechStack />
+      </motion.section>
+
+    </div>
   )
 }
 

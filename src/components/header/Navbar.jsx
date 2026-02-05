@@ -1,27 +1,20 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import logo from '../../assets/images/planetImg1.png'
-import mode from '../../assets/images/lightMode.png'
-// import modeLightText from "../../assets/images/lightModeText.png"
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from '../../assets/images/planetImg1.png';
+import mode from '../../assets/images/lightMode.png';
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
-  // Function to apply active styles
   const activeClass = ({ isActive }) =>
-    isActive ? 'text-[#C961DE] transition' : 'hover:text-[#2954A3] transition'
+    isActive ? 'text-[#C961DE] transition' : 'hover:text-[#C961DE] transition';
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-[#0F103F] text-white py-4 flex items-center justify-center shadow-md z-40">
-        <div className="absolute top-[0px] left-[0px] hidden md:block">
-          <img src={logo} alt="Logo" className="h-30 sm:h-30 lg:h-50 xl:h-60 w-auto" />
-        </div>
-
-        <button onClick={() => setOpen(true)} className="absolute left-4 md:hidden text-2xl">☰</button>
-
-        {/* Center links */}
-        <ul className="hidden md:flex lg:space-x-[119px] space-x-[32px]">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full bg-[#0F103F] text-white py-5 px-20 flex items-center justify-end shadow-md z-40">
+        {/* Desktop links + light mode aligned to end */}
+        <ul className="hidden md:flex items-center space-x-8 lg:space-x-20">
           <li>
             <NavLink to="/" className={activeClass}>Home</NavLink>
           </li>
@@ -34,24 +27,37 @@ const Navbar = () => {
           <li>
             <NavLink to="/contact" className={activeClass}>Contact</NavLink>
           </li>
+          <div className="absolute top-[0px] right-[0px]"> <img src={mode} alt="Mode" className="h-30 sm:h-30 lg:h-50 xl:h-60 w-auto" /> </div>
         </ul>
 
-        <div className="absolute top-[0px] right-[0px]">
-          <img src={mode} alt="Mode" className="h-30 sm:h-30 lg:h-50 xl:h-60 w-auto" />
-          
-        </div>
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setOpen(true)}
+          className="md:hidden text-2xl ml-auto"
+        >
+          ☰
+        </button>
       </nav>
-    {/* to take space on desktop and tablet */}
-    <div className='hidden md:block h-[50px] z-42'/>
 
+      {/* Spacer */}
+      <div className="hidden md:block h-16" />
 
       {/* Mobile slide menu */}
-      <div className={`fixed top-0 left-0 h-full w-[150px] bg-[#1C1C65] text-white transform ${open ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50 md:hidden
-      rounded-r-[16px]
-      `}>
-        <button onClick={() => setOpen(false)} className="absolute top-4 right-4 text-2xl">✕</button>
+      <div
+        className={`fixed top-0 left-0 h-full w-40 bg-[#1C1C65] text-white transform ${
+          open ? 'translate-x-0' : '-translate-x-full'
+        } transition-transform duration-300 ease-in-out z-50 rounded-r-lg md:hidden`}
+      >
+        {/* Close button */}
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-4 right-4 text-2xl"
+        >
+          ✕
+        </button>
 
-        <ul className="flex flex-col items-center justify-center h-full space-y-8 text-lg">
+        {/* Mobile links */}
+        <ul className="flex flex-col items-center justify-center h-full space-y-6 text-lg">
           <li onClick={() => setOpen(false)}>
             <NavLink to="/" className={activeClass}>Home</NavLink>
           </li>
@@ -67,7 +73,7 @@ const Navbar = () => {
         </ul>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

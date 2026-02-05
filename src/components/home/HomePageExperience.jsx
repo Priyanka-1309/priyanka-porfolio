@@ -1,108 +1,82 @@
-import React from "react"
-import { motion } from "framer-motion"
-import { FaBriefcase } from "react-icons/fa"
+"use client";
 
-function HomePageExperience() {
-  const experience = [
-    {
-      role: "UI/UX Design Intern",
-      company: "CMT AI",
-      duration: "June – September",
-      description:
-        "During my 3-month UI/UX design internship at CMT AI, I actively contributed to real-world product design projects by working closely with cross-functional teams. I was involved in the complete design process, from understanding user requirements and defining user flows to creating wireframes and high-fidelity UI screens using Figma. This experience strengthened my foundation in user-centered design and problem-solving.",
-    },
-    {
-      role: "UI/UX Designer",
-      company: "Synexis Venture",
-      duration: "September – Present",
-      description:
-       "Currently working as a UI/UX Designer at Synexis Venture, designing modern, scalable, and user-focused digital products for web and mobile platforms. I collaborate closely with developers and stakeholders to translate requirements into intuitive interfaces, maintain design consistency, and deliver impactful user experiences that balance aesthetics with functionality.",
-    }
-  ]
+import React from "react";
+import { motion } from "framer-motion";
+import { FaBriefcase } from "react-icons/fa";
 
+const experience = [
+  {
+    role: "UI/UX Design Intern",
+    company: "CMT AI",
+    duration: "June – September",
+    description:
+      "Contributed to product design, wireframes, and high-fidelity UI screens using Figma while collaborating with cross-functional teams.",
+  },
+  {
+    role: "UI/UX Designer",
+    company: "Synexis Venture",
+    duration: "September – Present",
+    description:
+      "Designing scalable and user-focused digital products, translating requirements into intuitive interfaces while maintaining design consistency.",
+  },
+  // {
+  //   role: "Freelance Designer",
+  //   company: "Self-Employed",
+  //   duration: "2024 – Present",
+  //   description:
+  //     "Providing UI/UX design solutions to startups, creating responsive websites and apps with user-centered designs.",
+  // },
+];
+
+export default function HomePageExperience() {
   return (
-    <section className="bg-[#0F103F] py-20 flex justify-center">
-      <div className="w-[90%] max-w-[1000px] text-white">
-
+    <section className="bg-[#0F103F] py-10 px-4 md:px-6">
+      <div className="max-w-5xl mx-auto text-white">
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold tracking-wide ">
+          <h2 className="text-3xl md:text-4xl font-bold">
             My <span className="text-[#C961DE]">Experience</span>
           </h2>
-          <p className="text-white/70 mt-3">
-            My journey as a UI/UX designer
-          </p>
+          <p className="text-white/70 mt-2 text-lg">Professional UI/UX journey</p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative pl-10 space-y-12">
-
-          {/* Vertical Line */}
-          <div className="absolute left-4 top-6 h-140 w-[2px] bg-gradient-to-b from-[#C961DE] to-[#2954A3]" />
-
+        {/* Experience Cards */}
+        <div className="flex flex-col gap-8">
           {experience.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6"
             >
-              {/* Dot + Icon */}
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="
-                  absolute
-                  -left-[45px]
-                  top-6
-                  w-10
-                  h-10
-                  rounded-full
-                  bg-gradient-to-br
-                  from-[#C961DE]
-                  to-[#2954A3]
-                  flex
-                  items-center
-                  justify-center
-                  shadow-lg
-                "
-              >
-                <FaBriefcase className="text-white text-sm" />
-              </motion.div>
-
-              {/* Gradient Border Card */}
-              <div className="p-[1.5px] rounded-xl bg-gradient-to-br from-[#C961DE] to-[#2954A3]">
-                <div className="bg-[#1C1D5E] rounded-xl p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-semibold">
-                    {item.role}
-                  </h3>
-
-                  <p className="text-sm text-white/80 mt-1">
-                    {item.company} • {item.duration}
-                  </p>
-
-                  <p className="text-white/90 mt-4 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+              {/* Icon */}
+              <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#C961DE] to-[#2954A3] flex items-center justify-center text-white shadow-md">
+                <FaBriefcase className="text-lg md:text-xl" />
               </div>
 
+              {/* Card Content */}
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                className="flex-1 bg-[#1C1D5E]/70 backdrop-blur-md p-5 md:p-6 rounded-2xl border border-white/20"
+              >
+                <h3 className="text-lg md:text-xl font-semibold text-[#C961DE] mb-1">{item.role}</h3>
+                <p className="text-sm md:text-base text-white/80 mb-2">
+                  {item.company} • {item.duration}
+                </p>
+                <p className="text-sm md:text-base text-white/90 leading-relaxed">{item.description}</p>
+              </motion.div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
-  )
+  );
 }
-
-export default HomePageExperience
-

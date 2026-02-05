@@ -4,10 +4,15 @@ import { motion } from 'framer-motion'
 import Sidebar from '../../components/Sidebar'
 import HomePgaeIntroduction from '../../components/home/HomePgaeIntroduction'
 import HomePageExperience from '../../components/home/HomePageExperience'
-import HomePageAboutMe from '../../components/home/HomePageAboutMe'
+// import HomePageAboutMe from '../../components/home/HomePageAboutMe'
+import HomePageHowIDo from '../../components/home/HomePageHowIDo'
+import HomePageHowIWork from '../../components/home/HomePageHowIWork'
+import HomePageCaseStudies from '../../components/home/HomePageCaseStudies'
 import HomePageContact from '../../components/home/HomePageContact'
-import HomePageProjects from '../../components/home/HomePageProjects'
+import HomePageWhyWorkWithMe from '../../components/home/HomePageWhyWorkWithMe'
+// import HomePageProjects from '../../components/home/HomePageProjects'
 import HomePageTechStack from '../../components/home/HomePageTechStack'
+import HomePageOpenTo from '../../components/home/HomePageOpenTo'
 
 /* SCROLL ANIMATION VARIANT */
 const sectionVariants = {
@@ -39,7 +44,7 @@ function Home() {
           <HomePgaeIntroduction />
         </motion.div>
 
-        {/* ABOUT */}
+        {/* ABOUT
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -47,8 +52,7 @@ function Home() {
           transition={{ delay: 0.2 }}
         >
           <HomePageAboutMe />
-        </motion.div>
-
+        </motion.div> */}
 
 
         {/* TECH STACK */}
@@ -61,15 +65,50 @@ function Home() {
           <HomePageTechStack />
         </motion.div>
 
-        {/* PROJECTS */}
+        {/* How I Do  */}
         <motion.div
+        variants={sectionVariants}
+          initial="hidden"
+        whileInView="visible"
+       viewport={{ once: true, amount: 0.2}}
+         >
+        <HomePageHowIDo />
+         </motion.div>
+
+         {/* How I Work  */}
+        <motion.div
+        variants={sectionVariants}
+          initial="hidden"
+        whileInView="visible"
+       viewport={{ once: true, amount: 0.2}}
+         >
+        <HomePageHowIWork />
+         </motion.div>
+
+
+
+  {/* HowCaseStudies*/}
+        <motion.div
+        variants={sectionVariants}
+          initial="hidden"
+        whileInView="visible"
+       viewport={{ once: true, amount: 0.2}}
+         >
+        <HomePageCaseStudies />
+         </motion.div>
+
+
+
+
+        {/* PROJECTS */}
+        {/* <motion.div
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
           <HomePageProjects />
-        </motion.div>
+        </motion.div> */}
 
         {/* experience  */}
         <motion.div
@@ -79,6 +118,29 @@ function Home() {
        viewport={{ once: true, amount: 0.2}}
          >
         <HomePageExperience />
+         </motion.div>
+
+
+       {/* WhyWorkWithMe*/}
+        <motion.div
+        variants={sectionVariants}
+          initial="hidden"
+        whileInView="visible"
+       viewport={{ once: true, amount: 0.2}}
+         >
+        <HomePageWhyWorkWithMe />
+
+         </motion.div>
+
+ {/* OpenTo*/}
+        <motion.div
+        variants={sectionVariants}
+          initial="hidden"
+        whileInView="visible"
+       viewport={{ once: true, amount: 0.2}}
+         >
+        <HomePageOpenTo />
+
          </motion.div>
 
 

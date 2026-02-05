@@ -8,6 +8,7 @@ import NotFound from './pages/notFound/NotFound'
 import Projects from './pages/projects/Projects'
 import Contact from './pages/contact/Contact'
 
+
 const App = () => {
   return (
     <Routes>

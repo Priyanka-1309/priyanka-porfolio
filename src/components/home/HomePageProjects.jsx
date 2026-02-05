@@ -16,7 +16,6 @@ import variantSwitchAnimationCover from "../../assets/images/projectsImage/varia
 import valchronVenture from "../../assets/images/projectsImage/valchronVentureCover.png"
 import furnitureCover from "../../assets/images/projectsImage/furnitureCover.png"
 
-
 import prevIcon from "../../assets/images/backArrow.png"
 import nextIcon from "../../assets/images/forwardArrow.png"
 import ring2 from "../../assets/images/ring2.png"
@@ -26,7 +25,6 @@ import personOnChair from "../../assets/images/exploreWork/personOnChair.png";
 
 import ProjectCard from "./projectCard/ProjectCard"
 import { useNavigate } from "react-router-dom"
- 
  
 function HomePageProjects() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -44,7 +42,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",  // Wedding Planner title color
               subtitleColor: "#FFFFFF", // Subtitle color
               image: weddingPlannerCover,
-              link:"https://www.figma.com/design/KdZTBrtz6etTiyHk9hBtoJ/wedding--planner?node-id=0-1&t=YYdxzJO9hDkVfLRF-1"
+              // link:"https://www.figma.com/design/KdZTBrtz6etTiyHk9hBtoJ/wedding--planner?node-id=0-1&t=YYdxzJO9hDkVfLRF-1"
             },
             {
               title: "Furniture Website🛋️",
@@ -52,7 +50,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image: furnitureCover,
-              link:"https://www.figma.com/design/fazoJ7tEqOpdkO4xgrxqm5/Furniture-website--Community-?node-id=0-1&t=5YGLi68xPZhTGRNw-1"
+              // link:"https://www.figma.com/design/fazoJ7tEqOpdkO4xgrxqm5/Furniture-website--Community-?node-id=0-1&t=5YGLi68xPZhTGRNw-1"
             
             },
             {
@@ -61,7 +59,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:shoppingappcover,
-              link:"https://www.figma.com/design/lsdl2PkQqZkhyyOHZwpAcI/shopping-app?node-id=0-1&t=8jR3zIZ5p5qzTcag-1"
+              // link:"https://www.figma.com/design/lsdl2PkQqZkhyyOHZwpAcI/shopping-app?node-id=0-1&t=8jR3zIZ5p5qzTcag-1"
     
             },
             {
@@ -70,7 +68,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:valchronVenture,
-              link:"https://www.figma.com/design/xmBDaVPtMmsCVlgJTmR5Pc/Valchron-Ventures-LLC?node-id=336-499&t=6zqsn0Bge6reEb0S-1"
+              // link:"https://www.figma.com/design/xmBDaVPtMmsCVlgJTmR5Pc/Valchron-Ventures-LLC?node-id=336-499&t=6zqsn0Bge6reEb0S-1"
     
             },
             {
@@ -79,7 +77,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:CrmCover,
-              link:"https://www.figma.com/design/6mKbHEDmXAaqslBCPcDUqy/S2-HIVE-SCHOOL-UI?node-id=0-1&t=y64TTICHnb4ui2xq-1"
+              // link:"https://www.figma.com/design/6mKbHEDmXAaqslBCPcDUqy/S2-HIVE-SCHOOL-UI?node-id=0-1&t=y64TTICHnb4ui2xq-1"
     
             },
             {
@@ -88,7 +86,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:landingPageCover,
-              link:"https://www.figma.com/design/ydsQwgib6fspv6zjLJUczK/face-drop-landing-page?node-id=0-1&t=mnC4jsLd0XxxsT99-1"
+              // link:"https://www.figma.com/design/ydsQwgib6fspv6zjLJUczK/face-drop-landing-page?node-id=0-1&t=mnC4jsLd0XxxsT99-1"
     
             },
             {
@@ -97,7 +95,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:variantSwitchAnimationCover,
-              link:"https://www.figma.com/design/zjajRnhZYuBjPWXg3fGWd0/Variant-Switch-Animation?node-id=0-1&t=g6pC46iqVKQVFhh6-1"
+              // link:"https://www.figma.com/design/zjajRnhZYuBjPWXg3fGWd0/Variant-Switch-Animation?node-id=0-1&t=g6pC46iqVKQVFhh6-1"
     
             },
             {
@@ -106,7 +104,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image: MetroBuddyCover,
-              link:"https://www.figma.com/design/UGbdSmQFIlMbFXF9kwOvww/Metro-buddy?node-id=0-1&t=vNyLK7i6VnMOxvTt-1"
+              // link:"https://www.figma.com/design/UGbdSmQFIlMbFXF9kwOvww/Metro-buddy?node-id=0-1&t=vNyLK7i6VnMOxvTt-1"
     
             },
             {
@@ -115,7 +113,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:synexisventureCover,
-              link:"https://www.figma.com/design/DNDTOMjkR9eDeFiJmg9DTA/synexis-venture?node-id=0-1&t=ErxO7NXiNQkZrfd2-1"
+              // link:"https://www.figma.com/design/DNDTOMjkR9eDeFiJmg9DTA/synexis-venture?node-id=0-1&t=ErxO7NXiNQkZrfd2-1"
     
             },
             {
@@ -124,7 +122,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:jobSeekerCover,
-              link:"https://www.figma.com/design/K0J7tFedWx5fnBQMmkJgMB/Job-Portal-App?node-id=0-1&t=YlIKoXGKSLwXQev3-1"
+              // link:"https://www.figma.com/design/K0J7tFedWx5fnBQMmkJgMB/Job-Portal-App?node-id=0-1&t=YlIKoXGKSLwXQev3-1"
     
             },
             {
@@ -133,7 +131,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image: MetroClapCover,
-              link:"https://www.figma.com/design/pM03LsQlIWNLyGqpknMSFL/Metro-Clap?node-id=0-1&t=wHxMb7UPQ4NtvWCL-1"
+              // link:"https://www.figma.com/design/pM03LsQlIWNLyGqpknMSFL/Metro-Clap?node-id=0-1&t=wHxMb7UPQ4NtvWCL-1"
     
             },
             {
@@ -142,7 +140,7 @@ function HomePageProjects() {
               titleColor: "#C961DE",
               subtitleColor: "#FFFFFF",
               image:freshGroCover,
-              link:"https://www.figma.com/design/qjhcxFEEVus6BqsI1jZmX8/fresh-gro?node-id=0-1&t=ISgZivQWQMWmOsmE-1"
+              // link:"https://www.figma.com/design/qjhcxFEEVus6BqsI1jZmX8/fresh-gro?node-id=0-1&t=ISgZivQWQMWmOsmE-1"
     
             },
   ];
@@ -161,7 +159,7 @@ function HomePageProjects() {
 
   return (
     <section className="px-[5px] 
-                            md:mt-[180px]
+                            md:mt-[60px]
                             pb-38 md:pb-52  
                             bg-[#0F103F] 
                             relative max-w-[1000px] 
@@ -175,11 +173,11 @@ function HomePageProjects() {
         className="
       hidden md:block
       absolute
-      top-[-320px]
+      top-[-120px]
       left-1/2
       -translate-x-1/2
-      w-[120vw]
-      h-[1100px]
+      w-[80vw]
+      h-[800px]
       max-w-none
       z-0
       opacity-40 
@@ -188,7 +186,7 @@ function HomePageProjects() {
 
       {/* TITLE */}
       <div className="text-center px-4">
-         <h2 className="text-3xl md:text-4xl font-bold mb-3">
+         <h2 className="text-3xl md:text-4xl font-bold mb-4">
   <span className="text-white">My </span>
   <span className="text-[#C961DE]">
     Recent work
@@ -196,9 +194,9 @@ function HomePageProjects() {
 </h2>
 
 
-        <p className="text-gray-300 pb-5">
+        {/* <p className="text-gray-300 pb-5">
           Explore my latest projects
-        </p>
+        </p> */}
       </div>
 
       {/* SWIPER WRAPPER */}
@@ -210,7 +208,7 @@ function HomePageProjects() {
           loop
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 8000, disableOnInteraction: false }}
           className="pb-16"
           modules={[Autoplay]}
         >
@@ -286,7 +284,7 @@ function HomePageProjects() {
           <img
             src={personOnChair}
             alt="person"
-            className="absolute top-[30px] left-[60px] h-[80px] w-[80px]"
+            className="absolute top-[30px] left-[60px] h-[50px] w-[50px]"
           />
 
         </div>

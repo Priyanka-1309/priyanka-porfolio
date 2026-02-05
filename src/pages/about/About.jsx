@@ -1,14 +1,14 @@
 import React from 'react'
 import Sidebar from '../../components/Sidebar' 
-import AboutDetails from '../../components/about/AboutDetails'
+import HomePageAboutMe from '../../components/home/HomePageAboutMe'
 
 function About() {
   return (
     <div className='bg-[#0F103F]'>
       <Sidebar />
-      <div className="ml-[38px] md:ml-[50px] min-h-screen pb-20">
+      <div className="ml-[28px] md:ml-[50px] min-h-screen pb-20">
         
-        <AboutDetails/>
+        <HomePageAboutMe/>
       </div>
     </div>
   )
