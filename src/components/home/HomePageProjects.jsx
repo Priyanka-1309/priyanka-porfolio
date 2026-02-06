@@ -37,9 +37,9 @@ function HomePageProjects() {
       const projects = [
 
     {
-              title: "Wedding Planner💍",
-              subtitle: "Elegant Wedding Planner Platform – Helping couples plan their dream day with ease.",
-              titleColor: "#C961DE",  // Wedding Planner title color
+              title: "wedding Planner💍",
+              subtitle: "Elegant wedding Planner Platform – Helping couples plan their dream day with ease.",
+              titleColor: "#C961DE",  // wedding Planner title color
               subtitleColor: "#FFFFFF", // Subtitle color
               image: weddingPlannerCover,
               // link:"https://www.figma.com/design/KdZTBrtz6etTiyHk9hBtoJ/wedding--planner?node-id=0-1&t=YYdxzJO9hDkVfLRF-1"

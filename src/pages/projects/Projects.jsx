@@ -20,11 +20,11 @@ import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.p
 
 
 /* ================= GALLERIES ================= */
-// Wedding
-import w1 from "../../case studies/1Wedding.png";
-import w2 from "../../case studies/2Wedding.png";
-import w3 from "../../case studies/3Wedding.png";
-import w4 from "../../case studies/4Wedding.png";
+// wedding
+import w1 from "../../case studies/1wedding.png";
+import w2 from "../../case studies/2wedding.png";
+import w3 from "../../case studies/3wedding.png";
+import w4 from "../../case studies/4wedding.png";
 
 // CRM
 import crm1 from "../../case studies/1crm.png";
@@ -218,7 +218,7 @@ export default function Projects() {
         <CaseCard
           id="wedding"
           cover={weddingPlannerCover}
-          title="Wedding Planner Platform"
+          title="wedding Planner Platform"
           subtitle="UI UX • WEBSITE • FIGMA"
           openCard={openCard}
           setOpenCard={setOpenCard}
@@ -226,7 +226,7 @@ export default function Projects() {
          <CaseGrid>
   <Info icon="💍" title="Project Overview">
     This project focused on the complete digital transformation of a
-    high-end Wedding Planning & Event Management brand.
+    high-end wedding Planning & Event Management brand.
     <br /><br />
     The website was designed as a <strong>digital showroom</strong>,
     reflecting the elegance, emotion, and grandeur of luxury weddings.
