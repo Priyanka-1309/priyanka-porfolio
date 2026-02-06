@@ -21,10 +21,10 @@ import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.p
 
 /* ================= GALLERIES ================= */
 // Wedding
-import w1 from "../../case studies/1Wedding.png";
-import w2 from "../../case studies/2Wedding.png";
-import w3 from "../../case studies/3Wedding.png";
-import w4 from "../../case studies/4Wedding.png";
+import w1 from "../../case studies/1wedding.png";
+import w2 from "../../case studies/2wedding.png";
+import w3 from "../../case studies/3wedding.png";
+import w4 from "../../case studies/4wedding.png";
 
 // CRM
 import crm1 from "../../case studies/1crm.png";
