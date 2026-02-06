@@ -12,7 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png";
 import CrmCover from "../../assets/images/projectsImage/crmCover.png";
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png";
-import shoppingappcover from "../../assets/images/projectsImage/shoppingappcover.png";
+// import shoppingappcover from "../../assets/images/projectsImage/shoppingappcover.png";
 import valchronVenture from "../../assets/images/projectsImage/valchronVentureCover.png";
 import jobSeekerCover from "../../assets/images/projectsImage/jobSeekerCover.png";
 import MetroClapCover from "../../assets/images/projectsImage/metroClapCover.png";
@@ -21,10 +21,10 @@ import MetroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.p
 
 /* ================= GALLERIES ================= */
 // Wedding
-import w1 from "../../case studies/1Wedding.png";
-import w2 from "../../case studies/2Wedding.png";
-import w3 from "../../case studies/3Wedding.png";
-import w4 from "../../case studies/4Wedding.png";
+import w1 from "../../case studies/1wedding.png";
+import w2 from "../../case studies/2wedding.png";
+import w3 from "../../case studies/3wedding.png";
+import w4 from "../../case studies/4wedding.png";
 
 // CRM
 import crm1 from "../../case studies/1crm.png";
