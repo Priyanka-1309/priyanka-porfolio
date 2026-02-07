@@ -5,13 +5,13 @@
 // import ring2 from "../../assets/images/ring2.png"
 
 // // ✅ IMPORT IMAGES (case studies folder se)
-// import wedding1 from "../../case studies/1Wedding.png";
-// import wedding2 from "../../case studies/2Wedding.png";
-// import wedding3 from "../../case studies/3Wedding.png";
-// import wedding4 from "../../case studies/4Wedding.png";
-// import wedding5 from "../../case studies/5Wedding.png";
-// import wedding6 from "../../case studies/6Wedding.png";
-// import wedding7 from "../../case studies/7Wedding.png";
+// import wedding1 from "../../case studies/1wedding.png";
+// import wedding2 from "../../case studies/2wedding.png";
+// import wedding3 from "../../case studies/3wedding.png";
+// import wedding4 from "../../case studies/4wedding.png";
+// import wedding5 from "../../case studies/5wedding.png";
+// import wedding6 from "../../case studies/6wedding.png";
+// import wedding7 from "../../case studies/7wedding.png";
 
 // import crm1 from "../../case studies/1crm.png";
 // import crm2 from "../../case studies/2crm.png";
@@ -88,11 +88,11 @@
 //   {
 //     id: 1,
 //     meta: "• UI UX DESIGN  • WEBSITE • Figma",
-//     title: "Wedding Planner",
+//     title: "wedding Planner",
 //     description:
 //       "A modern wedding planning platform designed to help couples discover venues, vendors, and inspiration while simplifying the entire wedding planning journey.",
 //     problem: [
-//       "Wedding planning information is scattered across multiple platforms, making the process confusing and time-consuming.",
+//       "wedding planning information is scattered across multiple platforms, making the process confusing and time-consuming.",
 //       "Users find it difficult to compare venues and vendors due to lack of structured and consistent data.",
 //       "Unclear pricing and limited details reduce trust and increase decision fatigue.",
 //       "Poorly designed platforms make navigation overwhelming, especially on mobile devices.",
@@ -415,11 +415,11 @@ import CrmCover from "../../assets/images/projectsImage/crmCover.png";
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png";
 
 /* ================= GALLERIES ================= */
-// Wedding
-import w1 from "../../case studies/1Wedding.png";
-import w2 from "../../case studies/2Wedding.png";
-import w3 from "../../case studies/3Wedding.png";
-import w4 from "../../case studies/4Wedding.png";
+// wedding
+import w1 from "../../case studies/1wedding.png";
+import w2 from "../../case studies/2wedding.png";
+import w3 from "../../case studies/3wedding.png";
+import w4 from "../../case studies/4wedding.png";
 
 // CRM
 import crm1 from "../../case studies/1crm.png";
@@ -504,7 +504,7 @@ export default function CaseStudies() {
         <CaseCard
           id="wedding"
           cover={weddingPlannerCover}
-          title="Wedding Planner Platform"
+          title="wedding Planner Platform"
           subtitle="UI UX • WEBSITE • FIGMA"
           openCard={openCard}
           setOpenCard={setOpenCard}
