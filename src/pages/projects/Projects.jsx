@@ -73,7 +73,7 @@ import gp18 from "../../case studies/18gp.png";
 import gp19 from "../../case studies/19gp.png";
 
 
-// // / Shopping
+// / Shopping
 
 // import sho1 from "../../case studies/1sho.jpg";
 // import sho2 from "../../case studies/2sho.jpg";

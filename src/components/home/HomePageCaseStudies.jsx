@@ -415,7 +415,7 @@ import CrmCover from "../../assets/images/projectsImage/crmCover.png";
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png";
 
 /* ================= GALLERIES ================= */
-// wedding
+
 import w1 from "../../case studies/1wedding.png";
 import w2 from "../../case studies/2wedding.png";
 import w3 from "../../case studies/3wedding.png";
