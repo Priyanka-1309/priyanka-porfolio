@@ -1,13 +1,13 @@
 import React from 'react'
-import Navbar from '../components/header/Navbar'
+// import Navbar from '../components/header/Navbar'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 import Footer from '../components/footer/Footer'
 
 function Layout() {
     return (
-        <div className=' overflow-x-hidden'>
-            <Navbar />
+        <div className='min-h-screen overflow-x-hidden bg-white'>
+           
             <section className="flex justify-between ">
                 <div>
                     {/* <Sidebar /> */}

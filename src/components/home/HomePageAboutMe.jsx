@@ -1,156 +1,902 @@
-import React from 'react';
-import girlImage from "../../assets/images/girlImage.png";
-import diamond from "../../assets/images/diamond.png";
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import { Globe } from "lucide-react";
+import myimage from "../../assets/images/myimage.jpg";
 
 function HomePageAboutMe() {
-  const navigation = useNavigate();
+  const sectionRef = useRef(null);
 
-  const cards = [
-    { title: "Problem-Solving", desc: "Designing with logic, not just visuals." },
-    { title: "User-Centered", desc: "Focused on real user needs & behavior." },
-    { title: "Full Process", desc: "Flows, wireframes, UI & prototypes." },
-    { title: "Always Learning", desc: "Constantly improving my design craft." }
+  const experiences = [
+    {
+      company: "CMT AI",
+      role: "UI/UX Designer Intern",
+      period: "JUNE 2025 — SEPTEMBER 2025",
+      url: "https://www.cmtai.in/",
+    },
+    {
+      company: "Oscorm",
+      role: "UI/UX Designer",
+      period: "OCTOBER 2025 — PRESENT",
+      url: "https://oscorm.com/",
+      featured: true,
+    },
   ];
 
+  useEffect(() => {
+    const root = sectionRef.current;
+    if (!root) return;
+
+    const elements = root.querySelectorAll(".pr-animate");
+
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      elements.forEach((element) =>
+        element.classList.add("pr-in-view")
+      );
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("pr-in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -20px 0px",
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="relative pb-[120px] pt-[80px] flex justify-center overflow-hidden ">
+    <section className="pr-about" id="about" ref={sectionRef}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 
-      {/* MAIN RECTANGLE CARD */}
-      <div
-        className="
-          relative
-          w-[95%] max-w-[1000px]
-          min-h-[520px]
-          rounded-3xl
-          bg-gradient-to-br from-[#C961DE] to-[#2954A3]
-          shadow-[0_30px_80px_rgba(0,0,0,0.25)]
-          flex flex-col md:flex-row
-          items-center
-          px-[60px] md:px-[80px]
-          py-[60px]
-          text-white
-        "
-      >
+        .pr-about,
+        .pr-about * {
+          box-sizing: border-box;
+        }
 
-        {/* Girl Illustration with float */}
-        <img
-          src={girlImage}
-          alt="girl"
-          className="hidden md:block absolute left-[-200px] top-[-90px] h-[800px] animate-float"
-        />
+        .pr-about {
+          --blue: #304ffe;
+          --pink: #f29bbd;
+          --dark: #242039;
+          --muted: #777489;
+          --border: #eae8ef;
 
-        {/* LEFT TEXT SECTION */}
-        <div className="md:w-[65%] text-left animate-fadeInUp">
-          <p className="text-sm tracking-widest text-white/120 mb-3 text-center w-full">
-            ABOUT ME
-          </p>
+          position: relative;
+          isolation: isolate;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+          background: #fff;
+          color: var(--dark);
+          font-family: 'DM Sans', sans-serif;
+          scroll-margin-top: 80px;
+        }
 
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-5 pl-4 md:pl-6 animate-fadeInUp">
-            Hello, I’m <span className="text-[#1E3A8A]">Priyanka</span>
-          </h2>
+        .pr-about::before,
+        .pr-about::after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          filter: blur(100px);
+          opacity: .045;
+          pointer-events: none;
+        }
 
-          <p className="text-m font-medium text-white/80 mb-4 pl-4 md:pl-6 animate-fadeInUp">
-            I’m a UI/UX Designer with hands-on experience designing user-centric
-            web and mobile products.
-          </p>
+        .pr-about::before {
+          top: 0;
+          left: -130px;
+          background: var(--blue);
+        }
 
-          <p className="text-sm md:text-base text-white/80 leading-relaxed mb-4 pl-5 md:pl-6 animate-fadeInUp delay-100">
-            I approach design as a problem-solving process, not just a visual task. My work focuses on understanding user behavior, identifying friction points, and creating clean, functional interfaces that feel effortless to use.
-          </p>
+        .pr-about::after {
+          right: -130px;
+          bottom: 0;
+          background: var(--pink);
+        }
 
-          <p className="text-sm md:text-base text-white/80 leading-relaxed mb-4 pl-4 md:pl-6 animate-fadeInUp delay-200">
-            I primarily work in Figma, designing structured user flows, wireframes, high-fidelity interfaces, and interactive prototypes.
-          </p>
+        /* Main container: balanced left-right padding */
 
-          <p className="text-sm md:text-base text-white/80 leading-relaxed pl-4 md:pl-6 animate-fadeInUp delay-300">
-            I’m constantly learning, iterating, and refining my process to create meaningful and effective digital experiences.
-          </p>
+        .pr-container {
+          width: 100%;
+          max-width: 1600px;
+          margin: 0 auto;
+          padding: 40px 100px 44px;
+        }
+
+        /* Scroll animation */
+
+        .pr-animate {
+          opacity: 0;
+          transform: translateY(14px);
+          transition:
+            opacity .6s ease,
+            transform .6s ease;
+          transition-delay: var(--delay, 0ms);
+        }
+
+        .pr-animate.pr-in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Centered section heading */
+
+        .pr-heading-wrap {
+          width: 100%;
+          margin: 0 auto 32px;
+          text-align: center;
+        }
+
+        .pr-eyebrow {
+          display: block;
+          width: fit-content;
+          margin: 0 auto 10px;
+          color: var(--dark);
+          font-family: 'Playfair Display', serif;
+          font-size: 16px;
+          font-style: italic;
+          font-weight: 500;
+        }
+
+        .pr-heading {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: baseline;
+          justify-content: center;
+          column-gap: 9px;
+          row-gap: 0;
+          margin: 0;
+          color: var(--dark);
+          font-family: 'DM Sans', sans-serif;
+          font-size: clamp(25px, 2.7vw, 36px);
+          font-weight: 700;
+          line-height: 1.3;
+          letter-spacing: -1px;
+        }
+
+        .pr-heading-main {
+          color: var(--dark);
+          font-weight: 700;
+        }
+
+        .pr-heading-accent {
+          display: inline-block;
+          color: var(--pink);
+          font-family: 'Caveat', cursive;
+          font-size: 1.2em;
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: 0;
+          white-space: nowrap;
+        }
+
+        /* Main two-column layout */
+
+        .pr-main-grid {
+          display: grid;
+          grid-template-columns:
+            minmax(0, .78fr)
+            minmax(0, 1.22fr);
+          align-items: start;
+          gap: clamp(18px, 2.5vw, 32px);
+          width: 100%;
+        }
+
+        .pr-profile,
+        .pr-content {
+          width: 100%;
+          min-width: 0;
+        }
+
+        /* Profile image */
+
+        .pr-photo-frame {
+          position: relative;
+          width: 100%;
+          height: clamp(340px, 35vw, 440px);
+          padding: 4px;
+          overflow: hidden;
+          border: 2px solid rgba(48, 79, 254, .16);
+          border-radius: 15px;
+          background: linear-gradient(
+            135deg,
+            rgba(48, 79, 254, .10),
+            rgba(242, 155, 189, .20)
+          );
+          box-shadow: 7px 7px 0 rgba(242, 155, 189, .19);
+          transform: rotate(-.4deg);
+          transition:
+            transform .35s ease,
+            border-color .35s ease;
+        }
+
+        .pr-photo-frame:hover {
+          transform: rotate(0deg) translateY(-3px);
+          border-color: rgba(48, 79, 254, .3);
+        }
+
+        .pr-photo {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 25%;
+          border-radius: 9px;
+          transition: transform .5s ease;
+        }
+
+        .pr-photo-frame:hover .pr-photo {
+          transform: scale(1.025);
+        }
+
+        /* Profile details */
+
+        .pr-profile-bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-top: 19px;
+        }
+
+        .pr-profile-label {
+          display: inline-block;
+          margin-bottom: 6px;
+          color: var(--blue);
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+        }
+
+        .pr-name {
+          margin: 0 0 4px;
+          color: var(--dark);
+          font-family: 'Playfair Display', serif;
+          font-size: 23px;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+
+        .pr-role {
+          margin: 0;
+          color: var(--muted);
+          font-size: 11px;
+          line-height: 1.7;
+        }
+
+        .pr-monogram {
+          display: grid;
+          flex-shrink: 0;
+          width: 39px;
+          height: 39px;
+          place-items: center;
+          border: 1px solid var(--border);
+          border-radius: 50%;
+          color: var(--blue);
+          font-family: 'Playfair Display', serif;
+          font-size: 21px;
+          transition:
+            border-color .3s ease,
+            background .3s ease;
+        }
+
+        .pr-profile-bottom:hover .pr-monogram {
+          border-color: var(--pink);
+          background: #fffafd;
+        }
+
+        /* About content */
+
+        .pr-content {
+          padding-top: 1px;
+        }
+
+        .pr-about-copy {
+          color: var(--muted);
+          font-size: 12px;
+          line-height: 1.85;
+          overflow-wrap: break-word;
+        }
+
+        .pr-about-copy p {
+          margin: 0 0 13px;
+        }
+
+        .pr-about-copy strong {
+          color: #38324f;
+          font-weight: 700;
+        }
+
+        /* Oscorm project highlight */
+
+        .pr-project-note {
+          margin-top: 16px !important;
+          padding: 11px 13px;
+          border-left: 2px solid var(--pink);
+          border-radius: 0 5px 5px 0;
+          background: #fffafd;
+          color: var(--muted);
+          font-size: 11px;
+          line-height: 1.8;
+        }
+
+        .pr-project-note strong {
+          color: var(--blue);
+        }
+
+        .pr-project-link {
+          color: var(--blue);
+          font-weight: 700;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(48, 79, 254, .3);
+          transition:
+            color .2s ease,
+            border-color .2s ease;
+        }
+
+        .pr-project-link:hover {
+          color: #172dcc;
+          border-color: var(--pink);
+        }
+
+        /* Experience section */
+
+        .pr-experience {
+          margin-top: 27px;
+          padding-top: 20px;
+          border-top: 1px solid var(--border);
+        }
+
+        .pr-experience-heading {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 12px;
+          margin-bottom: 15px;
+        }
+
+        .pr-section-label {
+          display: block;
+          margin-bottom: 6px;
+          color: var(--blue);
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+        }
+
+        .pr-experience-title {
+          margin: 0;
+          color: var(--dark);
+          font-family: 'Playfair Display', serif;
+          font-size: 29px;
+          font-weight: 500;
+          line-height: 1.2;
+        }
+
+        .pr-experience-title span {
+          color: var(--pink);
+        }
+
+        .pr-position-count {
+          flex-shrink: 0;
+          padding: 5px 9px;
+          border: 1px solid var(--border);
+          border-radius: 20px;
+          color: var(--muted);
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: .5px;
+        }
+
+        .pr-experience-row {
+          display: grid;
+          grid-template-columns:
+            minmax(0, 1fr)
+            minmax(75px, .7fr)
+            auto;
+          align-items: center;
+          gap: 9px;
+          min-height: 52px;
+          padding: 10px 0;
+          border-bottom: 1px solid var(--border);
+          transition: padding .25s ease;
+        }
+
+        .pr-experience-row:hover {
+          padding-right: 4px;
+          padding-left: 4px;
+        }
+
+        .pr-exp-role {
+          padding-left: 9px;
+          border-left: 2px solid var(--pink);
+          color: #29263a;
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 1.6;
+        }
+
+        .pr-exp-company {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          min-width: 0;
+          color: var(--muted);
+          font-size: 10px;
+          font-weight: 600;
+          text-decoration: none;
+          overflow-wrap: anywhere;
+          transition: color .25s ease;
+        }
+
+        .pr-exp-company:hover {
+          color: var(--blue);
+        }
+
+        .pr-exp-company svg {
+          flex-shrink: 0;
+          color: var(--blue);
+          transition:
+            color .25s ease,
+            transform .25s ease;
+        }
+
+        .pr-exp-company:hover svg {
+          color: var(--pink);
+          transform: translateY(-1px);
+        }
+
+        .pr-exp-date {
+          display: block;
+          color: #858092;
+          font-size: 8px;
+          font-weight: 700;
+          line-height: 1.6;
+          text-align: right;
+          white-space: normal;
+        }
+
+        .pr-featured {
+          display: inline-block;
+          margin-top: 5px;
+          color: var(--blue);
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: .5px;
+        }
+
+        .pr-bottom-note {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-top: 15px;
+          color: #89829a;
+          font-size: 10px;
+          line-height: 1.7;
+        }
+
+        .pr-bottom-star {
+          color: var(--pink);
+          font-size: 16px;
+        }
+
+        /* Medium laptop */
+
+        @media (max-width: 1100px) {
+          .pr-container {
+            padding-left: 28px;
+            padding-right: 28px;
+          }
+
+          .pr-main-grid {
+            gap: 20px;
+          }
+
+          .pr-heading {
+            font-size: clamp(25px, 3vw, 33px);
+          }
+
+          .pr-photo-frame {
+            height: clamp(330px, 37vw, 410px);
+          }
+        }
+
+        /* Tablet */
+
+        @media (max-width: 850px) {
+          .pr-container {
+            padding-left: 22px;
+            padding-right: 22px;
+          }
+
+          .pr-heading-wrap {
+            margin-bottom: 27px;
+          }
+
+          .pr-heading {
+            font-size: clamp(23px, 3.2vw, 30px);
+            column-gap: 7px;
+          }
+
+          .pr-main-grid {
+            grid-template-columns:
+              minmax(0, .76fr)
+              minmax(0, 1.24fr);
+            gap: 18px;
+          }
+
+          .pr-photo-frame {
+            height: 360px;
+          }
+
+          .pr-name {
+            font-size: 20px;
+          }
+
+          .pr-about-copy {
+            font-size: 11px;
+            line-height: 1.8;
+          }
+
+          .pr-experience-row {
+            grid-template-columns:
+              minmax(0, 1fr)
+              minmax(70px, .8fr);
+            gap: 8px;
+          }
+
+          .pr-exp-date {
+            grid-column: 1 / -1;
+            padding-left: 11px;
+            text-align: left;
+          }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 650px) {
+          .pr-container {
+            padding-left: 18px;
+            padding-right: 18px;
+          }
+
+          .pr-heading-wrap {
+            margin-bottom: 26px;
+            padding: 0;
+          }
+
+          .pr-eyebrow {
+            margin-bottom: 9px;
+            font-size: 15px;
+          }
+
+          .pr-heading {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            column-gap: 6px;
+            row-gap: 2px;
+            font-size: clamp(22px, 5.5vw, 30px);
+            line-height: 1.35;
+            letter-spacing: -.7px;
+          }
+
+          .pr-heading-accent {
+            font-size: 1.14em;
+          }
+
+          .pr-main-grid {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 28px;
+          }
+
+          .pr-profile {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+          }
+
+          .pr-photo-frame {
+            height: clamp(320px, 100vw, 440px);
+          }
+
+          .pr-content {
+            padding-top: 0;
+          }
+
+          .pr-about-copy {
+            font-size: 12px;
+            line-height: 1.85;
+          }
+
+          .pr-project-note {
+            padding: 10px 12px;
+          }
+
+          .pr-experience {
+            margin-top: 26px;
+            padding-top: 18px;
+          }
+
+          .pr-experience-row {
+            grid-template-columns:
+              minmax(0, 1fr)
+              minmax(75px, .8fr);
+            gap: 8px;
+          }
+
+          .pr-exp-company {
+            justify-self: end;
+          }
+
+          .pr-exp-date {
+            grid-column: 1 / -1;
+            padding-left: 11px;
+            text-align: left;
+            font-size: 8px;
+          }
+        }
+
+        /* Small phones */
+
+        @media (max-width: 390px) {
+          .pr-container {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+
+          .pr-heading {
+            font-size: 21px;
+            column-gap: 5px;
+          }
+
+          .pr-heading-accent {
+            font-size: 1.1em;
+          }
+
+          .pr-photo-frame {
+            height: 340px;
+          }
+
+          .pr-name {
+            font-size: 20px;
+          }
+
+          .pr-experience-title {
+            font-size: 26px;
+          }
+
+          .pr-exp-role,
+          .pr-exp-company {
+            font-size: 9px;
+          }
+        }
+
+        /* Very narrow phones */
+
+        @media (max-width: 340px) {
+          .pr-heading {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            font-size: 25px;
+          }
+
+          .pr-photo-frame {
+            height: 300px;
+          }
+        }
+
+        /* Accessibility */
+
+        @media (prefers-reduced-motion: reduce) {
+          .pr-about *,
+          .pr-about *::before,
+          .pr-about *::after {
+            animation: none !important;
+            transition: none !important;
+          }
+
+          .pr-animate {
+            opacity: 1;
+            transform: none;
+          }
+        }
+      `}</style>
+
+      <div className="pr-container">
+        {/* Centered section heading */}
+
+        <header className="pr-heading-wrap pr-animate">
+          <span className="pr-eyebrow">/ Who Am I</span>
+
+          <h1 className="pr-heading">
+            <span className="pr-heading-main">
+              I turn ideas into
+            </span>
+
+            <span className="pr-heading-accent">
+              digital experiences.
+            </span>
+          </h1>
+        </header>
+
+        <div className="pr-main-grid">
+          {/* Left profile */}
+
+          <aside className="pr-profile pr-animate">
+            <div className="pr-photo-frame">
+              <img
+                src={myimage}
+                alt="Priyanka Chandel"
+                className="pr-photo"
+              />
+            </div>
+
+            <div className="pr-profile-bottom">
+              <div>
+                <span className="pr-profile-label">
+                  HELLO, I'M
+                </span>
+
+                <h2 className="pr-name">
+                  Priyanka Chandel
+                </h2>
+
+                <p className="pr-role">
+                  UI/UX Designer &amp; Frontend Developer
+                </p>
+              </div>
+
+              <div className="pr-monogram">P.</div>
+            </div>
+          </aside>
+
+          {/* Right About content */}
+
+          <main
+            className="pr-content pr-animate"
+            style={{ "--delay": "100ms" }}
+          >
+            <div className="pr-about-copy">
+              <p>
+                I’m a{" "}
+                <strong>
+                  UI/UX Designer and Frontend Developer
+                </strong>{" "}
+                with 1+ year of professional experience creating
+                intuitive, responsive, and visually engaging web
+                and mobile experiences.
+              </p>
+
+              <p>
+                Skilled in{" "}
+                <strong>
+                  Figma, user research, wireframing, prototyping,
+                  and design systems
+                </strong>
+                , I enjoy transforming ideas into user-centered
+                designs that balance aesthetics, usability, and
+                functionality. Over time, I’ve worked on various
+                UI/UX projects, exploring creative solutions and
+                designing seamless digital experiences for
+                different user needs.
+              </p>
+
+              <p>
+                With a foundation in frontend development using{" "}
+                <strong>HTML, CSS, and JavaScript</strong>, I bridge
+                the gap between design and development to bring
+                ideas to life. I’m passionate about continuous
+                learning, thoughtful design, and creating digital
+                products that make a meaningful impact.
+              </p>
+
+              <p className="pr-project-note">
+                At <strong>Oscorm</strong>, I designed the website
+                experience for{" "}
+                <a
+                  href="https://oscorm.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pr-project-link"
+                >
+                  Oscorm.com
+                </a>
+                , bringing together intuitive user flows, thoughtful
+                visual design, and usability-focused interface
+                decisions to create a clear and engaging digital
+                experience.
+              </p>
+            </div>
+
+            {/* Experience */}
+
+            <section className="pr-experience">
+              <div
+                className="pr-experience-heading pr-animate"
+                style={{ "--delay": "80ms" }}
+              >
+                <div>
+                  <span className="pr-section-label">
+                    MY PROFESSIONAL JOURNEY
+                  </span>
+
+                  <h2 className="pr-experience-title">
+                    Experience<span>.</span>
+                  </h2>
+                </div>
+
+                <span className="pr-position-count">
+                  {String(experiences.length).padStart(2, "0")} POSITIONS
+                </span>
+              </div>
+
+              {experiences.map((experience, index) => (
+                <article
+                  key={experience.company}
+                  className="pr-experience-row pr-animate"
+                  style={{ "--delay": `${index * 100}ms` }}
+                >
+                  <div>
+                    <div className="pr-exp-role">
+                      {experience.role}
+                    </div>
+
+                    {experience.featured && (
+                      <span className="pr-featured">
+                        ✦ DESIGN EXPERIENCE
+                      </span>
+                    )}
+                  </div>
+
+                  <a
+                    className="pr-exp-company"
+                    href={experience.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${experience.company} website`}
+                    title={`Visit ${experience.company} website`}
+                  >
+                    <Globe size={13} strokeWidth={1.8} />
+                    <span>{experience.company}</span>
+                  </a>
+
+                  <span className="pr-exp-date">
+                    {experience.period}
+                  </span>
+                </article>
+              ))}
+
+              <div className="pr-bottom-note">
+                <span className="pr-bottom-star">✳</span>
+
+                <span>
+                  Thoughtful design, clear experiences, meaningful impact.
+                </span>
+              </div>
+            </section>
+          </main>
         </div>
-
-        {/* RIGHT SIDE CARDS WITH STAGGERED ANIMATION */}
-       <div className="md:w-[35%] grid grid-cols-2 sm:grid-cols-1 gap-4 mt-40 md:mt-0">
-  {cards.map((card, index) => (
-    <div
-      key={index}
-      className={`
-        bg-white/15 backdrop-blur-md
-        rounded-2xl p-4
-        hover:scale-105 transition-transform duration-300
-        animate-cardFadeUp
-      `}
-      style={{ animationDelay: `${index * 0.2}s` }}
-    >
-      <h4 className="font-semibold mb-1">{card.title}</h4>
-      <p className="text-sm text-white/80">{card.desc}</p>
-    </div>
-  ))}
-</div>
-
-<style>
-  {`
-    @keyframes cardFadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-      }
-      50% {
-        opacity: 0.5;
-        transform: translateY(15px) scale(1.02);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .animate-cardFadeUp {
-      animation: cardFadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-  `}
-</style>
-
-
-        {/* Diamond with float */}
-        <img
-          src={diamond}
-          alt="diamond"
-          className="hidden md:block absolute right-[-100px] bottom-[-170px] h-[320px] animate-float delay-500"
-        />
       </div>
-
-      {/* Inline Animations */}
-      <style>
-        {`
-          @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-
-          @keyframes cardFadeUp {
-            0% { opacity: 0; transform: translateY(40px) scale(0.95); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-          }
-
-          @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-          }
-
-          .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out forwards;
-          }
-
-          .animate-cardFadeUp {
-            animation: cardFadeUp 0.7s ease-out forwards;
-          }
-
-          .animate-float {
-            animation: float 3s ease-in-out infinite;
-          }
-        `}
-      </style>
-    </div>
+    </section>
   );
 }
 

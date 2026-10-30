@@ -1,18 +1,16 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import Sidebar from '../../components/Sidebar'
+// import Sidebar from '../../components/Sidebar'
 import HomePgaeIntroduction from '../../components/home/HomePgaeIntroduction'
-import HomePageExperience from '../../components/home/HomePageExperience'
-// import HomePageAboutMe from '../../components/home/HomePageAboutMe'
+import HomePageService from '../../components/home/HomePageService'
+import HomePageAboutMe from '../../components/home/HomePageAboutMe'
 import HomePageHowIDo from '../../components/home/HomePageHowIDo'
-import HomePageHowIWork from '../../components/home/HomePageHowIWork'
+// import HomePageHowIWork from '../../components/home/HomePageHowIWork'
 import HomePageCaseStudies from '../../components/home/HomePageCaseStudies'
 import HomePageContact from '../../components/home/HomePageContact'
-import HomePageWhyWorkWithMe from '../../components/home/HomePageWhyWorkWithMe'
 // import HomePageProjects from '../../components/home/HomePageProjects'
 import HomePageTechStack from '../../components/home/HomePageTechStack'
-import HomePageOpenTo from '../../components/home/HomePageOpenTo'
 
 /* SCROLL ANIMATION VARIANT */
 const sectionVariants = {
@@ -29,10 +27,10 @@ const sectionVariants = {
 
 function Home() {
   return (
-    <div className='bg-[#0F103F]'>
-      <Sidebar />
+    <div className='bg-[#fff]'>
+      {/* <Sidebar /> */}
 
-      <div className="ml-[38px] md:ml-[50px] pb-20">
+      <div >
 
         {/* INTRO */}
         <motion.div
@@ -44,7 +42,7 @@ function Home() {
           <HomePgaeIntroduction />
         </motion.div>
 
-        {/* ABOUT
+        {/* ABOUT */}
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -52,7 +50,7 @@ function Home() {
           transition={{ delay: 0.2 }}
         >
           <HomePageAboutMe />
-        </motion.div> */}
+        </motion.div>
 
 
         {/* TECH STACK */}
@@ -74,6 +72,11 @@ function Home() {
          >
         <HomePageHowIDo />
          </motion.div>
+         
+  {/* HowCaseStudies*/}
+        <div>
+        <HomePageCaseStudies />
+        </div>
 
          {/* How I Work  */}
         <motion.div
@@ -82,20 +85,11 @@ function Home() {
         whileInView="visible"
        viewport={{ once: true, amount: 0.2}}
          >
-        <HomePageHowIWork />
+   
          </motion.div>
 
 
 
-  {/* HowCaseStudies*/}
-        <motion.div
-        variants={sectionVariants}
-          initial="hidden"
-        whileInView="visible"
-       viewport={{ once: true, amount: 0.2}}
-         >
-        <HomePageCaseStudies />
-         </motion.div>
 
 
 
@@ -110,37 +104,14 @@ function Home() {
           <HomePageProjects />
         </motion.div> */}
 
-        {/* experience  */}
+        {/* services */}
         <motion.div
         variants={sectionVariants}
           initial="hidden"
         whileInView="visible"
        viewport={{ once: true, amount: 0.2}}
          >
-        <HomePageExperience />
-         </motion.div>
-
-
-       {/* WhyWorkWithMe*/}
-        <motion.div
-        variants={sectionVariants}
-          initial="hidden"
-        whileInView="visible"
-       viewport={{ once: true, amount: 0.2}}
-         >
-        <HomePageWhyWorkWithMe />
-
-         </motion.div>
-
- {/* OpenTo*/}
-        <motion.div
-        variants={sectionVariants}
-          initial="hidden"
-        whileInView="visible"
-       viewport={{ once: true, amount: 0.2}}
-         >
-        <HomePageOpenTo />
-
+        <HomePageService />
          </motion.div>
 
 
