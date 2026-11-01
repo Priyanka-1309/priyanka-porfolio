@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
 body {
-  font-family: 'Poppins', sans-serif,serif tracking-wide;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.025em;
 }

@@ -1,11 +1,15 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion as Motion } from "framer-motion";
-import { Sparkles, Target, Users } from "lucide-react";
+import { Sparkles, Users } from "lucide-react";
 
 import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png";
 import CrmCover from "../../assets/images/projectsImage/crmCover.png";
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png";
 import metroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png";
+import oscormCover from "../../assets/images/projectsImage/oscormCover.png";
+import oscormDashboard from "../../assets/images/projectsImage/oscormDashboard.png";
+import easySkyTripCover from "../../assets/images/projectsImage/easySkyTripCover.png";
+import myLocalPlaceCover from "../../assets/images/projectsImage/mylocalPlaceCover.png";
 
 import w1 from "../../case studies/1wedding.png";
 import w2 from "../../case studies/2wedding.png";
@@ -115,8 +119,6 @@ import mp27 from "../../case studies/27mp.png";
 
 /* ------------------------------------------------------------------ */
 /*  DATA – project summaries and case-study details                    */
-/*  NOTE: palette, fonts, insights, features sab EDIT karne layak hain. */
-/*  Apne real Figma colours / fonts / process se replace kar dena.      */
 /* ------------------------------------------------------------------ */
 const PROCESS_TITLES = ["Research", "Wireframes", "Visual design", "Prototype"];
 const metroBuddyAppGallery = [
@@ -483,6 +485,180 @@ const projects = [
       ...metroBuddyWebsiteGallery,
     ],
   },
+  {
+    id: "oscorm",
+    number: "07",
+    title: "Oscorm",
+    category: "Website",
+    projectType: "Talent platform · Website",
+    label: "TALENT PLATFORM · WEB DESIGN",
+    role: "UI/UX Designer",
+    description:
+      "A talent platform connecting businesses with vetted professionals and helping freelancers manage work from discovery through delivery.",
+    overview:
+      "Oscorm brings hiring and freelance work into one platform. Businesses can discover verified experts, while freelancers can build trusted profiles, find relevant work and track project milestones.",
+    audience:
+      "Businesses looking for skilled professionals and freelancers seeking verified project opportunities.",
+    goals: [
+      "Make relevant talent easier to discover",
+      "Build trust with clear profile and skill verification",
+      "Make project progress and payments easier to follow",
+    ],
+    problem:
+      "Hiring and freelance work can involve manual profile checks, scattered communication and unclear project milestones.",
+    insights: [
+      { t: "Trust comes first", d: "Both sides need confidence in skills, identity and payment before committing to a project." },
+      { t: "Two user journeys", d: "Businesses and freelancers need different tools, but should share a consistent platform." },
+      { t: "Visibility matters", d: "Clear milestones help people understand what is happening after a match is made." },
+    ],
+    solution:
+      "A two-sided hiring experience that brings verified profiles, AI-assisted discovery and project progress into a clear workflow.",
+    features: [
+      { t: "Verified profiles", d: "Present professional skills and trust signals where hiring decisions happen." },
+      { t: "AI talent matching", d: "Help businesses find experts relevant to their project needs." },
+      { t: "Freelancer tools", d: "Support profile building and personalized job discovery." },
+      { t: "Project milestones", d: "Keep delivery stages and escrow-protected payments easy to understand." },
+    ],
+    process: [
+      "Organised the experience around the distinct needs of clients and freelancers.",
+      "Prioritised verification and relevant talent discovery in the hiring journey.",
+      "Used Oscorm's teal accents with neutral surfaces to keep actions clear and readable.",
+      "Connected matching, project milestones and payment into one continuous workflow.",
+    ],
+    palette: [
+      { name: "Oscorm Teal", hex: "#00E7E1", use: "Primary highlights and key actions" },
+      { name: "Deep Teal", hex: "#057A79", use: "Supporting accents and icons" },
+      { name: "Ink", hex: "#14171A", use: "Headings and primary text" },
+      { name: "Mist", hex: "#F3F4F6", use: "Soft interface backgrounds" },
+      { name: "White", hex: "#FFFFFF", use: "Cards and content surfaces" },
+    ],
+    fonts: { display: "DM Sans", body: "Inter" },
+    principles: ["Build trust early", "Design for both sides", "Keep progress visible"],
+    outcome:
+      "A clearer hiring and freelance workflow that supports discovery, project delivery and payment in one place.",
+    learnings:
+      "Two-sided platforms work best when each audience gets a focused journey within a shared visual system.",
+    tools: ["Figma", "UI/UX Design", "Prototyping", "Design System"],
+    cover: oscormCover,
+    accent: "#00E7E1",
+    gallery: [oscormDashboard],
+  },
+  {
+    id: "mylocalplace",
+    number: "08",
+    title: "MyLocalPlace",
+    category: "Website",
+    projectType: "Local discovery · Website",
+    label: "LOCAL DISCOVERY · WEB DESIGN",
+    role: "UI/UX Designer",
+    description:
+      "A local discovery platform for finding trusted businesses, comparing reviews and connecting with nearby services.",
+    overview:
+      "MyLocalPlace helps people search for local restaurants, services and shops, while giving businesses tools to share updates, respond to reviews and reach nearby customers.",
+    audience:
+      "People searching for local businesses and business owners building their presence in the community.",
+    goals: [
+      "Make local businesses easy to search and explore",
+      "Help customers judge trust through reviews and details",
+      "Give businesses a clear way to engage local customers",
+    ],
+    problem:
+      "Finding reliable local businesses can mean switching between search results, review sites and business pages to compare options.",
+    insights: [
+      { t: "Search needs context", d: "Location, category and useful business details help people decide where to go." },
+      { t: "Trust is built socially", d: "Reviews and responses help customers feel confident before reaching out." },
+      { t: "Businesses need visibility", d: "Owners need simple ways to keep listings current and connect with nearby customers." },
+    ],
+    solution:
+      "A business discovery experience that brings category browsing, reviews and local business updates together.",
+    features: [
+      { t: "Category discovery", d: "Browse restaurants, shopping, health, travel and other local services." },
+      { t: "Business search", d: "Find relevant businesses and services in a locality." },
+      { t: "Reviews and ratings", d: "Make customer feedback easy to scan while comparing options." },
+      { t: "Business engagement", d: "Help owners share updates, answer questions and respond to reviews." },
+    ],
+    process: [
+      "Structured the experience around customer discovery and business visibility.",
+      "Grouped local services into categories to support browsing as well as direct search.",
+      "Used MyLocalPlace's maroon brand color with white surfaces and readable contrast.",
+      "Kept reviews and business information close to the discovery flow.",
+    ],
+    palette: [
+      { name: "Brand Maroon", hex: "#8B1A2B", use: "Brand identity and primary actions" },
+      { name: "White", hex: "#FFFFFF", use: "Navigation and content surfaces" },
+      { name: "Warm White", hex: "#FDFDFD", use: "Main page background" },
+      { name: "Charcoal", hex: "#2B292A", use: "Headings and body text" },
+      { name: "Review Gold", hex: "#FFC107", use: "Ratings and review highlights" },
+    ],
+    fonts: { display: "Inter", body: "Inter" },
+    principles: ["Make local search simple", "Show trust signals", "Support both audiences"],
+    outcome:
+      "A local business directory that helps customers discover services and gives owners more ways to build visibility.",
+    learnings:
+      "Pairing category browsing with visible reviews helps turn a broad directory into a more confident discovery experience.",
+    tools: ["Figma", "UI/UX Design", "Responsive Design", "Prototyping"],
+    cover: myLocalPlaceCover,
+    accent: "#8B1A2B",
+    gallery: [myLocalPlaceCover],
+  },
+  {
+    id: "easyskytrip",
+    number: "09",
+    title: "EasySkyTrip",
+    category: "Website",
+    projectType: "Travel booking · Website",
+    label: "TRAVEL BOOKING · WEB DESIGN",
+    role: "UI/UX Designer",
+    description:
+      "A travel booking experience for discovering flight deals, destinations and travel options in one place.",
+    overview:
+      "EasySkyTrip brings flight and travel offers together with recommended tickets, popular airlines and destination discovery to help travelers plan their next journey.",
+    audience:
+      "Travelers comparing flight options and planning domestic or international trips.",
+    goals: [
+      "Make flight and destination discovery straightforward",
+      "Surface useful offers and recommended tickets",
+      "Build confidence with clear booking and support information",
+    ],
+    problem:
+      "Travelers often compare airlines, destinations and offers across multiple sites before they can make a confident booking decision.",
+    insights: [
+      { t: "Planning starts with a route", d: "Origin and destination should be easy to set and review." },
+      { t: "Offers need context", d: "Travelers need to compare deals alongside destinations and airline information." },
+      { t: "Confidence continues after search", d: "Clear payment, refund and support information helps people complete a booking." },
+    ],
+    solution:
+      "A travel-focused website that brings route search, flight offers and destination inspiration into a single journey.",
+    features: [
+      { t: "Route search", d: "Start a trip by choosing where to travel from and to." },
+      { t: "Flight offers", d: "Explore exclusive deals and recommended tickets." },
+      { t: "Airline discovery", d: "Review popular airline partners while comparing travel options." },
+      { t: "Booking reassurance", d: "Keep payment security, refunds and support easy to find." },
+    ],
+    process: [
+      "Organised the page around route search, offers and destination discovery.",
+      "Separated domestic and international travel to make browsing more relevant.",
+      "Used the EasySkyTrip wordmark's magenta accent with crisp light surfaces.",
+      "Kept booking reassurance visible alongside the inspiration-led travel content.",
+    ],
+    palette: [
+      { name: "Brand Magenta", hex: "#7D0740", use: "Brand highlights and primary actions" },
+      { name: "Deep Berry", hex: "#750037", use: "Supporting brand accents" },
+      { name: "Ink", hex: "#010101", use: "Headings and high-contrast text" },
+      { name: "White", hex: "#FFFFFF", use: "Primary content surfaces" },
+      { name: "Soft Rose", hex: "#F9F7F8", use: "Subtle background accents" },
+    ],
+    fonts: { display: "Geist", body: "Geist" },
+    principles: ["Search first", "Make offers easy to compare", "Reassure at every step"],
+    outcome:
+      "A travel booking concept that brings route search, deals and destination browsing into one approachable experience.",
+    learnings:
+      "Travel discovery feels simpler when inspiration and practical booking information live in the same journey.",
+    tools: ["Figma", "UI/UX Design", "Responsive Design", "Prototyping"],
+    cover: easySkyTripCover,
+    accent: "#7D0740",
+    gallery: [easySkyTripCover],
+  },
 ];
 
 const FILTERS = [
@@ -492,13 +668,20 @@ const FILTERS = [
 ];
 
 const SECTIONS = [
-  ["overview", "Overview"],
-  ["challenge", "Challenge"],
-  ["planning", "Research & planning"],
-  ["exploration", "Design exploration"],
-  ["final", "Final solution"],
+  ["overview", "Project overview"],
+  ["problem", "Problem statement"],
+  ["goals", "Goals & objectives"],
+  ["research", "Research & analysis"],
+  ["persona", "User persona"],
+  ["journey", "User journey"],
+  ["wireframes", "Wireframes"],
+  ["design-process", "Design process"],
+  ["uiux", "UI/UX design"],
+  ["screens", "Final screens"],
+  ["features", "Key features"],
+  ["challenges", "Challenges & solutions"],
   ["validation", "Validation"],
-  ["reflection", "Reflection"],
+  ["outcome", "Final outcome"],
 ];
 
 const Arrow = () => (
@@ -506,6 +689,18 @@ const Arrow = () => (
     <path d="M3 11L11 3M5 3h6v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
+
+function SectionHeading({ number, title, kicker }) {
+  return (
+    <header className="pc-editorial-heading">
+      <span>{number}</span>
+      <div>
+        <h2>{title}</h2>
+        <p>{kicker}</p>
+      </div>
+    </header>
+  );
+}
 
 /* ------------------------------------------------------------------ */
 /*  MAIN                                                               */
@@ -549,7 +744,16 @@ function CaseStudiesInner() {
     () => projects.filter((p) => filter === "All" || p.category === filter),
     [filter]
   );
-  const previewProject = visible.find((project) => project.id === previewId) || visible[0];
+  const previewIndex = Math.max(0, visible.findIndex((project) => project.id === previewId));
+  const previewProject = visible[previewIndex];
+  const carouselItems = visible
+    .map((project, index) => {
+      let offset = index - previewIndex;
+      if (offset > visible.length / 2) offset -= visible.length;
+      if (offset < -visible.length / 2) offset += visible.length;
+      return { project, offset };
+    })
+    .filter(({ offset }) => Math.abs(offset) <= 2);
 
   const counts = {
     All: projects.length,
@@ -608,7 +812,10 @@ function CaseStudiesInner() {
                   key={f.key}
                   type="button"
                   className={filter === f.key ? "is-active" : ""}
-                  onClick={() => setFilter(f.key)}
+                  onClick={() => {
+                    setFilter(f.key);
+                    setPreviewId(projects.find((project) => f.key === "All" || project.category === f.key).id);
+                  }}
                   aria-pressed={filter === f.key}
                 >
                   <span>{f.short}</span>
@@ -618,58 +825,67 @@ function CaseStudiesInner() {
             </nav>
           </header>
 
-          <div className="pc-project-browser">
-            <nav className="pc-project-nav" aria-label="Choose a project">
-              <p className="pc-project-nav-label">Selected work</p>
-              {visible.map((project) => (
+          <div className="pc-project-carousel" style={{ "--active-accent": previewProject.accent }}>
+            <button
+              type="button"
+              className="pc-carousel-arrow pc-carousel-prev"
+              onClick={() => setPreviewId(visible[(previewIndex - 1 + visible.length) % visible.length].id)}
+              aria-label="Previous project"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <div className="pc-carousel-stage" aria-label="Featured projects">
+              {carouselItems.map(({ project, offset }) => (
                 <button
-                  key={project.id}
                   type="button"
-                  className={`pc-project-option ${previewProject.id === project.id ? "is-active" : ""}`}
-                  style={{ "--accent": project.accent }}
-                  onClick={() => setPreviewId(project.id)}
-                  aria-pressed={previewProject.id === project.id}
+                  key={project.id}
+                  className={`pc-carousel-card ${offset === 0 ? "is-current" : ""}`}
+                  data-offset={offset}
+                  style={{ "--project-accent": project.accent }}
+                  onClick={() => offset === 0 ? openProject(project) : setPreviewId(project.id)}
+                  aria-label={offset === 0 ? `Open ${project.title} case study` : `Preview ${project.title}`}
+                  aria-current={offset === 0 ? "true" : undefined}
                 >
-                  <span className="pc-option-number">{project.number}</span>
-                  <span className="pc-option-copy">
+                  <img
+                    src={project.cover || project.gallery[0]}
+                    alt=""
+                    loading={offset === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                  <span className="pc-carousel-shade" aria-hidden="true" />
+                  <span className="pc-carousel-number">{project.number} <i>/ {String(projects.length).padStart(2, "0")}</i></span>
+                  <span className="pc-carousel-copy">
+                    <small>{project.category} <i>·</i> {project.role}</small>
                     <strong>{project.title}</strong>
-                    <small>{project.projectType || (project.category === "Website" ? "Website" : "Mobile app")}</small>
+                    <span>{project.label}</span>
                   </span>
-                  <span className="pc-option-arrow" aria-hidden="true">↗</span>
+                  {offset === 0 && <span className="pc-carousel-open">Open case study <Arrow /></span>}
                 </button>
               ))}
-            </nav>
-
-            <article className="pc-project-showcase" style={{ "--accent": previewProject.accent }}>
-              <button
-                type="button"
-                className="pc-project-cover"
-                onClick={() => openProject(previewProject)}
-                aria-label={`Open ${previewProject.title} case study`}
-              >
-                <img
-                  src={previewProject.cover || previewProject.gallery[0]}
-                  alt={`${previewProject.title} case study cover`}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span className="pc-project-kind">
-                  {previewProject.projectType || (previewProject.category === "Website" ? "Website" : "Mobile app")}
-                </span>
-                <span className="pc-cover-cta">Open case study <span aria-hidden="true">↗</span></span>
-              </button>
-              <div className="pc-project-info">
-                <p className="pc-project-label">{previewProject.label}</p>
-                <h2>{previewProject.title}</h2>
-                <p className="pc-project-description">{previewProject.description}</p>
-                <div className="pc-project-meta">
-                  <span>{previewProject.role}</span>
-                  <span className="pc-project-pill">
-                    {previewProject.projectType || (previewProject.category === "Website" ? "Website concept" : "App concept")}
-                  </span>
-                </div>
+            </div>
+            <button
+              type="button"
+              className="pc-carousel-arrow pc-carousel-next"
+              onClick={() => setPreviewId(visible[(previewIndex + 1) % visible.length].id)}
+              aria-label="Next project"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+            <div className="pc-carousel-footer">
+              <div className="pc-carousel-dots" role="group" aria-label="Choose a project">
+                {visible.map((project) => (
+                  <button
+                    key={project.id}
+                    type="button"
+                    className={project.id === previewProject.id ? "is-active" : ""}
+                    onClick={() => setPreviewId(project.id)}
+                    aria-label={`Show ${project.title}`}
+                    aria-pressed={project.id === previewProject.id}
+                  />
+                ))}
               </div>
-            </article>
+              <span><b>{previewProject.number}</b> / {String(projects.length).padStart(2, "0")} <i>Scroll or use arrows to explore</i></span>
+            </div>
           </div>
         </>
       )}
@@ -712,16 +928,23 @@ function ProjectDetail({ project, onBack, onOpen }) {
   // section spy
   useEffect(() => {
     const els = SECTIONS.map(([id]) => document.getElementById(`pc-sec-${id}`)).filter(Boolean);
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id.replace("pc-sec-", ""));
-        });
-      },
-      { rootMargin: "-35% 0px -60% 0px", threshold: 0 }
-    );
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
+    const updateActiveSection = () => {
+      const marker = window.innerHeight * 0.32;
+      let current = SECTIONS[0][0];
+      els.forEach((el) => {
+        if (el.getBoundingClientRect().top <= marker) {
+          current = el.id.replace("pc-sec-", "");
+        }
+      });
+      setActive((previousActive) => previousActive === current ? previousActive : current);
+    };
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    updateActiveSection();
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, [project.id]);
 
   // lightbox keys
@@ -742,7 +965,10 @@ function ProjectDetail({ project, onBack, onOpen }) {
 
   function go(id) {
     const el = document.getElementById(`pc-sec-${id}`);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) {
+      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+      el.scrollIntoView({ behavior, block: "start" });
+    }
   }
 
   async function copy(hex) {
@@ -779,18 +1005,6 @@ function ProjectDetail({ project, onBack, onOpen }) {
               <span>Next</span> →
             </button>
           </div>
-          <nav className="pc-secnav" aria-label="Case study sections">
-            {SECTIONS.map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                className={active === id ? "is-active" : ""}
-                onClick={() => go(id)}
-              >
-                {label}
-              </button>
-            ))}
-          </nav>
           <span className="pc-top-count">
             {project.number} / {String(projects.length).padStart(2, "0")}
           </span>
@@ -802,7 +1016,7 @@ function ProjectDetail({ project, onBack, onOpen }) {
 
       {/* 01 — project cover */}
       <Motion.header
-        className="pc-d-hero"
+        className="pc-d-hero pc-cover-hero"
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -819,8 +1033,8 @@ function ProjectDetail({ project, onBack, onOpen }) {
                 <span>{project.number}</span>
                 <span>{project.projectType || project.category}</span>
               </div>
-              <p className="pc-d-eyebrow">DESIGN CASE STUDY</p>
-              <h1 className="pc-d-title">{project.title}</h1>
+              <p className="pc-d-eyebrow"><Sparkles size={14} aria-hidden="true" /> {project.label}</p>
+              <h1 className={`pc-d-title ${project.title.length > 10 ? "is-long" : ""}`}>{project.title}</h1>
               <p className="pc-d-lead">{project.description}</p>
               <div className="pc-d-actions">
                 <button type="button" className="pc-d-explore" onClick={() => go("overview")}>
@@ -873,97 +1087,148 @@ function ProjectDetail({ project, onBack, onOpen }) {
         </div>
       </Motion.header>
 
-      {/* 02 — overview */}
-      <Motion.section id="pc-sec-overview" className="pc-block pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.42, ease: "easeOut" }}>
-        <div className="pc-block-head">
-          <span className="pc-section-number">02</span>
-          <h2>Overview</h2>
-          <p className="pc-kicker">A quick look at the idea, people and priorities</p>
-        </div>
-        <div className="pc-block-body">
-          <div className="pc-overview-intro">
-            <span className="pc-overview-mark" aria-hidden="true"><Sparkles size={20} strokeWidth={1.8} /></span>
-            <p className="pc-big">{project.overview}</p>
+      <div className="pc-story-layout">
+        <aside className="pc-story-sidebar">
+          <span className="pc-story-index-label">On this page</span>
+          <nav className="pc-secnav" aria-label="Case study sections">
+            {SECTIONS.map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                className={active === id ? "is-active" : ""}
+                onClick={() => {
+                  setActive(id);
+                  go(id);
+                }}
+              >
+                <i aria-hidden="true" />
+                {label}
+              </button>
+            ))}
+          </nav>
+          <span className="pc-story-project-count">
+            {project.number} <i>/</i> {String(projects.length).padStart(2, "0")}
+          </span>
+        </aside>
+        <div className="pc-story-content">
+      <Motion.section id="pc-sec-overview" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="01" title="Project overview" kicker="The idea, its audience and how it was shaped" />
+        <div className="pc-editorial-overview">
+          <div className="pc-editorial-lead">
+            <span className="pc-editorial-eyebrow"><Sparkles size={14} /> {project.label}</span>
+            <p>{project.overview}</p>
           </div>
-          <div className="pc-overview-grid">
-            <article className="pc-overview-audience">
-              <span className="pc-card-label"><Users size={14} /> Made for</span>
-              <h3>The people behind the project</h3>
-              <p>{project.audience}</p>
-              <span className="pc-overview-orbit" aria-hidden="true" />
+          <div className="pc-editorial-meta">
+            <div><span>My role</span><strong>{project.role}</strong></div>
+            <div><span>Project type</span><strong>{project.projectType || project.category}</strong></div>
+            <div className="pc-editorial-tools"><span>Tools &amp; methods</span><strong>{project.tools.join(" · ")}</strong></div>
+          </div>
+          <div className="pc-editorial-audience">
+            <span className="pc-editorial-icon"><Users size={18} /></span>
+            <div><span className="pc-card-label">Intended audience</span><p>{project.audience}</p></div>
+          </div>
+        </div>
+      </Motion.section>
+
+      <Motion.section id="pc-sec-problem" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="02" title="Problem statement" kicker="The need this project set out to address" />
+        <div className="pc-editorial-problem">
+          <span>THE CHALLENGE</span>
+          <p>{project.problem}</p>
+          <i aria-hidden="true">“</i>
+        </div>
+      </Motion.section>
+
+      <Motion.section id="pc-sec-goals" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="03" title="Project goals &amp; objectives" kicker="The priorities captured for this experience" />
+        <div className="pc-editorial-goals">
+          {project.goals.map((goal, index) => (
+            <article className="pc-editorial-goal" key={goal}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <p>{goal}</p>
+              <Arrow />
             </article>
-            <div className="pc-overview-goals">
-              <div className="pc-overview-goals-head">
-                <span className="pc-card-label"><Target size={14} /> Design priorities</span>
-                <span className="pc-overview-count">{String(project.goals.length).padStart(2, "0")} goals</span>
-              </div>
-              {project.goals.map((goal, index) => (
-                <div className="pc-overview-goal" key={goal}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p>{goal}</p>
-                  <i aria-hidden="true">↗</i>
-                </div>
+          ))}
+        </div>
+      </Motion.section>
+
+      <Motion.section id="pc-sec-research" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="04" title="Research &amp; analysis" kicker="The research approach and insights recorded for the project" />
+        <div className="pc-editorial-research">
+          <article className="pc-editorial-research-note">
+            <span className="pc-card-label">Recorded approach</span>
+            <p>{project.process[0]}</p>
+          </article>
+          <div className="pc-editorial-insights">
+            {project.insights.map((insight, index) => (
+              <article className="pc-editorial-insight" key={insight.t}>
+                <span>INSIGHT {String(index + 1).padStart(2, "0")}</span>
+                <h3>{insight.t}</h3>
+                <p>{insight.d}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </Motion.section>
+
+      <Motion.section id="pc-sec-persona" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="05" title="User persona" kicker="The audience definition available in the project notes" />
+        <article className="pc-editorial-persona">
+          <span className="pc-editorial-persona-mark"><Users size={22} /></span>
+          <div>
+            <span className="pc-card-label">Audience profile</span>
+            <p>{project.audience}</p>
+            <small>This is the audience description documented for this project; no individual persona details were provided.</small>
+          </div>
+        </article>
+      </Motion.section>
+
+      <Motion.section id="pc-sec-journey" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="06" title="User journey" kicker="How the project notes describe planning the experience" />
+        <div className="pc-editorial-journey">
+          <span className="pc-card-label">Flow-planning note</span>
+          <p>{project.process[1]}</p>
+          <div className="pc-editorial-journey-goals">
+            {project.goals.map((goal, index) => (
+              <div key={goal}><span>{String(index + 1).padStart(2, "0")}</span><p>{goal}</p></div>
+            ))}
+          </div>
+          <small>The source content describes flow planning and design priorities, not a measured or step-by-step user journey.</small>
+        </div>
+      </Motion.section>
+
+      <Motion.section id="pc-sec-wireframes" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="07" title="Wireframes" kicker="Structure and flow before visual styling" />
+        <div className="pc-editorial-wireframes">
+          <div className="pc-wireframe-copy">
+            <span className="pc-card-label">Planning documentation</span>
+            <p>{project.process[1]}</p>
+            <div className="pc-method-tags">
+              {project.tools.filter((tool) => /wireframe|user flow|auto layout|prototype/i.test(tool)).map((tool) => (
+                <span key={tool}>{tool}</span>
               ))}
             </div>
           </div>
+          <p className="pc-editorial-caption">The project notes describe wireframe planning, but no wireframe images were included in the source gallery.</p>
         </div>
       </Motion.section>
 
-      {/* 03 — challenge */}
-      <Motion.section id="pc-sec-challenge" className="pc-block pc-tint pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.42, ease: "easeOut" }}>
-        <div className="pc-block-head">
-          <span className="pc-section-number">03</span>
-          <h2>The challenge</h2>
-          <p className="pc-kicker">The user problem and design objectives</p>
-        </div>
-        <div className="pc-block-body">
-          <p className="pc-big">{project.problem}</p>
-          <div className="pc-three">
-            {project.insights.map((insight, index) => (
-              <div className="pc-card pc-challenge-card" key={insight.t}>
-                <span className="pc-card-label">Challenge 0{index + 1}</span>
-                <h3>{insight.t}</h3><p>{insight.d}</p>
-              </div>
-            ))}
-          </div>
-          <div className="pc-objective-strip"><strong>Design objective</strong><span>{project.goals[0]}</span></div>
-        </div>
+      <Motion.section id="pc-sec-design-process" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="08" title="Design process" kicker="The four stages documented for this project" />
+        <ol className="pc-editorial-process">
+          {project.process.map((step, index) => (
+            <li key={step}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div><small>{PROCESS_TITLES[index]}</small><p>{step}</p></div>
+            </li>
+          ))}
+        </ol>
       </Motion.section>
 
-      {/* 04 — research and planning */}
-      <Motion.section id="pc-sec-planning" className="pc-block pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.42, ease: "easeOut" }}>
-        <div className="pc-block-head">
-          <span className="pc-section-number">04</span>
-          <h2>Research &amp; planning</h2>
-          <p className="pc-kicker">Turning the problem into a clear direction</p>
-        </div>
-        <div className="pc-block-body">
-          <div className="pc-planning-audience"><span className="pc-card-label">Primary audience</span><p>{project.audience}</p></div>
-          <ol className="pc-steps">
-            {project.process.map((text, index) => (
-              <li key={text}>
-                <span className="pc-step-n">0{index + 1}</span>
-                <h3>{PROCESS_TITLES[index]}</h3>
-                <p>{text}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="pc-planning-goals">
-            <h3>What the experience needs to do</h3>
-            {project.goals.map((goal, index) => <div key={goal}><span>0{index + 1}</span><p>{goal}</p></div>)}
-          </div>
-        </div>
-      </Motion.section>
-
-      {/* 05 — design exploration */}
-      <Motion.section id="pc-sec-exploration" className="pc-block pc-tint pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.42, ease: "easeOut" }}>
-        <div className="pc-block-head">
-          <span className="pc-section-number">05</span>
-          <h2>Design exploration</h2>
-          <p className="pc-kicker">Colour, type and visual decisions</p>
-        </div>
-        <div className="pc-block-body">
-          <p className="pc-design-direction">{project.process[2]}</p>
+      <Motion.section id="pc-sec-uiux" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="09" title="UI/UX design" kicker="The visual choices and principles behind the interface" />
+        <div className="pc-editorial-design">
+          <p className="pc-editorial-direction">{project.process[2]}</p>
           <h3 className="pc-sub">Colour palette <small>Click a colour to copy its value</small></h3>
           <div className="pc-palette-strip">
             {project.palette.map((colour) => (
@@ -974,133 +1239,115 @@ function ProjectDetail({ project, onBack, onOpen }) {
               </button>
             ))}
           </div>
-          <h3 className="pc-sub">Typography</h3>
-          <div className="pc-two">
-            <div className="pc-card pc-type"><span className="pc-aa" style={{ fontFamily: `'${project.fonts.display}', sans-serif` }}>Aa</span><h3>{project.fonts.display}</h3><p>Headlines and key moments</p></div>
-            <div className="pc-card pc-type"><span className="pc-aa" style={{ fontFamily: `'${project.fonts.body}', sans-serif` }}>Aa</span><h3>{project.fonts.body}</h3><p>Body text, buttons and labels</p></div>
+          <div className="pc-editorial-type">
+            <article className="pc-type-specimen">
+              <span>Aa</span><div><small>DISPLAY TYPEFACE</small><strong>{project.fonts.display}</strong></div>
+            </article>
+            <article className="pc-type-specimen">
+              <span>Aa</span><div><small>BODY TYPEFACE</small><strong>{project.fonts.body}</strong></div>
+            </article>
           </div>
           <h3 className="pc-sub">Design principles</h3>
-          <div className="pc-principle-list">{project.principles.map((principle, index) => <span key={principle}><b>0{index + 1}</b>{principle}</span>)}</div>
+          <div className="pc-principle-list">{project.principles.map((principle, index) => <span key={principle}><b>{String(index + 1).padStart(2, "0")}</b>{principle}</span>)}</div>
         </div>
       </Motion.section>
 
-      {/* 06 — final solution and high-fidelity screens */}
-      <Motion.section id="pc-sec-final" className="pc-final-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: 0.42, ease: "easeOut" }}>
-        <div className="pc-block pc-final-intro">
-          <div className="pc-block-head">
-            <span className="pc-section-number">06</span>
-            <h2>Final solution</h2>
-            <p className="pc-kicker">A considered response to the challenge</p>
-          </div>
-          <div className="pc-block-body">
-            <p className="pc-big">{project.solution}</p>
-            <div className="pc-four">
-              {project.features.map((feature, index) => (
-                <div className="pc-card pc-feature" key={feature.t}>
-                  <span className="pc-feature-index">0{index + 1}</span>
-                  <h3>{feature.t}</h3><p>{feature.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="pc-gal-wrap">
-          <div className="pc-gal-head">
-            <div>
-              <span className="pc-card-label">High-fidelity UI</span>
-              <h2>Explore the finished interface</h2>
-              <p>Browse the key screens and select any design to view it full size.</p>
-            </div>
-            <span className="pc-gallery-hint">Scroll to explore <b aria-hidden="true">→</b></span>
-          </div>
-          {project.galleryModes && (
-            <div className="pc-gallery-switch" role="group" aria-label="Choose Metro Buddy interface">
-              {Object.keys(project.galleryModes).map((mode) => (
-                <button
-                  type="button"
-                  key={mode}
-                  className={galleryMode === mode ? "is-active" : ""}
-                  onClick={() => {
-                    setGalleryMode(mode);
-                    setShowAllScreens(false);
-                    setZoom(null);
-                  }}
-                  aria-pressed={galleryMode === mode}
-                >
-                  {mode}
-                  <span>{project.galleryModes[mode].length}</span>
-                </button>
-              ))}
-            </div>
-          )}
-          <div className={`pc-gal ${isWeb ? "is-web" : "is-app"}`}>
-            {visibleGallery.map((src, screenIndex) => (
-              <Motion.button
-                className="pc-gallery-screen"
-                type="button"
-                key={`${project.id}-${screenIndex}`}
-                onClick={() => setZoom(screenIndex)}
-                aria-label={`View ${project.title} screen ${screenIndex + 1} enlarged`}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.12 }}
-                transition={{ duration: 0.38, delay: Math.min(screenIndex * 0.035, 0.21), ease: "easeOut" }}
-              >
-                {isWeb && (
-                  <span className="pc-gallery-browser-bar" aria-hidden="true">
-                    <i /><i /><i /><em>{project.title} · Screen {screenIndex + 1}</em>
-                  </span>
-                )}
-                <img src={src} alt={`${project.title} design screen ${screenIndex + 1}`} loading="lazy" decoding="async" />
-                <span className="pc-gallery-screen-hint">View screen <span aria-hidden="true">↗</span></span>
-              </Motion.button>
+      <Motion.section id="pc-sec-screens" className="pc-editorial-section pc-editorial-screens pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="10" title="Final screens &amp; mockups" kicker="Explore the original project visuals and open any screen full size" />
+        {project.galleryModes && (
+          <div className="pc-gallery-switch" role="group" aria-label="Choose Metro Buddy interface">
+            {Object.keys(project.galleryModes).map((mode) => (
+              <button type="button" key={mode} className={galleryMode === mode ? "is-active" : ""} onClick={() => {
+                setGalleryMode(mode);
+                setShowAllScreens(false);
+                setZoom(null);
+              }} aria-pressed={galleryMode === mode}>
+                {mode}<span>{project.galleryModes[mode].length}</span>
+              </button>
             ))}
           </div>
-          {gal.length > visibleGallery.length && (
-            <button type="button" className="pc-gallery-more" onClick={() => setShowAllScreens(true)}>
-              Explore all screens <span aria-hidden="true">↓</span>
-            </button>
-          )}
-          {showAllScreens && gal.length > (isWeb ? 4 : 6) && (
-            <button type="button" className="pc-gallery-more is-collapse" onClick={() => setShowAllScreens(false)}>
-              Show fewer screens <span aria-hidden="true">↑</span>
-            </button>
-          )}
+        )}
+        <div className={`pc-gal ${isWeb ? "is-web" : "is-app"}`}>
+          {visibleGallery.map((src, screenIndex) => (
+            <Motion.button
+              className="pc-gallery-screen"
+              type="button"
+              key={`${project.id}-${galleryMode}-${screenIndex}`}
+              onClick={() => setZoom(screenIndex)}
+              aria-label={`View ${project.title} screen ${screenIndex + 1} enlarged`}
+              initial={false}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.38, delay: Math.min(screenIndex * 0.035, 0.21), ease: "easeOut" }}
+            >
+              {isWeb && <span className="pc-gallery-browser-bar" aria-hidden="true"><i /><i /><i /><em>{project.title} · Screen {screenIndex + 1}</em></span>}
+              <img src={src} alt={`${project.title} design screen ${screenIndex + 1}`} loading="lazy" decoding="async" />
+              <span className="pc-gallery-screen-hint">View screen <span aria-hidden="true">↗</span></span>
+            </Motion.button>
+          ))}
+        </div>
+        {gal.length > visibleGallery.length && (
+          <button type="button" className="pc-gallery-more" onClick={() => setShowAllScreens(true)}>
+            Explore all screens <span aria-hidden="true">↓</span>
+          </button>
+        )}
+        {showAllScreens && gal.length > (isWeb ? 4 : 6) && (
+          <button type="button" className="pc-gallery-more is-collapse" onClick={() => setShowAllScreens(false)}>
+            Show fewer screens <span aria-hidden="true">↑</span>
+          </button>
+        )}
+      </Motion.section>
+
+      <Motion.section id="pc-sec-features" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="11" title="Key features" kicker="The capabilities described in the original project content" />
+        <div className="pc-editorial-features">
+          {project.features.map((feature, index) => (
+            <article className="pc-editorial-feature" key={feature.t}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div><h3>{feature.t}</h3><p>{feature.d}</p></div>
+              <Arrow />
+            </article>
+          ))}
         </div>
       </Motion.section>
 
-      {/* 07 — validation plan */}
-      <Motion.section id="pc-sec-validation" className="pc-block pc-tint pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.42, ease: "easeOut" }}>
-        <div className="pc-block-head">
-          <span className="pc-section-number">07</span>
-          <h2>Validation</h2>
-          <p className="pc-kicker">How I would test and improve the experience</p>
-        </div>
-        <div className="pc-block-body">
-          <div className="pc-validation-intro"><span className="pc-validation-mark">↗</span><div><span className="pc-card-label">Next step</span><h3>Validate the key user goals</h3><p>These are proposed usability checks for the concept—not reported test results.</p></div></div>
-          <div className="pc-three">
-            {project.goals.map((goal, index) => (
-              <div className="pc-card pc-validation-card" key={goal}><span className="pc-card-label">Check 0{index + 1}</span><h3>{["Task clarity", "Flow confidence", "Visual hierarchy"][index % 3]}</h3><p>Ask a target user to complete this goal, then note where the interface feels unclear: {goal.toLowerCase()}.</p></div>
+      <Motion.section id="pc-sec-challenges" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="12" title="Challenges &amp; solutions" kicker="Project-specific challenges and the design response" />
+        <div className="pc-editorial-challenges">
+          <div className="pc-editorial-challenge-list">
+            {project.insights.map((insight, index) => (
+              <article className="pc-editorial-challenge" key={insight.t}>
+                <span>DESIGN CONSIDERATION {String(index + 1).padStart(2, "0")}</span>
+                <h3>{insight.t}</h3><p>{insight.d}</p>
+              </article>
             ))}
           </div>
+          <article className="pc-editorial-solution">
+            <span className="pc-card-label">Design response</span>
+            <p>{project.solution}</p>
+          </article>
         </div>
       </Motion.section>
 
-      {/* 08 — reflection */}
-      <Motion.section id="pc-sec-reflection" className="pc-block pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.42, ease: "easeOut" }}>
-        <div className="pc-block-head">
-          <span className="pc-section-number">08</span>
-          <h2>Reflection</h2>
-          <p className="pc-kicker">What I learned and what comes next</p>
-        </div>
-        <div className="pc-block-body">
-          <p className="pc-big">{project.outcome}</p>
-          <div className="pc-two">
-            <div className="pc-card pc-learn"><span className="pc-card-label">Key learning</span><h3>What this project taught me</h3><p>{project.learnings}</p></div>
-            <div className="pc-card pc-next-step"><span className="pc-card-label">Next iteration</span><h3>Learn from real users</h3><p>Test the main journey with people from the target audience, use their feedback to refine the flow, and check the experience across screen sizes.</p></div>
-          </div>
+      <Motion.section id="pc-sec-validation" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="13" title="Validation" kicker="What is and is not documented in this case study" />
+        <div className="pc-editorial-validation">
+          <span aria-hidden="true">↗</span>
+          <p>No usability test findings, validation results, or project-specific metrics were included in the source content.</p>
         </div>
       </Motion.section>
+
+      <Motion.section id="pc-sec-outcome" className="pc-editorial-section pc-editorial-outcome pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+        <SectionHeading number="14" title="Final outcome" kicker="The project outcome and reflection, in the original words" />
+        <div className="pc-editorial-outcome-card">
+          <span className="pc-card-label">Project outcome</span>
+          <p>{project.outcome}</p>
+          <div><span className="pc-card-label">Key learning</span><p>{project.learnings}</p></div>
+        </div>
+      </Motion.section>
+
+        </div>
+      </div>
 
       <button
         type="button"
@@ -2187,9 +2434,15 @@ const STYLES = `
 }
 .pc-project-nav{
   display:flex; flex-direction:column; gap:8px; padding:18px;
+  height:380px; max-height:calc(100vh - 40px); overflow-y:auto;
+  align-self:start; overscroll-behavior:contain; scrollbar-color:#c8c6cf transparent;
+  scrollbar-width:thin;
   border:1px solid #eeedf1; border-radius:24px; background:#fff;
   box-shadow:0 14px 36px rgba(27,29,53,.055);
 }
+.pc-project-nav::-webkit-scrollbar{width:6px}
+.pc-project-nav::-webkit-scrollbar-thumb{border-radius:999px; background:#c8c6cf}
+.pc-project-nav::-webkit-scrollbar-track{background:transparent}
 .pc-project-nav-label{
   margin:2px 6px 6px; color:#858590; font-size:10px; font-weight:800;
   letter-spacing:.12em; text-transform:uppercase;
@@ -2303,7 +2556,10 @@ const STYLES = `
   .pc-hero-foot{align-items:flex-start}
   .pc-hero-foot p{font-size:13px}
   .pc-project-browser{grid-template-columns:1fr; gap:14px; padding:0 5vw 52px}
-  .pc-project-nav{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; padding:12px}
+  .pc-project-nav{
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; padding:12px;
+    height:auto; max-height:none; overflow:visible;
+  }
   .pc-project-nav-label{grid-column:1/-1; margin:2px 4px 4px}
   .pc-project-option{min-height:60px; grid-template-columns:27px minmax(0,1fr); gap:7px; padding:7px}
   .pc-option-number{width:26px; height:26px; font-size:9px}
@@ -2558,5 +2814,1192 @@ const STYLES = `
 }
 @media (prefers-reduced-motion:reduce){
   .pc-gal.is-web .pc-gallery-screen,.pc-gallery-switch button{transition:none}
+}
+
+/* Editorial project carousel and case-study layout */
+.pc-root{
+  --blue:#304ffe;
+  --pink:#f29bbd;
+  --paper:#faf9f6;
+  --ink:#191a27;
+  --muted:#6d6c77;
+  --line:#e8e5e2;
+  background:var(--paper);
+  color:var(--ink);
+}
+.pc-root .pc-hero{
+  max-width:1420px;
+  margin:0 auto;
+  padding:clamp(54px,7vw,92px) 5vw 16px;
+  text-align:center;
+}
+.pc-root .pc-hero-title{
+  display:flex;
+  justify-content:center;
+  align-items:baseline;
+  gap:.24em;
+  color:var(--ink);
+  font-size:clamp(48px,7.2vw,96px);
+}
+.pc-root .pc-hero-title .pc-script{
+  color:var(--pink);
+  font-family:Caveat,cursive;
+  font-size:1.04em;
+  font-weight:700;
+  letter-spacing:-.04em;
+}
+.pc-root .pc-hero-foot{
+  justify-content:center;
+  margin-top:12px;
+}
+.pc-root .pc-hero-foot p{
+  max-width:560px;
+  font-size:15px;
+}
+.pc-root .pc-scrollhint{display:none}
+.pc-root .pc-filter-row{justify-content:center; margin-top:24px}
+.pc-root .pc-filter-row button{
+  border-color:#e8e5e2;
+  background:rgba(255,255,255,.72);
+}
+.pc-root .pc-filter-row button.is-active{
+  border-color:var(--blue);
+  background:var(--blue);
+  color:#fff;
+}
+.pc-project-carousel{
+  position:relative;
+  max-width:1420px;
+  margin:0 auto;
+  padding:0 66px 54px;
+}
+.pc-carousel-stage{
+  position:relative;
+  height:clamp(390px,48vw,560px);
+  perspective:1500px;
+  isolation:isolate;
+}
+.pc-carousel-card{
+  --project-accent:var(--blue);
+  position:absolute;
+  top:50%;
+  left:50%;
+  display:block;
+  width:clamp(210px,27vw,340px);
+  height:clamp(310px,39vw,460px);
+  padding:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:24px;
+  background:#242333;
+  box-shadow:0 28px 65px rgba(29,27,46,.2);
+  color:#fff;
+  cursor:pointer;
+  text-align:left;
+  transform-origin:center;
+  transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .45s ease,filter .45s ease,box-shadow .45s ease;
+}
+.pc-carousel-card img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .75s cubic-bezier(.2,.8,.2,1);
+}
+.pc-carousel-card:hover img{transform:scale(1.045)}
+.pc-carousel-card:focus-visible,.pc-carousel-arrow:focus-visible,.pc-carousel-dots button:focus-visible{
+  outline:3px solid var(--blue);
+  outline-offset:4px;
+}
+.pc-carousel-card[data-offset="0"]{
+  z-index:5;
+  opacity:1;
+  filter:none;
+  transform:translate(-50%,-50%) scale(1);
+  box-shadow:0 38px 90px rgba(29,27,46,.26);
+}
+.pc-carousel-card[data-offset="1"]{
+  z-index:4;
+  opacity:.88;
+  filter:saturate(.88);
+  transform:translate(-50%,-50%) translateX(108%) rotateY(-8deg) scale(.84);
+}
+.pc-carousel-card[data-offset="-1"]{
+  z-index:4;
+  opacity:.88;
+  filter:saturate(.88);
+  transform:translate(-50%,-50%) translateX(-108%) rotateY(8deg) scale(.84);
+}
+.pc-carousel-card[data-offset="2"]{
+  z-index:2;
+  opacity:.5;
+  filter:saturate(.7);
+  transform:translate(-50%,-50%) translateX(178%) rotateY(-12deg) scale(.68);
+}
+.pc-carousel-card[data-offset="-2"]{
+  z-index:2;
+  opacity:.5;
+  filter:saturate(.7);
+  transform:translate(-50%,-50%) translateX(-178%) rotateY(12deg) scale(.68);
+}
+.pc-carousel-shade{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(18,19,33,.04) 20%,rgba(18,19,33,.08) 40%,rgba(18,19,33,.88) 100%);
+  pointer-events:none;
+}
+.pc-carousel-number{
+  position:absolute;
+  top:20px;
+  right:20px;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+}
+.pc-carousel-number i{
+  color:rgba(255,255,255,.7);
+  font-size:11px;
+  font-style:normal;
+}
+.pc-carousel-copy{
+  position:absolute;
+  right:24px;
+  bottom:28px;
+  left:24px;
+  display:grid;
+  gap:8px;
+}
+.pc-carousel-copy small{
+  color:rgba(255,255,255,.8);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.pc-carousel-copy small i{
+  margin:0 4px;
+  color:var(--pink);
+  font-style:normal;
+}
+.pc-carousel-copy strong{
+  color:#fff;
+  font-family:'Bricolage Grotesque',Inter,sans-serif;
+  font-size:clamp(22px,2.4vw,32px);
+  line-height:1.05;
+  letter-spacing:-.045em;
+}
+.pc-carousel-copy>span{
+  color:rgba(255,255,255,.76);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+.pc-carousel-open{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 12px;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:999px;
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-size:10px;
+  font-weight:700;
+  opacity:0;
+  transform:translateY(5px);
+  transition:opacity .2s ease,transform .2s ease;
+  backdrop-filter:blur(8px);
+}
+.pc-carousel-open svg{width:13px;height:13px}
+.pc-carousel-card.is-current:hover .pc-carousel-open,
+.pc-carousel-card.is-current:focus-visible .pc-carousel-open{opacity:1;transform:none}
+.pc-carousel-arrow{
+  position:absolute;
+  z-index:8;
+  top:44%;
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  border:1px solid #e8e5e2;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+  color:var(--blue);
+  box-shadow:0 8px 26px rgba(32,31,45,.1);
+  cursor:pointer;
+  transition:transform .2s ease,background .2s ease,color .2s ease;
+}
+.pc-carousel-arrow:hover{transform:scale(1.07);background:var(--blue);color:#fff}
+.pc-carousel-arrow span{font-size:23px;line-height:1}
+.pc-carousel-prev{left:10px}
+.pc-carousel-next{right:10px}
+.pc-carousel-footer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-top:5px;
+  color:#777681;
+  font-size:11px;
+}
+.pc-carousel-footer>b,.pc-carousel-footer span b{color:var(--blue)}
+.pc-carousel-footer span i{margin-left:10px;color:#898894;font-style:normal}
+.pc-carousel-dots{display:flex;align-items:center;gap:8px}
+.pc-carousel-dots button{
+  width:8px;
+  height:8px;
+  padding:0;
+  border:0;
+  border-radius:999px;
+  background:#d8d6dd;
+  cursor:pointer;
+  transition:width .25s ease,background .25s ease;
+}
+.pc-carousel-dots button.is-active{width:22px;background:var(--blue)}
+
+.pc-detail{
+  --paper:#faf9f6;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+}
+.pc-detail .pc-top{
+  border-color:rgba(33,31,43,.08);
+  background:rgba(250,249,246,.94);
+}
+.pc-detail .pc-top-row{max-width:1440px;padding:10px 5vw}
+.pc-detail .pc-back{
+  border-color:rgba(48,79,254,.24);
+  background:transparent;
+  color:var(--blue);
+}
+.pc-detail .pc-back:hover{background:var(--blue);color:#fff}
+.pc-detail .pc-project-switch{border-color:rgba(33,31,43,.1);background:rgba(255,255,255,.8)}
+.pc-detail .pc-project-switch>button:hover{background:rgba(48,79,254,.08);color:var(--blue)}
+.pc-detail .pc-top-count{color:#777681}
+.pc-detail .pc-read b{background:var(--blue)}
+.pc-detail .pc-d-hero{
+  padding:clamp(40px,6vw,78px) 5vw 0;
+  background:
+    radial-gradient(ellipse at 86% 28%,rgba(242,155,189,.2),transparent 31%),
+    radial-gradient(ellipse at 76% 75%,rgba(48,79,254,.08),transparent 34%),
+    var(--paper);
+}
+.pc-detail .pc-d-hero::before{
+  width:34vw;
+  right:-9vw;
+  top:-17vw;
+  background:var(--pink);
+  opacity:.12;
+  filter:blur(78px);
+}
+.pc-detail .pc-d-inner{max-width:1320px}
+.pc-detail .pc-d-hero-grid{
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(30px,5vw,82px);
+}
+.pc-detail .pc-d-intro{padding:10px 0 28px}
+.pc-detail .pc-d-badges span{
+  border-color:rgba(48,79,254,.16);
+  background:rgba(255,255,255,.78);
+  color:var(--blue);
+}
+.pc-detail .pc-d-eyebrow{color:var(--blue)}
+.pc-detail .pc-d-title{
+  max-width:650px;
+  color:#171827;
+  font-family:'Bricolage Grotesque',Inter,sans-serif;
+  font-size:clamp(46px,6.6vw,88px);
+  line-height:.98;
+}
+.pc-detail .pc-d-lead{color:#64636f}
+.pc-detail .pc-d-explore{
+  background:var(--blue);
+  box-shadow:0 12px 28px rgba(48,79,254,.19);
+}
+.pc-detail .pc-d-explore:hover{box-shadow:0 16px 32px rgba(48,79,254,.27)}
+.pc-detail .pc-showcase{
+  min-height:clamp(330px,39vw,510px);
+  overflow:visible;
+  border:0;
+  background:transparent;
+}
+.pc-detail .pc-showcase-glow{
+  width:78%;
+  background:linear-gradient(135deg,var(--blue),var(--pink));
+  opacity:.18;
+  filter:blur(78px);
+}
+.pc-detail .pc-showcase-cover-card{
+  top:7%;
+  left:-4%;
+  border-color:rgba(255,255,255,.9);
+}
+.pc-detail .pc-showcase-browser{
+  width:100%;
+  padding:0 10px 14px;
+  border-color:rgba(34,33,45,.12);
+  border-radius:20px;
+  background:linear-gradient(145deg,#fff,#eeedf1);
+  box-shadow:0 32px 76px rgba(31,30,44,.18);
+  transform:rotate(1deg);
+}
+.pc-detail .pc-showcase-toolbar{height:39px}
+.pc-detail .pc-showcase-browser .pc-cover-image{
+  height:clamp(250px,33vw,420px);
+  object-fit:contain;
+  object-position:top center;
+  background:#fff;
+}
+.pc-detail .pc-showcase-base{
+  bottom:1px;
+  background:linear-gradient(#f3f2f5,#dad9df);
+}
+.pc-detail .pc-showcase-phones{gap:clamp(12px,2vw,28px)}
+.pc-detail .pc-showcase-phone{
+  width:clamp(106px,14vw,174px);
+  border-color:rgba(31,30,44,.14);
+  border-radius:30px;
+  box-shadow:0 26px 56px rgba(31,30,44,.2);
+}
+.pc-detail .pc-showcase-caption{bottom:0;color:#6d6c77}
+.pc-detail .pc-showcase-caption i{background:var(--pink)}
+.pc-detail .pc-meta-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  margin-top:24px;
+  padding:18px 0 28px;
+  border-color:rgba(33,31,43,.12);
+}
+.pc-detail .pc-meta-grid dt{color:#797883}
+.pc-detail .pc-meta-grid dd{color:#222331}
+
+.pc-story-layout{
+  display:grid;
+  grid-template-columns:minmax(180px,220px) minmax(0,1fr);
+  align-items:start;
+  gap:clamp(32px,5vw,76px);
+  width:min(1320px,90%);
+  margin:0 auto;
+  padding:clamp(28px,4vw,54px) 0 clamp(56px,8vw,104px);
+}
+.pc-story-sidebar{
+  position:sticky;
+  top:90px;
+  align-self:start;
+  padding:20px 14px 14px;
+  border:1px solid rgba(33,31,43,.09);
+  border-radius:20px;
+  background:rgba(255,255,255,.72);
+  box-shadow:0 16px 42px rgba(31,30,44,.045);
+  backdrop-filter:blur(12px);
+}
+.pc-story-index-label{
+  display:block;
+  margin:0 10px 13px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.pc-story-sidebar .pc-secnav{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  overflow:visible;
+}
+.pc-story-sidebar .pc-secnav button{
+  display:grid;
+  grid-template-columns:13px minmax(0,1fr);
+  align-items:center;
+  gap:10px;
+  min-height:40px;
+  padding:8px 10px;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:#686773;
+  font-size:11px;
+  font-weight:600;
+  text-align:left;
+  white-space:normal;
+  transition:background .2s ease,color .2s ease;
+}
+.pc-story-sidebar .pc-secnav button:hover{background:rgba(48,79,254,.06);color:var(--blue)}
+.pc-story-sidebar .pc-secnav button.is-active{background:rgba(48,79,254,.09);color:var(--blue)}
+.pc-story-sidebar .pc-secnav button i{
+  width:7px;
+  height:7px;
+  border:1px solid #c8c6ce;
+  border-radius:50%;
+  background:#fff;
+}
+.pc-story-sidebar .pc-secnav button.is-active i{border-color:var(--blue);background:var(--blue)}
+.pc-story-project-count{
+  display:block;
+  margin:16px 10px 0;
+  padding-top:13px;
+  border-top:1px solid rgba(33,31,43,.09);
+  color:#777681;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+.pc-story-project-count i{margin:0 4px;color:var(--pink);font-style:normal}
+.pc-story-content{min-width:0}
+.pc-story-content .pc-block,
+.pc-story-content .pc-final-section{
+  display:block;
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:clamp(40px,5vw,66px) 0;
+  border-bottom:1px solid rgba(33,31,43,.09);
+  background:transparent;
+}
+.pc-story-content .pc-block-head{
+  position:static;
+  margin-bottom:24px;
+}
+.pc-story-content .pc-block-head h2{
+  max-width:none;
+  color:#191a27;
+  font-size:clamp(30px,3.8vw,48px);
+  letter-spacing:-.055em;
+}
+.pc-story-content .pc-section-number{color:var(--blue)}
+.pc-story-content .pc-kicker{color:#777681;font-size:13px}
+.pc-story-content .pc-block-body{min-width:0}
+.pc-story-content .pc-big{
+  max-width:850px;
+  color:#33323e;
+  font-size:clamp(19px,2vw,25px);
+  line-height:1.62;
+}
+.pc-story-content .pc-overview-intro{
+  border-color:rgba(48,79,254,.13);
+  background:linear-gradient(115deg,rgba(48,79,254,.07),rgba(242,155,189,.08) 48%,#fff 100%);
+}
+.pc-story-content .pc-overview-mark{color:var(--blue)}
+.pc-story-content .pc-overview-audience{
+  background:linear-gradient(145deg,#242548,#34365e);
+}
+.pc-story-content .pc-overview-goal>span{color:var(--blue)}
+.pc-story-content .pc-card,
+.pc-story-content .pc-steps li{
+  border-color:rgba(33,31,43,.09);
+  background:rgba(255,255,255,.78);
+  box-shadow:0 12px 34px rgba(31,30,44,.04);
+}
+.pc-story-content .pc-card:hover{box-shadow:0 18px 40px rgba(31,30,44,.08)}
+.pc-story-content .pc-card-label{color:var(--blue)}
+.pc-story-content .pc-challenge-card{border-top-color:var(--pink)}
+.pc-story-content .pc-objective-strip{
+  border-color:rgba(48,79,254,.16);
+  background:#fff;
+}
+.pc-story-content .pc-objective-strip strong{color:var(--blue)}
+.pc-story-content .pc-step-n{background:var(--blue)}
+.pc-story-content .pc-planning-audience{background:rgba(48,79,254,.055)}
+.pc-story-content .pc-design-direction{
+  border-left-color:var(--pink);
+  background:rgba(242,155,189,.1);
+}
+.pc-story-content .pc-color-token{border-color:rgba(33,31,43,.1);background:#fff}
+.pc-story-content .pc-principle-list b{color:var(--pink)}
+.pc-story-content .pc-final-section{padding-top:0;border-bottom:0}
+.pc-story-content .pc-final-intro{
+  display:block;
+  max-width:none;
+  margin:0;
+  padding:clamp(40px,5vw,66px) 0 30px;
+}
+.pc-story-content .pc-final-intro .pc-block-head{margin-bottom:24px}
+.pc-story-content .pc-gal-wrap{
+  margin-top:22px;
+  padding:clamp(24px,3.5vw,42px);
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:24px;
+  background:#f0eff8;
+}
+.pc-story-content .pc-gal-head h2{
+  color:#191a27;
+  font-size:clamp(25px,3vw,38px);
+  letter-spacing:-.05em;
+}
+.pc-story-content .pc-gal-head p{color:#6d6c77;font-size:13px}
+.pc-story-content .pc-gallery-switch button.is-active{background:var(--blue)}
+.pc-story-content .pc-gallery-more span{color:var(--blue)}
+.pc-story-content .pc-validation-intro{
+  border-color:rgba(48,79,254,.12);
+  background:linear-gradient(135deg,#fff,rgba(242,155,189,.1));
+}
+.pc-story-content .pc-validation-mark{background:var(--blue)}
+.pc-story-content .pc-validation-card{border-top-color:var(--blue)}
+.pc-story-content .pc-learn{
+  border-left:4px solid var(--pink);
+  background:linear-gradient(135deg,#fff,rgba(242,155,189,.13));
+}
+.pc-story-content .pc-next-step{background:linear-gradient(140deg,#fff,rgba(48,79,254,.07))}
+.pc-detail .pc-next{
+  padding:clamp(36px,6vw,78px) max(5vw,calc((100vw - 1320px)/2));
+  background:linear-gradient(110deg,rgba(48,79,254,.1),rgba(242,155,189,.2));
+  color:#191a27;
+}
+.pc-detail .pc-next span{color:var(--blue);font-weight:700}
+.pc-detail .pc-next strong{color:#191a27}
+.pc-detail .pc-zoom{background:rgba(17,18,29,.94)}
+.pc-detail :is(button,a,select):focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.pc-story-content .pc-case-block{scroll-margin-top:96px}
+
+@media (max-width:1000px){
+  .pc-carousel-card{width:clamp(190px,29vw,280px);height:clamp(300px,43vw,410px)}
+  .pc-carousel-card[data-offset="2"]{transform:translate(-50%,-50%) translateX(154%) rotateY(-12deg) scale(.66)}
+  .pc-carousel-card[data-offset="-2"]{transform:translate(-50%,-50%) translateX(-154%) rotateY(12deg) scale(.66)}
+  .pc-story-layout{grid-template-columns:170px minmax(0,1fr);gap:28px}
+}
+@media (max-width:850px){
+  .pc-root .pc-hero{padding-top:44px}
+  .pc-project-carousel{padding:0 42px 44px}
+  .pc-carousel-stage{height:clamp(350px,58vw,470px)}
+  .pc-carousel-card{width:clamp(185px,34vw,280px);height:clamp(290px,49vw,400px)}
+  .pc-carousel-card[data-offset="2"],.pc-carousel-card[data-offset="-2"]{opacity:0;pointer-events:none}
+  .pc-carousel-card[data-offset="1"]{transform:translate(-50%,-50%) translateX(93%) rotateY(-6deg) scale(.78)}
+  .pc-carousel-card[data-offset="-1"]{transform:translate(-50%,-50%) translateX(-93%) rotateY(6deg) scale(.78)}
+  .pc-carousel-arrow{width:40px;height:40px}
+  .pc-detail .pc-top-row{flex-wrap:wrap}
+  .pc-detail .pc-d-hero-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  .pc-detail .pc-showcase{min-height:clamp(280px,48vw,390px)}
+  .pc-story-layout{grid-template-columns:1fr;gap:14px;width:90%;padding-top:18px}
+  .pc-story-sidebar{
+    position:sticky;
+    z-index:40;
+    top:58px;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    align-items:center;
+    gap:10px;
+    padding:8px 10px;
+    border-radius:15px;
+  }
+  .pc-story-index-label{margin:0 0 0 4px;white-space:nowrap}
+  .pc-story-sidebar .pc-secnav{flex-direction:row;gap:3px;overflow-x:auto;scrollbar-width:none}
+  .pc-story-sidebar .pc-secnav::-webkit-scrollbar{display:none}
+  .pc-story-sidebar .pc-secnav button{
+    display:flex;
+    flex:none;
+    min-height:34px;
+    padding:7px 10px;
+    white-space:nowrap;
+  }
+  .pc-story-sidebar .pc-secnav button i{display:none}
+  .pc-story-project-count{display:none}
+}
+@media (max-width:600px){
+  .pc-root .pc-hero{padding:38px 5vw 12px}
+  .pc-root .pc-hero-title{flex-wrap:wrap;gap:.12em;font-size:clamp(42px,11vw,62px)}
+  .pc-root .pc-hero-foot p{font-size:13px}
+  .pc-root .pc-filter-row{margin-top:18px}
+  .pc-project-carousel{padding:0 28px 34px}
+  .pc-carousel-stage{height:clamp(330px,104vw,440px)}
+  .pc-carousel-card{width:clamp(205px,68vw,300px);height:clamp(310px,96vw,420px);border-radius:21px}
+  .pc-carousel-card[data-offset="1"]{transform:translate(-50%,-50%) translateX(76%) rotateY(-5deg) scale(.73)}
+  .pc-carousel-card[data-offset="-1"]{transform:translate(-50%,-50%) translateX(-76%) rotateY(5deg) scale(.73)}
+  .pc-carousel-number{top:15px;right:15px;font-size:12px}
+  .pc-carousel-copy{right:17px;bottom:20px;left:17px;gap:7px}
+  .pc-carousel-copy strong{font-size:25px}
+  .pc-carousel-copy small{font-size:9px}
+  .pc-carousel-open{right:15px;bottom:14px;opacity:1;transform:none}
+  .pc-carousel-arrow{top:43%;width:36px;height:36px}
+  .pc-carousel-prev{left:0}
+  .pc-carousel-next{right:0}
+  .pc-carousel-footer{flex-direction:column;gap:12px;margin-top:8px}
+  .pc-carousel-footer span i{display:none}
+  .pc-detail .pc-top-row{justify-content:space-between;gap:6px;padding:9px 3vw}
+  .pc-detail .pc-back{padding:8px 10px;font-size:10px}
+  .pc-detail .pc-project-switch{gap:2px}
+  .pc-detail .pc-project-switch>button{padding:7px 6px;font-size:9px}
+  .pc-detail .pc-project-switch label{gap:2px;padding:0 3px}
+  .pc-detail .pc-project-switch select{max-width:105px;font-size:9px}
+  .pc-detail .pc-d-hero{padding:34px 5vw 0}
+  .pc-detail .pc-d-hero-grid{grid-template-columns:1fr;gap:10px}
+  .pc-detail .pc-d-intro{padding:0 0 8px}
+  .pc-detail .pc-d-title{font-size:clamp(42px,12vw,66px)}
+  .pc-detail .pc-d-lead{font-size:14px}
+  .pc-detail .pc-showcase{min-height:clamp(260px,78vw,360px);margin:0 -4px}
+  .pc-detail .pc-showcase-browser{transform:none}
+  .pc-detail .pc-showcase-browser .pc-cover-image{height:clamp(210px,60vw,290px)}
+  .pc-detail .pc-showcase-cover-card{left:0;top:3%;max-width:52%}
+  .pc-detail .pc-showcase-phone{width:clamp(88px,25vw,125px)}
+  .pc-detail .pc-showcase-caption{right:8px;bottom:-6px}
+  .pc-detail .pc-meta-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px;padding:14px 0 18px}
+  .pc-detail .pc-meta-grid>div:last-child{grid-column:1/-1}
+  .pc-story-layout{width:90%;padding-top:10px}
+  .pc-story-sidebar{grid-template-columns:minmax(0,1fr);gap:5px;top:56px;padding:7px}
+  .pc-story-index-label{display:none}
+  .pc-story-sidebar .pc-secnav button{min-height:32px;padding:6px 9px;font-size:10px}
+  .pc-story-content .pc-block,
+  .pc-story-content .pc-final-section{padding:34px 0}
+  .pc-story-content .pc-block-head{margin-bottom:18px}
+  .pc-story-content .pc-block-head h2{font-size:32px}
+  .pc-story-content .pc-kicker{font-size:11px}
+  .pc-story-content .pc-big{font-size:18px}
+  .pc-story-content .pc-two,
+  .pc-story-content .pc-four,
+  .pc-story-content .pc-steps{grid-template-columns:1fr}
+  .pc-story-content .pc-three{grid-template-columns:1fr}
+  .pc-story-content .pc-overview-intro{grid-template-columns:30px minmax(0,1fr);gap:10px;padding:16px}
+  .pc-story-content .pc-overview-mark{width:30px;height:30px}
+  .pc-story-content .pc-overview-mark svg{width:17px;height:17px}
+  .pc-story-content .pc-overview-grid{grid-template-columns:1fr}
+  .pc-story-content .pc-objective-strip{align-items:flex-start;flex-direction:column;gap:7px}
+  .pc-story-content .pc-palette-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pc-story-content .pc-gal-wrap{margin-top:10px;padding:18px 13px;border-radius:18px}
+  .pc-story-content .pc-gal.is-web{grid-template-columns:1fr}
+  .pc-story-content .pc-gal.is-web .pc-gallery-screen:first-child{grid-column:auto;aspect-ratio:16/10}
+  .pc-story-content .pc-gal.is-app .pc-gallery-screen{flex-basis:190px;width:190px;height:390px}
+  .pc-detail .pc-next{align-items:flex-start;flex-wrap:wrap;gap:10px;padding:32px 5vw}
+  .pc-detail .pc-next strong{font-size:32px;margin-left:0}
+  .pc-detail .pc-next svg{width:28px;height:28px}
+}
+/* ---------- editorial case study sections ---------- */
+.pc-story-content .pc-editorial-section{
+  min-width:0;
+  padding:clamp(34px,4.6vw,62px) 0;
+  border-bottom:1px solid rgba(33,31,43,.1);
+}
+.pc-story-content .pc-editorial-heading{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr);
+  gap:14px;
+  align-items:start;
+  margin-bottom:clamp(22px,3vw,34px);
+}
+.pc-editorial-heading>span{
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:rgba(48,79,254,.08);
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+}
+.pc-editorial-heading h2{
+  margin:0;
+  color:#191a27;
+  font-size:clamp(26px,3vw,40px);
+  line-height:1.08;
+  letter-spacing:-.05em;
+}
+.pc-editorial-heading p{
+  margin:9px 0 0;
+  color:#777681;
+  font-size:13px;
+  line-height:1.6;
+}
+.pc-editorial-section p{line-height:1.75}
+.pc-editorial-lead{
+  padding:clamp(22px,4vw,42px);
+  border:1px solid rgba(48,79,254,.1);
+  border-radius:24px;
+  background:linear-gradient(120deg,rgba(48,79,254,.065),rgba(242,155,189,.11) 55%,#fff);
+}
+.pc-editorial-eyebrow{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.pc-editorial-lead>p{
+  max-width:860px;
+  margin:18px 0 0;
+  color:#272733;
+  font-size:clamp(20px,2.4vw,30px);
+  line-height:1.5;
+  letter-spacing:-.025em;
+}
+.pc-editorial-meta{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin:18px 0;
+  padding:20px 4px;
+  border-bottom:1px solid rgba(33,31,43,.1);
+}
+.pc-editorial-meta>div{min-width:0}
+.pc-editorial-meta span{
+  display:block;
+  margin-bottom:8px;
+  color:#777681;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.pc-editorial-meta strong{font-size:12px;line-height:1.65}
+.pc-editorial-tools strong{display:block}
+.pc-editorial-audience,.pc-editorial-persona{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:22px;
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:19px;
+  background:#fff;
+  box-shadow:0 12px 32px rgba(31,30,44,.04);
+}
+.pc-editorial-icon,.pc-editorial-persona-mark{
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  background:rgba(242,155,189,.22);
+  color:#30213a;
+}
+.pc-editorial-audience .pc-card-label,.pc-editorial-persona .pc-card-label{margin-bottom:5px}
+.pc-editorial-audience p,.pc-editorial-persona p{margin:0;color:#292936;font-size:15px}
+.pc-editorial-problem{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(26px,5vw,52px);
+  border-radius:24px;
+  background:#212139;
+  color:#fff;
+}
+.pc-editorial-problem>span,.pc-editorial-insight>span,.pc-editorial-challenge>span,
+.pc-editorial-validation>span+ p,.pc-editorial-feature>span{
+  color:var(--pink);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.13em;
+}
+.pc-editorial-problem>p{
+  position:relative;
+  z-index:1;
+  max-width:850px;
+  margin:20px 0 0;
+  font-size:clamp(22px,3vw,36px);
+  line-height:1.48;
+  letter-spacing:-.03em;
+}
+.pc-editorial-problem>i{
+  position:absolute;
+  top:-38px;
+  right:22px;
+  color:rgba(242,155,189,.14);
+  font-family:Georgia,serif;
+  font-size:220px;
+  font-style:normal;
+  line-height:1;
+}
+.pc-editorial-goals,.pc-editorial-features{display:grid;gap:10px}
+.pc-editorial-goal,.pc-editorial-feature{
+  display:grid;
+  grid-template-columns:46px minmax(0,1fr) 20px;
+  align-items:center;
+  gap:16px;
+  padding:19px 20px;
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:17px;
+  background:rgba(255,255,255,.82);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.pc-editorial-goal:hover,.pc-editorial-feature:hover{
+  transform:translateY(-2px);
+  border-color:rgba(48,79,254,.2);
+  box-shadow:0 14px 32px rgba(31,30,44,.07);
+}
+.pc-editorial-goal>span,.pc-editorial-feature>span{
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.1em;
+}
+.pc-editorial-goal p,.pc-editorial-feature p{margin:0;color:#33323e;font-size:14px}
+.pc-editorial-goal>svg,.pc-editorial-feature>svg{color:var(--pink)}
+.pc-editorial-research{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px}
+.pc-editorial-research-note,.pc-editorial-insight,.pc-editorial-challenge{
+  padding:22px;
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:18px;
+  background:#fff;
+}
+.pc-editorial-research-note{
+  align-self:start;
+  background:linear-gradient(145deg,rgba(48,79,254,.08),#fff 80%);
+}
+.pc-editorial-research-note p{margin:0;color:#2c2b38;font-size:15px}
+.pc-editorial-insights,.pc-editorial-challenge-list{display:grid;gap:10px}
+.pc-editorial-insight>span,.pc-editorial-challenge>span{color:var(--blue)}
+.pc-editorial-insight h3,.pc-editorial-challenge h3{margin:10px 0 6px;font-size:16px;letter-spacing:-.02em}
+.pc-editorial-insight p,.pc-editorial-challenge p{margin:0;color:#666570;font-size:13px}
+.pc-editorial-persona small,.pc-editorial-journey small{
+  display:block;
+  margin-top:12px;
+  color:#777681;
+  font-size:11px;
+  line-height:1.6;
+}
+.pc-editorial-journey{
+  padding:24px;
+  border:1px solid rgba(48,79,254,.12);
+  border-radius:21px;
+  background:linear-gradient(135deg,#fff,rgba(48,79,254,.045));
+}
+.pc-editorial-journey>p{margin:0;color:#292936;font-size:clamp(17px,2vw,22px)}
+.pc-editorial-journey-goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}
+.pc-editorial-journey-goals>div{padding:14px;border-radius:13px;background:rgba(255,255,255,.85)}
+.pc-editorial-journey-goals span{color:var(--pink);font-size:10px;font-weight:800}
+.pc-editorial-journey-goals p{margin:7px 0 0;color:#44434e;font-size:12px}
+.pc-editorial-wireframes{
+  padding:24px;
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:21px;
+  background:linear-gradient(145deg,#fff,rgba(242,155,189,.09));
+}
+.pc-wireframe-copy>p{max-width:780px;margin:0;color:#2b2a36;font-size:clamp(17px,2vw,22px)}
+.pc-method-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pc-method-tags span{padding:7px 11px;border:1px solid rgba(48,79,254,.15);border-radius:999px;background:#fff;color:#3f3e4a;font-size:10px;font-weight:700}
+.pc-editorial-caption{margin:20px 0 0;color:#777681;font-size:11px}
+.pc-editorial-process{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.pc-editorial-process li{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+  min-width:0;
+  padding:20px;
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:17px;
+  background:#fff;
+}
+.pc-editorial-process li>span{color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.1em}
+.pc-editorial-process small,.pc-type-specimen small{display:block;color:#777681;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.pc-editorial-process p{margin:8px 0 0;color:#353440;font-size:13px}
+.pc-editorial-direction{
+  margin:0 0 26px;
+  padding:18px 21px;
+  border-left:3px solid var(--pink);
+  border-radius:0 14px 14px 0;
+  background:rgba(242,155,189,.11);
+  color:#302e3a;
+  font-size:15px;
+}
+.pc-editorial-section .pc-sub{margin:28px 0 13px;font-size:15px}
+.pc-editorial-section .pc-sub small{margin-left:8px;color:#777681;font-size:10px;font-weight:500}
+.pc-editorial-section .pc-palette-strip{grid-template-columns:repeat(auto-fit,minmax(138px,1fr))}
+.pc-editorial-section .pc-color-token{min-height:64px;background:#fff}
+.pc-editorial-type{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.pc-type-specimen{
+  display:flex;
+  align-items:center;
+  gap:17px;
+  min-width:0;
+  padding:18px;
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:16px;
+  background:#fff;
+}
+.pc-type-specimen>span{color:#252434;font-size:48px;line-height:1;letter-spacing:-.07em}
+.pc-type-specimen strong{display:block;overflow-wrap:anywhere;margin-top:6px;color:#292835;font-size:13px}
+.pc-editorial-section .pc-principle-list{margin-top:12px}
+.pc-editorial-screens{padding-left:clamp(16px,3vw,30px)!important;padding-right:clamp(16px,3vw,30px)!important;border:1px solid rgba(33,31,43,.08)!important;border-radius:24px;background:linear-gradient(145deg,#f3f2f8,#fdfbfd)!important}
+.pc-editorial-screens .pc-editorial-heading{margin-top:4px}
+.pc-editorial-screens .pc-gallery-switch{margin:0 0 15px}
+.pc-editorial-screens .pc-gallery-switch button.is-active{background:var(--blue)}
+.pc-editorial-screens .pc-gallery-more{margin-top:16px}
+.pc-editorial-challenges{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.85fr);gap:14px}
+.pc-editorial-solution{
+  align-self:stretch;
+  padding:24px;
+  border-radius:19px;
+  background:linear-gradient(145deg,#24243e,#353552);
+  color:#fff;
+}
+.pc-editorial-solution .pc-card-label{color:var(--pink)}
+.pc-editorial-solution p{margin:0;font-size:clamp(18px,2vw,24px);line-height:1.6}
+.pc-editorial-validation{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+  padding:22px;
+  border:1px solid rgba(48,79,254,.13);
+  border-radius:18px;
+  background:linear-gradient(120deg,rgba(48,79,254,.06),rgba(242,155,189,.11));
+}
+.pc-editorial-validation>span{
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  background:var(--blue);
+  color:#fff;
+  font-size:19px;
+}
+.pc-editorial-validation p{margin:3px 0 0;color:#353440;font-size:14px}
+.pc-editorial-outcome-card{
+  padding:clamp(24px,4vw,38px);
+  border:1px solid rgba(33,31,43,.08);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 16px 38px rgba(31,30,44,.05);
+}
+.pc-editorial-outcome-card>p{max-width:860px;margin:0;color:#262633;font-size:clamp(21px,2.7vw,34px);line-height:1.5;letter-spacing:-.025em}
+.pc-editorial-outcome-card>div{margin-top:24px;padding-top:20px;border-top:1px solid rgba(33,31,43,.1)}
+.pc-editorial-outcome-card>div>p{margin:0;color:#55545f;font-size:14px}
+/* ---------- project-specific cover hero ---------- */
+.pc-detail .pc-cover-hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(48px,7vw,94px) 5vw 0;
+  background:
+    radial-gradient(ellipse at 79% 38%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 38%),
+    linear-gradient(118deg,#faf9f6 8%,color-mix(in srgb,var(--accent) 10%,#faf9f6) 100%);
+}
+.pc-detail .pc-cover-hero::after{
+  position:absolute;
+  z-index:-1;
+  top:4%;
+  right:-8%;
+  width:min(52vw,720px);
+  aspect-ratio:1;
+  border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);
+  border-radius:50%;
+  box-shadow:0 0 0 34px color-mix(in srgb,var(--accent) 3%,transparent),0 0 0 82px color-mix(in srgb,var(--accent) 2%,transparent);
+  content:"";
+  pointer-events:none;
+}
+.pc-detail .pc-cover-hero .pc-d-inner{max-width:1320px}
+.pc-detail .pc-cover-hero .pc-d-hero-grid{
+  grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);
+  gap:clamp(30px,5.5vw,82px);
+  align-items:center;
+}
+.pc-detail .pc-cover-hero .pc-d-intro{padding:10px 0 30px}
+.pc-detail .pc-cover-hero .pc-d-badges{gap:9px;margin-bottom:26px}
+.pc-detail .pc-cover-hero .pc-d-badges span{
+  min-height:32px;
+  padding:7px 12px;
+  border:1px solid color-mix(in srgb,var(--accent) 20%,#fff);
+  background:rgba(255,255,255,.82);
+  box-shadow:0 5px 18px rgba(31,30,44,.035);
+  font-size:9px;
+  letter-spacing:.1em;
+}
+.pc-detail .pc-cover-hero .pc-d-badges span:first-child{
+  border-color:transparent;
+  background:var(--blue);
+  color:#fff;
+}
+.pc-detail .pc-cover-hero .pc-d-eyebrow{
+  gap:9px;
+  margin-bottom:16px;
+  color:color-mix(in srgb,var(--accent) 72%,#272633);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+}
+.pc-detail .pc-cover-hero .pc-d-eyebrow svg{flex:none}
+.pc-detail .pc-cover-hero .pc-d-title{
+  max-width:720px;
+  color:#171827;
+  font-family:'Bricolage Grotesque',Inter,sans-serif;
+  font-size:clamp(54px,7.6vw,112px);
+  font-weight:800;
+  line-height:.9;
+  letter-spacing:-.075em;
+  text-wrap:balance;
+}
+.pc-detail .pc-cover-hero .pc-d-title.is-long{font-size:clamp(48px,6vw,88px)}
+.pc-detail .pc-cover-hero .pc-d-lead{
+  max-width:500px;
+  margin:22px 0 0;
+  color:#555560;
+  font-size:clamp(15px,1.25vw,18px);
+  line-height:1.75;
+}
+.pc-detail .pc-cover-hero .pc-d-actions{margin-top:28px}
+.pc-detail .pc-cover-hero .pc-d-explore{
+  min-height:50px;
+  gap:24px;
+  padding:0 20px;
+  border:1px solid var(--blue);
+  background:var(--blue);
+  box-shadow:0 14px 30px rgba(48,79,254,.22);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.pc-detail .pc-cover-hero .pc-d-explore:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 36px rgba(48,79,254,.3);
+}
+.pc-detail .pc-cover-hero .pc-d-explore span{transition:transform .25s ease}
+.pc-detail .pc-cover-hero .pc-d-explore:hover span{transform:translateY(3px)}
+.pc-detail .pc-cover-hero .pc-showcase{
+  min-height:clamp(360px,42vw,560px);
+  margin:0;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.pc-detail .pc-cover-hero .pc-showcase:hover{transform:translateY(-5px)}
+.pc-detail .pc-cover-hero .pc-showcase-glow{opacity:.23;filter:blur(88px)}
+.pc-detail .pc-cover-hero .pc-showcase-browser{
+  max-width:680px;
+  border-radius:22px;
+  box-shadow:0 34px 78px rgba(31,30,44,.2),0 3px 8px rgba(31,30,44,.07);
+  transform:rotate(1deg);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;
+}
+.pc-detail .pc-cover-hero .pc-showcase:hover .pc-showcase-browser{
+  transform:rotate(0) translateY(-2px);
+  box-shadow:0 40px 86px rgba(31,30,44,.22),0 3px 8px rgba(31,30,44,.07);
+}
+.pc-detail .pc-cover-hero .pc-showcase-browser .pc-cover-image{
+  height:clamp(270px,34vw,440px);
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.pc-detail .pc-cover-hero .pc-showcase-phone{
+  width:clamp(112px,14vw,184px);
+  border-radius:31px;
+  box-shadow:0 30px 64px rgba(31,30,44,.22);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;
+}
+.pc-detail .pc-cover-hero .pc-showcase:hover .pc-showcase-phone-1{transform:translateY(10px) rotate(-9deg)}
+.pc-detail .pc-cover-hero .pc-showcase:hover .pc-showcase-phone-2{transform:translateY(-20px) scale(1.025)}
+.pc-detail .pc-cover-hero .pc-showcase:hover .pc-showcase-phone-3{transform:translateY(10px) rotate(9deg)}
+.pc-detail .pc-cover-hero .pc-showcase-cover-card{
+  top:7%;
+  left:-3%;
+  max-width:min(250px,52%);
+  padding:9px 14px 9px 9px;
+  border-color:rgba(255,255,255,.95);
+  box-shadow:0 16px 36px rgba(31,30,44,.16);
+  transition:transform .3s ease;
+}
+.pc-detail .pc-cover-hero .pc-showcase:hover .pc-showcase-cover-card{transform:rotate(-1deg) translateY(-3px)}
+.pc-detail .pc-cover-hero .pc-showcase-cover-card img{width:50px;height:42px}
+.pc-detail .pc-cover-hero .pc-showcase-cover-card span{font-size:9px}
+.pc-detail .pc-cover-hero .pc-showcase-caption{
+  right:4px;
+  bottom:-5px;
+  gap:10px;
+  color:#53525e;
+  font-size:9px;
+  letter-spacing:.14em;
+}
+.pc-detail .pc-cover-hero .pc-meta-grid{
+  grid-template-columns:minmax(0,.72fr) minmax(0,.82fr) minmax(0,1.46fr);
+  gap:clamp(16px,3vw,42px);
+  margin-top:16px;
+  padding:23px 0 28px;
+  border-color:rgba(33,31,43,.14);
+}
+.pc-detail .pc-cover-hero .pc-meta-grid dt{
+  margin-bottom:8px;
+  color:#777681;
+  font-size:9px;
+  letter-spacing:.13em;
+}
+.pc-detail .pc-cover-hero .pc-meta-grid dd{color:#292835;font-size:12px;line-height:1.65}
+@media (max-width:850px){
+  .pc-detail .pc-cover-hero{padding-top:48px}
+  .pc-detail .pc-cover-hero .pc-d-hero-grid{
+    grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+    gap:24px;
+  }
+  .pc-detail .pc-cover-hero .pc-d-title{font-size:clamp(48px,7.5vw,72px)}
+  .pc-detail .pc-cover-hero .pc-d-title.is-long{font-size:clamp(42px,6.3vw,64px)}
+  .pc-detail .pc-cover-hero .pc-showcase{min-height:clamp(300px,48vw,420px)}
+  .pc-detail .pc-cover-hero .pc-showcase-browser .pc-cover-image{height:clamp(230px,34vw,310px)}
+  .pc-detail .pc-cover-hero .pc-showcase-phone{width:clamp(92px,15vw,128px)}
+}
+@media (max-width:650px){
+  .pc-detail .pc-cover-hero{
+    padding:38px 5vw 0;
+    background:
+      radial-gradient(ellipse at 80% 47%,color-mix(in srgb,var(--accent) 15%,transparent),transparent 44%),
+      linear-gradient(155deg,#faf9f6 12%,color-mix(in srgb,var(--accent) 9%,#faf9f6) 100%);
+  }
+  .pc-detail .pc-cover-hero::after{top:26%;right:-30%;width:90vw}
+  .pc-detail .pc-cover-hero .pc-d-hero-grid{grid-template-columns:1fr;gap:4px}
+  .pc-detail .pc-cover-hero .pc-d-intro{padding:0 0 8px}
+  .pc-detail .pc-cover-hero .pc-d-badges{margin-bottom:18px}
+  .pc-detail .pc-cover-hero .pc-d-eyebrow{margin-bottom:12px;font-size:9px}
+  .pc-detail .pc-cover-hero .pc-d-title{font-size:clamp(44px,12.5vw,72px);line-height:.94}
+  .pc-detail .pc-cover-hero .pc-d-title.is-long{font-size:clamp(38px,11vw,60px)}
+  .pc-detail .pc-cover-hero .pc-d-lead{max-width:36em;margin-top:14px;font-size:14px;line-height:1.7}
+  .pc-detail .pc-cover-hero .pc-d-actions{margin-top:19px}
+  .pc-detail .pc-cover-hero .pc-d-explore{min-height:46px;font-size:12px}
+  .pc-detail .pc-cover-hero .pc-showcase{
+    min-height:clamp(280px,84vw,390px);
+    margin:0 -4px;
+  }
+  .pc-detail .pc-cover-hero .pc-showcase-browser{transform:none}
+  .pc-detail .pc-cover-hero .pc-showcase-browser .pc-cover-image{height:clamp(220px,62vw,300px)}
+  .pc-detail .pc-cover-hero .pc-showcase-phone{width:clamp(88px,25vw,128px)}
+  .pc-detail .pc-cover-hero .pc-showcase-cover-card{left:0;top:3%;max-width:55%}
+  .pc-detail .pc-cover-hero .pc-showcase-caption{right:7px;bottom:-2px}
+  .pc-detail .pc-cover-hero .pc-meta-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+    margin-top:8px;
+    padding:17px 0 21px;
+  }
+  .pc-detail .pc-cover-hero .pc-meta-grid>div:last-child{grid-column:1/-1}
+}
+@media (max-width:850px){
+  .pc-editorial-research,.pc-editorial-challenges{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .pc-story-content .pc-editorial-section{padding:32px 0}
+  .pc-story-content .pc-editorial-heading{grid-template-columns:32px minmax(0,1fr);gap:10px}
+  .pc-editorial-heading>span{width:29px;height:29px;font-size:9px}
+  .pc-editorial-heading h2{font-size:27px}
+  .pc-editorial-heading p{font-size:11px}
+  .pc-editorial-lead{padding:20px;border-radius:19px}
+  .pc-editorial-lead>p{font-size:20px}
+  .pc-editorial-meta{grid-template-columns:1fr 1fr;gap:14px}
+  .pc-editorial-tools{grid-column:1/-1}
+  .pc-editorial-audience,.pc-editorial-persona{gap:12px;padding:17px}
+  .pc-editorial-problem{padding:24px}
+  .pc-editorial-problem>p{font-size:22px}
+  .pc-editorial-goal,.pc-editorial-feature{grid-template-columns:32px minmax(0,1fr) 16px;gap:10px;padding:15px}
+  .pc-editorial-goal p,.pc-editorial-feature p{font-size:12px}
+  .pc-editorial-journey,.pc-editorial-wireframes{padding:18px}
+  .pc-editorial-journey-goals{grid-template-columns:1fr}
+  .pc-editorial-process{grid-template-columns:1fr}
+  .pc-editorial-type{grid-template-columns:1fr}
+  .pc-editorial-screens{padding-left:12px!important;padding-right:12px!important;border-radius:18px}
+  .pc-editorial-validation{padding:17px}
+  .pc-editorial-validation p{font-size:12px}
+  .pc-editorial-outcome-card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .pc-carousel-card,.pc-carousel-card img,.pc-carousel-arrow,.pc-carousel-dots button,
+  .pc-carousel-open,.pc-story-sidebar .pc-secnav button,
+  .pc-editorial-goal,.pc-editorial-feature{transition:none}
+  .pc-detail .pc-cover-hero .pc-showcase,
+  .pc-detail .pc-cover-hero .pc-showcase-browser,
+  .pc-detail .pc-cover-hero .pc-showcase-phone,
+  .pc-detail .pc-cover-hero .pc-showcase-cover-card,
+  .pc-detail .pc-cover-hero .pc-d-explore,
+  .pc-detail .pc-cover-hero .pc-d-explore span{animation:none;transition:none}
 }
 `;
