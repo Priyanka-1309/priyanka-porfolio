@@ -6,10 +6,20 @@ import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlanne
 import CrmCover from "../../assets/images/projectsImage/crmCover.png";
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png";
 import metroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png";
-import oscormCover from "../../assets/images/projectsImage/oscormCover.png";
 import oscormDashboard from "../../assets/images/projectsImage/oscormDashboard.png";
 import easySkyTripCover from "../../assets/images/projectsImage/easySkyTripCover.png";
 import myLocalPlaceCover from "../../assets/images/projectsImage/mylocalPlaceCover.png";
+
+// The Oscorm cover artwork is stored in: src/cover pages/
+// Load it from the real folder instead of the old projectsImage path.
+const coverPageFiles = import.meta.glob("../../cover pages/*", {
+  eager: true,
+  import: "default",
+});
+const oscormCover =
+  Object.entries(coverPageFiles).find(([filePath]) =>
+    /\/(?:oscomcover|oscormcover)[^/]*\.(png|jpe?g|webp|avif)$/i.test(filePath)
+  )?.[1] || oscormDashboard;
 
 import w1 from "../../case studies/1wedding.png";
 import w2 from "../../case studies/2wedding.png";
@@ -89,6 +99,67 @@ import gp17 from "../../case studies/17gp.png";
 import gp18 from "../../case studies/18gp.png";
 import gp19 from "../../case studies/19gp.png";
 
+import oscorm1 from "../../case studies/oscorm1.png";
+import oscorm2 from "../../case studies/oscorm2.png";
+import oscorm3 from "../../case studies/oscorm3.jpg";
+import oscorm4 from "../../case studies/oscorm4.png";
+import oscorm5 from "../../case studies/oscorm5.jpg";
+import oscorm6 from "../../case studies/oscorm6.png";
+import oscorm8 from "../../case studies/oscorm8.png";
+import oscorm9 from "../../case studies/oscorm9.png";
+import oscorm10 from "../../case studies/oscorm10.png";
+import oscorm11 from "../../case studies/oscorm11.png";
+import oscorm12 from "../../case studies/oscorm12.png";
+import oscorm13 from "../../case studies/oscoem13.png";
+import aoscorm1 from "../../case studies/aoscorm1.png";
+import aoscorm2 from "../../case studies/aoscorm2.png";
+import aoscorm3 from "../../case studies/aoscorm3.png";
+import aoscorm4 from "../../case studies/aoscorm4.png";
+import aoscorm5 from "../../case studies/aoscorm5.png";
+import aoscorm6 from "../../case studies/aoscorm6.png";
+// Dashboard screenshots: supports PNG, JPG, JPEG and WebP files.
+const cdOscormFiles = import.meta.glob("../../case studies/cdoscorm*.*", { eager: true, import: "default" });
+const fdOscormFiles = import.meta.glob("../../case studies/fdoscorm*.*", { eager: true, import: "default" });
+// EasySkyTrip screens: est1 through est12 (PNG/JPG/JPEG/WebP/AVIF supported).
+const easySkyTripFiles = import.meta.glob("../../case studies/est*.*", { eager: true, import: "default" });
+// MyLocalPlace screens
+const myLocalPlaceUserFiles = import.meta.glob(
+  "../../case studies/UMLP*.*",
+  { eager: true, import: "default" }
+);
+
+const myLocalPlaceBusinessFiles = import.meta.glob(
+  "../../case studies/BMLP*.*",
+  { eager: true, import: "default" }
+);
+
+const myLocalPlaceAdminFiles = import.meta.glob(
+  "../../case studies/DMLP*.*",
+  { eager: true, import: "default" }
+);
+
+const getMyLocalPlaceScreens = (files, prefix, total) =>
+  Array.from({ length: total }, (_, index) => {
+    const number = index + 1;
+    const path = Object.keys(files).find((file) =>
+      new RegExp(
+        `/${prefix}${number}\\.(png|jpe?g|webp|avif)$`,
+        "i"
+      ).test(file)
+    );
+
+    return path ? files[path] : null;
+  }).filter(Boolean);
+
+const getOscormScreens = (files, prefix, total) =>
+  Array.from({ length: total }, (_, index) => {
+    const number = index + 1;
+    const path = Object.keys(files).find((file) =>
+      new RegExp(`/${prefix}${number}\\.(png|jpe?g|webp|avif)$`, "i").test(file)
+    );
+    return path ? files[path] : null;
+  }).filter(Boolean);
+
 import mp1 from "../../case studies/1mp.png";
 import mp2 from "../../case studies/2mp.png";
 import mp3 from "../../case studies/3mp.png";
@@ -127,11 +198,113 @@ const metroBuddyAppGallery = [
   mp26, mp27,
 ];
 const metroBuddyWebsiteGallery = [mp20, mp21, mp22, mp23, mp24, mp25];
+const oscormWebsiteGallery = [
+  oscorm1,
+  oscorm2,
+  oscorm3,
+  oscorm4,
+  oscorm5,
+  oscorm6,
+  oscorm8,
+  oscorm9,
+  oscorm10,
+  oscorm11,
+  oscorm12,
+  oscorm13,
+  oscormDashboard,
+];
+const oscormClientGallery = getOscormScreens(cdOscormFiles, "cdoscorm", 33);
+const oscormFreelancerGallery = getOscormScreens(fdOscormFiles, "fdoscorm", 12);
+const oscormAnalyticsGallery = [aoscorm1, aoscorm2, aoscorm3, aoscorm4, aoscorm5, aoscorm6];
+const easySkyTripGallery = getOscormScreens(easySkyTripFiles, "est", 12);
+const myLocalPlaceUserGallery = getMyLocalPlaceScreens(
+  myLocalPlaceUserFiles,
+  "UMLP",
+  7
+);
+
+const myLocalPlaceBusinessGallery = getMyLocalPlaceScreens(
+  myLocalPlaceBusinessFiles,
+  "BMLP",
+  9
+);
+
+const myLocalPlaceAdminGallery = getMyLocalPlaceScreens(
+  myLocalPlaceAdminFiles,
+  "DMLP",
+  7
+);
 
 const projects = [
   {
-    id: "wedding",
+    id: "oscorm",
     number: "01",
+    title: "Oscorm",
+    category: "Website",
+    projectType: "Talent platform · Website, Client, Freelancer & Analytics",
+    presentation: "hybrid",
+    browserFrameModes: ["Website", "Client", "Freelancer", "Analytics"],
+    galleryModes: {
+      Website: oscormWebsiteGallery,
+      Client: oscormClientGallery,
+      Freelancer: oscormFreelancerGallery,
+      Analytics: oscormAnalyticsGallery,
+    },
+    label: "TALENT PLATFORM · WEB & DASHBOARD DESIGN",
+    role: "UI/UX Designer",
+    description:
+      "A connected talent platform with a public website and dedicated client, freelancer and analytics dashboards.",
+    overview:
+      "Oscorm brings hiring and freelance work into one platform. The website helps businesses discover verified experts, while client, freelancer and analytics dashboards support hiring, project delivery and performance tracking.",
+    audience:
+      "Businesses looking for skilled professionals and freelancers seeking verified project opportunities.",
+    goals: [
+      "Make relevant talent easier to discover",
+      "Build trust with clear profile and skill verification",
+      "Make project progress and payments easier to follow",
+    ],
+    problem:
+      "Hiring and freelance work can involve manual profile checks, scattered communication and unclear project milestones.",
+    insights: [
+      { t: "Trust comes first", d: "Both sides need confidence in skills, identity and payment before committing to a project." },
+      { t: "Two user journeys", d: "Businesses and freelancers need different tools, but should share a consistent platform." },
+      { t: "Visibility matters", d: "Clear milestones help people understand what is happening after a match is made." },
+    ],
+    solution:
+      "A two-sided hiring experience that brings verified profiles, AI-assisted discovery and project progress into a clear workflow.",
+    features: [
+      { t: "Verified profiles", d: "Present professional skills and trust signals where hiring decisions happen." },
+      { t: "AI talent matching", d: "Help businesses find experts relevant to their project needs." },
+      { t: "Freelancer tools", d: "Support profile building and personalized job discovery." },
+      { t: "Project milestones", d: "Keep delivery stages and escrow-protected payments easy to understand." },
+    ],
+    process: [
+      "Organised the experience around the distinct needs of clients and freelancers.",
+      "Prioritised verification and relevant talent discovery in the hiring journey.",
+      "Used Oscorm's teal accents with neutral surfaces to keep actions clear and readable.",
+      "Connected matching, project milestones and payment into one continuous workflow.",
+    ],
+    palette: [
+      { name: "Oscorm Green", hex: "#057A79", use: "Primary highlights, buttons and key actions" },
+      { name: "Bright Teal", hex: "#00E7E1", use: "Secondary accents and supporting details" },
+      { name: "Ink", hex: "#14171A", use: "Headings and primary text" },
+      { name: "Mist", hex: "#F3F4F6", use: "Soft interface backgrounds" },
+      { name: "White", hex: "#FFFFFF", use: "Cards and content surfaces" },
+    ],
+    fonts: { display: "DM Sans", body: "Inter" },
+    principles: ["Build trust early", "Design for both sides", "Keep progress visible"],
+    outcome:
+      "A clearer hiring and freelance workflow that supports discovery, project delivery and payment in one place.",
+    learnings:
+      "Two-sided platforms work best when each audience gets a focused journey within a shared visual system.",
+    tools: ["Figma", "UI/UX Design", "Client Dashboard", "Freelancer Dashboard", "Analytics Dashboard", "Prototyping", "Design System"],
+    cover: oscormCover,
+    accent: "#057A79",
+    gallery: [...oscormWebsiteGallery, ...oscormClientGallery, ...oscormFreelancerGallery, ...oscormAnalyticsGallery],
+  },
+  {
+    id: "wedding",
+    number: "02",
     title: "Wedding Planner",
     category: "Website",
     label: "UI/UX DESIGN · WEBSITE",
@@ -187,7 +360,7 @@ const projects = [
   },
   {
     id: "school",
-    number: "02",
+    number: "03",
     title: "S2 HIVE School UI",
     category: "Mobile App",
     label: "SCHOOL CRM · MOBILE APP",
@@ -247,7 +420,7 @@ const projects = [
   },
   {
     id: "service",
-    number: "03",
+    number: "04",
     title: "Service Booking",
     category: "Website",
     label: "SERVICE PLATFORM · UI/UX",
@@ -303,7 +476,7 @@ const projects = [
   },
   {
     id: "job",
-    number: "04",
+    number: "05",
     title: "Job Portal App",
     category: "Mobile App",
     label: "MOBILE APP · UI/UX DESIGN",
@@ -362,7 +535,7 @@ const projects = [
   },
   {
     id: "freshgro",
-    number: "05",
+    number: "06",
     title: "Fresh Gro",
     category: "Mobile App",
     label: "GROCERY APP · UI/UX DESIGN",
@@ -421,7 +594,7 @@ const projects = [
   },
   {
     id: "metro-buddy",
-    number: "06",
+    number: "07",
     title: "Metro Buddy",
     category: "Website",
     projectType: "Website + mobile app",
@@ -486,64 +659,6 @@ const projects = [
     ],
   },
   {
-    id: "oscorm",
-    number: "07",
-    title: "Oscorm",
-    category: "Website",
-    projectType: "Talent platform · Website",
-    label: "TALENT PLATFORM · WEB DESIGN",
-    role: "UI/UX Designer",
-    description:
-      "A talent platform connecting businesses with vetted professionals and helping freelancers manage work from discovery through delivery.",
-    overview:
-      "Oscorm brings hiring and freelance work into one platform. Businesses can discover verified experts, while freelancers can build trusted profiles, find relevant work and track project milestones.",
-    audience:
-      "Businesses looking for skilled professionals and freelancers seeking verified project opportunities.",
-    goals: [
-      "Make relevant talent easier to discover",
-      "Build trust with clear profile and skill verification",
-      "Make project progress and payments easier to follow",
-    ],
-    problem:
-      "Hiring and freelance work can involve manual profile checks, scattered communication and unclear project milestones.",
-    insights: [
-      { t: "Trust comes first", d: "Both sides need confidence in skills, identity and payment before committing to a project." },
-      { t: "Two user journeys", d: "Businesses and freelancers need different tools, but should share a consistent platform." },
-      { t: "Visibility matters", d: "Clear milestones help people understand what is happening after a match is made." },
-    ],
-    solution:
-      "A two-sided hiring experience that brings verified profiles, AI-assisted discovery and project progress into a clear workflow.",
-    features: [
-      { t: "Verified profiles", d: "Present professional skills and trust signals where hiring decisions happen." },
-      { t: "AI talent matching", d: "Help businesses find experts relevant to their project needs." },
-      { t: "Freelancer tools", d: "Support profile building and personalized job discovery." },
-      { t: "Project milestones", d: "Keep delivery stages and escrow-protected payments easy to understand." },
-    ],
-    process: [
-      "Organised the experience around the distinct needs of clients and freelancers.",
-      "Prioritised verification and relevant talent discovery in the hiring journey.",
-      "Used Oscorm's teal accents with neutral surfaces to keep actions clear and readable.",
-      "Connected matching, project milestones and payment into one continuous workflow.",
-    ],
-    palette: [
-      { name: "Oscorm Teal", hex: "#00E7E1", use: "Primary highlights and key actions" },
-      { name: "Deep Teal", hex: "#057A79", use: "Supporting accents and icons" },
-      { name: "Ink", hex: "#14171A", use: "Headings and primary text" },
-      { name: "Mist", hex: "#F3F4F6", use: "Soft interface backgrounds" },
-      { name: "White", hex: "#FFFFFF", use: "Cards and content surfaces" },
-    ],
-    fonts: { display: "DM Sans", body: "Inter" },
-    principles: ["Build trust early", "Design for both sides", "Keep progress visible"],
-    outcome:
-      "A clearer hiring and freelance workflow that supports discovery, project delivery and payment in one place.",
-    learnings:
-      "Two-sided platforms work best when each audience gets a focused journey within a shared visual system.",
-    tools: ["Figma", "UI/UX Design", "Prototyping", "Design System"],
-    cover: oscormCover,
-    accent: "#00E7E1",
-    gallery: [oscormDashboard],
-  },
-  {
     id: "mylocalplace",
     number: "08",
     title: "MyLocalPlace",
@@ -598,8 +713,19 @@ const projects = [
       "Pairing category browsing with visible reviews helps turn a broad directory into a more confident discovery experience.",
     tools: ["Figma", "UI/UX Design", "Responsive Design", "Prototyping"],
     cover: myLocalPlaceCover,
-    accent: "#8B1A2B",
-    gallery: [myLocalPlaceCover],
+accent: "#8B1A2B",
+
+galleryModes: {
+  User: myLocalPlaceUserGallery,
+  Business: myLocalPlaceBusinessGallery,
+  "Admin Dashboard": myLocalPlaceAdminGallery,
+},
+
+gallery: [
+  ...myLocalPlaceUserGallery,
+  ...myLocalPlaceBusinessGallery,
+  ...myLocalPlaceAdminGallery,
+],
   },
   {
     id: "easyskytrip",
@@ -657,7 +783,8 @@ const projects = [
     tools: ["Figma", "UI/UX Design", "Responsive Design", "Prototyping"],
     cover: easySkyTripCover,
     accent: "#7D0740",
-    gallery: [easySkyTripCover],
+    // Keep every original EasySkyTrip screen in numeric order.
+    gallery: easySkyTripGallery.length ? easySkyTripGallery : [easySkyTripCover],
   },
 ];
 
@@ -670,17 +797,11 @@ const FILTERS = [
 const SECTIONS = [
   ["overview", "Project overview"],
   ["problem", "Problem statement"],
-  ["goals", "Goals & objectives"],
-  ["research", "Research & analysis"],
-  ["persona", "User persona"],
+  ["goals", "Project goals & objectives"],
   ["journey", "User journey"],
-  ["wireframes", "Wireframes"],
-  ["design-process", "Design process"],
-  ["uiux", "UI/UX design"],
-  ["screens", "Final screens"],
+  ["uiux", "UI/UX design & colour palette"],
+  ["screens", "Screens & mockups"],
   ["features", "Key features"],
-  ["challenges", "Challenges & solutions"],
-  ["validation", "Validation"],
   ["outcome", "Final outcome"],
 ];
 
@@ -781,7 +902,24 @@ function CaseStudiesInner() {
 
   return (
     <section className="pc-root" ref={rootRef}>
-      <style>{STYLES}</style>
+      <style>{STYLES + `
+/* Case study card spacing refinement */
+.pc-detail .pc-story-content .pc-editorial-section{padding:clamp(22px,2.6vw,34px);}
+.pc-detail .pc-editorial-pair{gap:18px;margin-bottom:22px;}
+.pc-detail .pc-editorial-pair-item{padding:clamp(22px,2.4vw,32px)!important;}
+.pc-detail #pc-sec-problem .pc-editorial-problem{padding:clamp(22px,2.5vw,34px)!important;min-height:220px;}
+.pc-detail .pc-editorial-goals{gap:12px;}
+.pc-detail .pc-editorial-goal{padding:18px!important;min-height:126px;gap:10px;}
+.pc-detail .pc-editorial-goal p{line-height:1.6;font-size:13px;}
+.pc-detail .pc-editorial-section .pc-block-head{margin-bottom:20px;}
+@media(max-width:767px){
+ .pc-detail .pc-story-content .pc-editorial-section{padding:19px!important;}
+ .pc-detail .pc-editorial-pair{gap:14px;margin-bottom:16px;}
+ .pc-detail .pc-editorial-pair-item{padding:19px!important;}
+ .pc-detail #pc-sec-problem .pc-editorial-problem{padding:20px!important;min-height:unset;}
+ .pc-detail .pc-editorial-goal{padding:15px!important;min-height:108px;}
+}
+`}</style>
 
       {selected ? (
         <ProjectDetail
@@ -796,8 +934,8 @@ function CaseStudiesInner() {
         <>
           <header className="pc-hero">
             <h1 className="pc-hero-title">
-              <span>Projects</span>
-              <span className="pc-script">Explained</span>
+              <span>Selected</span>
+              <span className="pc-script">Projects</span>
             </h1>
             <div className="pc-hero-foot">
               <p>
@@ -896,22 +1034,45 @@ function CaseStudiesInner() {
 /* ------------------------------------------------------------------ */
 /*  CASE STUDY PAGE                                                    */
 /* ------------------------------------------------------------------ */
+function getHexLuminance(hex) {
+  if (!hex || typeof hex !== "string") return 1;
+  const value = hex.replace("#", "").trim();
+  const normalized = value.length === 3 ? value.split("").map((part) => part + part).join("") : value;
+  if (!/^[0-9a-fA-F]{6}$/.test(normalized)) return 1;
+  const channels = [0, 2, 4].map((index) => parseInt(normalized.slice(index, index + 2), 16) / 255);
+  const linear = channels.map((channel) => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4);
+  return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+}
+
+function getProjectPaletteTone(palette, mode, fallback) {
+  if (!palette?.length) return fallback;
+  return palette.reduce((chosen, colour) => {
+    const current = getHexLuminance(colour.hex);
+    const selected = getHexLuminance(chosen.hex);
+    return mode === "dark" ? (current < selected ? colour : chosen) : (current > selected ? colour : chosen);
+  }, palette[0]).hex;
+}
+
 function ProjectDetail({ project, onBack, onOpen }) {
   const [zoom, setZoom] = useState(null);
   const [active, setActive] = useState("overview");
   const [toast, setToast] = useState("");
   const [showAllScreens, setShowAllScreens] = useState(false);
   const [galleryMode, setGalleryMode] = useState(
-    project.presentation === "hybrid" ? "App" : project.category === "Website" ? "Website" : "App"
+    project.galleryModes
+      ? Object.keys(project.galleryModes)[0]
+      : project.category === "Website" ? "Website" : "App"
   );
   const barRef = useRef(null);
-  const isHybrid = project.presentation === "hybrid";
-  const isWeb = isHybrid ? galleryMode === "Website" : project.category === "Website";
+  const isHybrid = project.presentation === "hybrid" || Boolean(project.galleryModes);
+  const isWeb = project.galleryModes
+    ? (project.browserFrameModes || Object.keys(project.galleryModes)).includes(galleryMode)
+    : project.category === "Website";
   const gal = project.galleryModes?.[galleryMode] || project.gallery;
   const i = projects.findIndex((p) => p.id === project.id);
   const next = projects[(i + 1) % projects.length];
   const previous = projects[(i - 1 + projects.length) % projects.length];
-  const visibleGallery = showAllScreens ? gal : gal.slice(0, isWeb ? 4 : 6);
+  const visibleGallery = gal; // Render every original screen in the gallery by default.
 
   // reading progress
   useEffect(() => {
@@ -981,8 +1142,28 @@ function ProjectDetail({ project, onBack, onOpen }) {
     setTimeout(() => setToast(""), 1600);
   }
 
+  const projectPalette = project.palette || [];
+  const projectPrimary = projectPalette[0]?.hex || project.accent || "#304ffe";
+  const projectSecondary = projectPalette[1]?.hex || projectPrimary;
+  const projectTertiary = projectPalette[2]?.hex || projectSecondary;
+  // Pick the actual darkest/lightest swatches from this project's own palette.
+  const projectDark = getProjectPaletteTone(projectPalette, "dark", "#252530");
+  const projectSoft = getProjectPaletteTone(projectPalette, "light", "#f6f6f8");
+  const detailTheme = {
+    "--accent": projectPrimary,
+    "--blue": projectPrimary,
+    "--pink": projectSecondary,
+    "--ink": projectDark,
+    "--project-primary": projectPrimary,
+    "--project-secondary": projectSecondary,
+    "--project-tertiary": projectTertiary,
+    "--project-dark": projectDark,
+    "--project-soft": projectSoft,
+    "--paper": "#ffffff",
+  };
+
   return (
-    <div className="pc-detail" style={{ "--accent": project.accent }}>
+    <div className={`pc-detail pc-project-${project.id}`} style={detailTheme}>
       <div className="pc-top">
         <div className="pc-top-row">
           <button type="button" className="pc-back" onClick={onBack}>
@@ -1075,6 +1256,26 @@ function ProjectDetail({ project, onBack, onOpen }) {
                   ))}
                 </div>
               )}
+              <div className="pc-showcase-floats" aria-label={`${project.title} supporting interface highlights`}>
+                <article className="pc-showcase-float pc-showcase-float-feature">
+                  <span className="pc-showcase-float-kicker">FEATURE / 01</span>
+                  <div className="pc-showcase-float-copy">
+                    <strong>{project.features[0]?.t || "Designed around people"}</strong>
+                    <p>{project.features[0]?.d || project.description}</p>
+                  </div>
+                  {gal[1] && <img src={gal[1]} alt={`${project.title} additional original screen preview`} loading="lazy" decoding="async" />}
+                </article>
+                <article className="pc-showcase-float pc-showcase-float-highlight">
+                  <span className="pc-showcase-float-kicker">PROJECT HIGHLIGHT</span>
+                  <strong>{project.insights[0]?.t || "A clearer experience"}</strong>
+                  <p>{project.insights[0]?.d || project.solution}</p>
+                  <i aria-hidden="true">✦</i>
+                </article>
+                <article className="pc-showcase-float pc-showcase-float-mini">
+                  {gal[2] && <img src={gal[2]} alt={`${project.title} another original interface screen`} loading="lazy" decoding="async" />}
+                  <span>INTERFACE PREVIEW <b>{project.number}</b></span>
+                </article>
+              </div>
               <figcaption className="pc-showcase-caption">{project.number} <i /> Selected work</figcaption>
             </Motion.figure>
           </div>
@@ -1113,78 +1314,56 @@ function ProjectDetail({ project, onBack, onOpen }) {
         <div className="pc-story-content">
       <Motion.section id="pc-sec-overview" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
         <SectionHeading number="01" title="Project overview" kicker="The idea, its audience and how it was shaped" />
-        <div className="pc-editorial-overview">
-          <div className="pc-editorial-lead">
-            <span className="pc-editorial-eyebrow"><Sparkles size={14} /> {project.label}</span>
-            <p>{project.overview}</p>
+        <div className="pc-editorial-overview pc-editorial-overview-grid">
+          <div className="pc-editorial-overview-copy">
+            <div className="pc-editorial-lead">
+              <span className="pc-editorial-eyebrow"><Sparkles size={14} /> {project.label}</span>
+              <p>{project.overview}</p>
+            </div>
+            <div className="pc-editorial-meta">
+              <div><span>My role</span><strong>{project.role}</strong></div>
+              <div><span>Project type</span><strong>{project.projectType || project.category}</strong></div>
+              <div className="pc-editorial-tools"><span>Tools &amp; methods</span><strong>{project.tools.join(" · ")}</strong></div>
+            </div>
+            <div className="pc-editorial-audience">
+              <span className="pc-editorial-icon"><Users size={18} /></span>
+              <div><span className="pc-card-label">Intended audience</span><p>{project.audience}</p></div>
+            </div>
           </div>
-          <div className="pc-editorial-meta">
-            <div><span>My role</span><strong>{project.role}</strong></div>
-            <div><span>Project type</span><strong>{project.projectType || project.category}</strong></div>
-            <div className="pc-editorial-tools"><span>Tools &amp; methods</span><strong>{project.tools.join(" · ")}</strong></div>
-          </div>
-          <div className="pc-editorial-audience">
-            <span className="pc-editorial-icon"><Users size={18} /></span>
-            <div><span className="pc-card-label">Intended audience</span><p>{project.audience}</p></div>
-          </div>
+          <figure className="pc-editorial-overview-visual">
+            <span className="pc-overview-visual-kicker">SELECTED PROJECT VISUAL</span>
+            <img src={project.cover || gal[0]} alt={`${project.title} original project preview`} loading="lazy" decoding="async" />
+            <figcaption><b>{project.number}</b><span>{project.title}</span></figcaption>
+            <span className="pc-overview-visual-shape" aria-hidden="true" />
+          </figure>
         </div>
       </Motion.section>
 
-      <Motion.section id="pc-sec-problem" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="02" title="Problem statement" kicker="The need this project set out to address" />
-        <div className="pc-editorial-problem">
-          <span>THE CHALLENGE</span>
-          <p>{project.problem}</p>
-          <i aria-hidden="true">“</i>
-        </div>
-      </Motion.section>
+      <div className="pc-editorial-pair">
+        <Motion.section id="pc-sec-problem" className="pc-editorial-section pc-case-block pc-editorial-pair-item" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+          <SectionHeading number="02" title="Problem statement" kicker="The need this project set out to address" />
+          <div className="pc-editorial-problem">
+            <span>THE CHALLENGE</span>
+            <p>{project.problem}</p>
+            <i aria-hidden="true">“</i>
+          </div>
+        </Motion.section>
 
-      <Motion.section id="pc-sec-goals" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="03" title="Project goals &amp; objectives" kicker="The priorities captured for this experience" />
-        <div className="pc-editorial-goals">
-          {project.goals.map((goal, index) => (
-            <article className="pc-editorial-goal" key={goal}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{goal}</p>
-              <Arrow />
-            </article>
-          ))}
-        </div>
-      </Motion.section>
-
-      <Motion.section id="pc-sec-research" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="04" title="Research &amp; analysis" kicker="The research approach and insights recorded for the project" />
-        <div className="pc-editorial-research">
-          <article className="pc-editorial-research-note">
-            <span className="pc-card-label">Recorded approach</span>
-            <p>{project.process[0]}</p>
-          </article>
-          <div className="pc-editorial-insights">
-            {project.insights.map((insight, index) => (
-              <article className="pc-editorial-insight" key={insight.t}>
-                <span>INSIGHT {String(index + 1).padStart(2, "0")}</span>
-                <h3>{insight.t}</h3>
-                <p>{insight.d}</p>
+        <Motion.section id="pc-sec-goals" className="pc-editorial-section pc-case-block pc-editorial-pair-item" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
+          <SectionHeading number="03" title="Project goals &amp; objectives" kicker="The priorities captured for this experience" />
+          <div className="pc-editorial-goals">
+            {project.goals.map((goal, index) => (
+              <article className="pc-editorial-goal" key={goal}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{goal}</p>
               </article>
             ))}
           </div>
-        </div>
-      </Motion.section>
-
-      <Motion.section id="pc-sec-persona" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="05" title="User persona" kicker="The audience definition available in the project notes" />
-        <article className="pc-editorial-persona">
-          <span className="pc-editorial-persona-mark"><Users size={22} /></span>
-          <div>
-            <span className="pc-card-label">Audience profile</span>
-            <p>{project.audience}</p>
-            <small>This is the audience description documented for this project; no individual persona details were provided.</small>
-          </div>
-        </article>
-      </Motion.section>
+        </Motion.section>
+      </div>
 
       <Motion.section id="pc-sec-journey" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="06" title="User journey" kicker="How the project notes describe planning the experience" />
+        <SectionHeading number="04" title="User journey" kicker="How the project notes describe planning the experience" />
         <div className="pc-editorial-journey">
           <span className="pc-card-label">Flow-planning note</span>
           <p>{project.process[1]}</p>
@@ -1197,36 +1376,8 @@ function ProjectDetail({ project, onBack, onOpen }) {
         </div>
       </Motion.section>
 
-      <Motion.section id="pc-sec-wireframes" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="07" title="Wireframes" kicker="Structure and flow before visual styling" />
-        <div className="pc-editorial-wireframes">
-          <div className="pc-wireframe-copy">
-            <span className="pc-card-label">Planning documentation</span>
-            <p>{project.process[1]}</p>
-            <div className="pc-method-tags">
-              {project.tools.filter((tool) => /wireframe|user flow|auto layout|prototype/i.test(tool)).map((tool) => (
-                <span key={tool}>{tool}</span>
-              ))}
-            </div>
-          </div>
-          <p className="pc-editorial-caption">The project notes describe wireframe planning, but no wireframe images were included in the source gallery.</p>
-        </div>
-      </Motion.section>
-
-      <Motion.section id="pc-sec-design-process" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="08" title="Design process" kicker="The four stages documented for this project" />
-        <ol className="pc-editorial-process">
-          {project.process.map((step, index) => (
-            <li key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <div><small>{PROCESS_TITLES[index]}</small><p>{step}</p></div>
-            </li>
-          ))}
-        </ol>
-      </Motion.section>
-
       <Motion.section id="pc-sec-uiux" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="09" title="UI/UX design" kicker="The visual choices and principles behind the interface" />
+        <SectionHeading number="05" title="UI/UX design" kicker="The visual choices and principles behind the interface" />
         <div className="pc-editorial-design">
           <p className="pc-editorial-direction">{project.process[2]}</p>
           <h3 className="pc-sub">Colour palette <small>Click a colour to copy its value</small></h3>
@@ -1253,9 +1404,9 @@ function ProjectDetail({ project, onBack, onOpen }) {
       </Motion.section>
 
       <Motion.section id="pc-sec-screens" className="pc-editorial-section pc-editorial-screens pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="10" title="Final screens &amp; mockups" kicker="Explore the original project visuals and open any screen full size" />
+        <SectionHeading number="06" title="Screens &amp; mockups" kicker="Explore the original project visuals and open any screen full size" />
         {project.galleryModes && (
-          <div className="pc-gallery-switch" role="group" aria-label="Choose Metro Buddy interface">
+          <div className="pc-gallery-switch" role="group" aria-label={`Choose ${project.title} gallery`}>
             {Object.keys(project.galleryModes).map((mode) => (
               <button type="button" key={mode} className={galleryMode === mode ? "is-active" : ""} onClick={() => {
                 setGalleryMode(mode);
@@ -1299,46 +1450,19 @@ function ProjectDetail({ project, onBack, onOpen }) {
       </Motion.section>
 
       <Motion.section id="pc-sec-features" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="11" title="Key features" kicker="The capabilities described in the original project content" />
+        <SectionHeading number="07" title="Key features" kicker="The capabilities described in the original project content" />
         <div className="pc-editorial-features">
           {project.features.map((feature, index) => (
             <article className="pc-editorial-feature" key={feature.t}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <div><h3>{feature.t}</h3><p>{feature.d}</p></div>
-              <Arrow />
             </article>
           ))}
         </div>
       </Motion.section>
 
-      <Motion.section id="pc-sec-challenges" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="12" title="Challenges &amp; solutions" kicker="Project-specific challenges and the design response" />
-        <div className="pc-editorial-challenges">
-          <div className="pc-editorial-challenge-list">
-            {project.insights.map((insight, index) => (
-              <article className="pc-editorial-challenge" key={insight.t}>
-                <span>DESIGN CONSIDERATION {String(index + 1).padStart(2, "0")}</span>
-                <h3>{insight.t}</h3><p>{insight.d}</p>
-              </article>
-            ))}
-          </div>
-          <article className="pc-editorial-solution">
-            <span className="pc-card-label">Design response</span>
-            <p>{project.solution}</p>
-          </article>
-        </div>
-      </Motion.section>
-
-      <Motion.section id="pc-sec-validation" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="13" title="Validation" kicker="What is and is not documented in this case study" />
-        <div className="pc-editorial-validation">
-          <span aria-hidden="true">↗</span>
-          <p>No usability test findings, validation results, or project-specific metrics were included in the source content.</p>
-        </div>
-      </Motion.section>
-
       <Motion.section id="pc-sec-outcome" className="pc-editorial-section pc-editorial-outcome pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-        <SectionHeading number="14" title="Final outcome" kicker="The project outcome and reflection, in the original words" />
+        <SectionHeading number="08" title="Final outcome" kicker="The project outcome and reflection, in the original words" />
         <div className="pc-editorial-outcome-card">
           <span className="pc-card-label">Project outcome</span>
           <p>{project.outcome}</p>
@@ -4002,4 +4126,701 @@ const STYLES = `
   .pc-detail .pc-cover-hero .pc-d-explore,
   .pc-detail .pc-cover-hero .pc-d-explore span{animation:none;transition:none}
 }
+
+/* ---------- final portfolio direction: white canvas + teal highlights ---------- */
+.pc-root{
+  --paper:#ffffff;
+  --blue:#304ffe;
+  --pink:#f29bbd;
+  --teal:#eaf8f7;
+  --teal-strong:#d8f1ef;
+  background:#fff !important;
+}
+.pc-root,.pc-detail{background:#fff !important}
+.pc-detail .pc-cover-hero{
+  background:
+    radial-gradient(ellipse at 78% 38%,rgba(216,241,239,.78),transparent 42%),
+    radial-gradient(ellipse at 10% 92%,rgba(242,155,189,.10),transparent 34%),
+    #fff;
+}
+.pc-detail .pc-cover-hero::after{
+  border-color:rgba(48,79,254,.12);
+  box-shadow:0 0 0 34px rgba(216,241,239,.34),0 0 0 82px rgba(48,79,254,.025);
+}
+.pc-detail .pc-top{background:rgba(255,255,255,.94)}
+.pc-story-layout{background:#fff}
+.pc-story-sidebar{
+  top:88px;
+  max-height:calc(100vh - 108px);
+  overflow-y:auto;
+  background:rgba(255,255,255,.9);
+  border-color:rgba(48,79,254,.12);
+  box-shadow:0 16px 42px rgba(31,30,44,.055);
+  scrollbar-width:thin;
+}
+.pc-editorial-lead,
+.pc-editorial-research-note,
+.pc-editorial-journey,
+.pc-editorial-wireframes,
+.pc-editorial-validation{
+  background:linear-gradient(135deg,#fff 0%,var(--teal) 100%);
+}
+.pc-editorial-audience,.pc-editorial-persona,.pc-editorial-insight,
+.pc-editorial-challenge,.pc-editorial-outcome-card{
+  background:#fff;
+  border-color:rgba(48,79,254,.10);
+}
+.pc-editorial-icon,.pc-editorial-persona-mark{
+  background:linear-gradient(145deg,var(--teal-strong),rgba(242,155,189,.2));
+  color:var(--blue);
+}
+.pc-editorial-pair{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(20px,3vw,38px);
+  align-items:stretch;
+}
+.pc-editorial-pair-item{
+  min-width:0;
+  padding:clamp(28px,3.2vw,42px) 0 !important;
+}
+.pc-editorial-pair-item .pc-editorial-heading{
+  grid-template-columns:34px minmax(0,1fr);
+  gap:10px;
+}
+.pc-editorial-pair-item .pc-editorial-heading>span{
+  width:30px;height:30px;
+  background:var(--teal-strong);
+  color:var(--blue);
+}
+.pc-editorial-pair-item .pc-editorial-heading h2{font-size:clamp(22px,2.1vw,30px)}
+.pc-editorial-pair-item .pc-editorial-heading p{font-size:11px}
+.pc-editorial-problem{
+  min-height:100%;
+  padding:clamp(22px,3vw,34px);
+  border:1px solid rgba(48,79,254,.10);
+  background:linear-gradient(145deg,#f0faf9,#e6f5f4);
+  color:#202633;
+}
+.pc-editorial-problem>span{color:var(--blue)}
+.pc-editorial-problem>p{font-size:clamp(18px,2vw,25px);color:#242b38}
+.pc-editorial-problem>i{color:rgba(48,79,254,.10)}
+.pc-editorial-pair-item .pc-editorial-goals{gap:9px}
+.pc-editorial-pair-item .pc-editorial-goal{
+  grid-template-columns:30px minmax(0,1fr) 16px;
+  gap:9px;
+  padding:13px 14px;
+  background:#fff;
+  border-color:rgba(48,79,254,.10);
+}
+.pc-editorial-pair-item .pc-editorial-goal p{font-size:12px}
+.pc-editorial-journey-goals{position:relative;gap:12px}
+.pc-editorial-journey-goals>div{
+  position:relative;
+  border:1px solid rgba(48,79,254,.09);
+  background:linear-gradient(145deg,#fff,var(--teal));
+}
+.pc-editorial-journey-goals span{
+  display:grid;place-items:center;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--blue);
+  color:#fff;
+}
+.pc-editorial-process li{border-color:rgba(48,79,254,.10);background:linear-gradient(145deg,#fff,var(--teal))}
+.pc-editorial-screens{
+  background:linear-gradient(145deg,#f5fbfa,#fff 72%) !important;
+  border-color:rgba(48,79,254,.10) !important;
+}
+.pc-editorial-solution{background:linear-gradient(145deg,#283a62,#304ffe)}
+.pc-editorial-validation>span{background:var(--teal-strong);color:var(--blue)}
+.pc-editorial-outcome-card{background:linear-gradient(145deg,#fff,var(--teal))}
+@media(max-width:850px){
+  .pc-editorial-pair{grid-template-columns:1fr;gap:0}
+  .pc-editorial-pair-item{padding:30px 0 !important}
+  .pc-story-sidebar{max-height:none;overflow:visible}
+}
+@media(max-width:600px){
+  .pc-editorial-pair{display:block}
+  .pc-editorial-pair-item .pc-editorial-heading h2{font-size:25px}
+  .pc-story-sidebar{top:56px}
+}
+
+/* ---------- compact, project-aware case study system ---------- */
+.pc-detail{--paper:#fff;background:#fff!important;color:var(--project-dark,#252530)}
+.pc-detail .pc-top{background:rgba(255,255,255,.94);border-color:color-mix(in srgb,var(--project-primary) 15%,#fff)}
+.pc-detail .pc-read b{background:var(--project-primary)}
+.pc-detail .pc-back:hover,.pc-detail .pc-gallery-switch button.is-active,.pc-detail .pc-d-explore{background:var(--project-primary);border-color:var(--project-primary)}
+.pc-detail .pc-story-sidebar{border-color:color-mix(in srgb,var(--project-primary) 18%,#fff)}
+.pc-detail .pc-story-index-label,.pc-detail .pc-editorial-eyebrow,.pc-detail .pc-editorial-goal>span,.pc-detail .pc-editorial-feature>span,.pc-detail .pc-editorial-insight>span,.pc-detail .pc-editorial-challenge>span,.pc-detail .pc-editorial-process li>span,.pc-detail .pc-principle-list b{color:var(--project-primary)}
+.pc-detail .pc-story-sidebar .pc-secnav button.is-active{background:color-mix(in srgb,var(--project-primary) 10%,#fff);color:var(--project-primary)}
+.pc-detail .pc-story-sidebar .pc-secnav button.is-active i{background:var(--project-primary);border-color:var(--project-primary)}
+.pc-detail .pc-editorial-heading>span{background:color-mix(in srgb,var(--project-primary) 13%,#fff);color:var(--project-primary)}
+.pc-detail .pc-editorial-heading h2{font-size:clamp(20px,1.8vw,26px);color:var(--project-dark);letter-spacing:-.035em}
+.pc-detail .pc-editorial-heading p{font-size:11px;margin-top:5px}
+.pc-detail .pc-editorial-lead,.pc-detail .pc-editorial-research-note,.pc-detail .pc-editorial-journey,.pc-detail .pc-editorial-wireframes,.pc-detail .pc-editorial-validation,.pc-detail .pc-editorial-outcome-card{background:linear-gradient(135deg,#fff,color-mix(in srgb,var(--project-primary) 8%,#fff));border-color:color-mix(in srgb,var(--project-primary) 18%,#fff)}
+.pc-detail .pc-editorial-audience,.pc-detail .pc-editorial-persona,.pc-detail .pc-editorial-insight,.pc-detail .pc-editorial-challenge,.pc-detail .pc-editorial-goal,.pc-detail .pc-editorial-feature,.pc-detail .pc-editorial-process li,.pc-detail .pc-type-specimen,.pc-detail .pc-color-token{border-color:color-mix(in srgb,var(--project-primary) 14%,#fff)}
+.pc-detail .pc-editorial-icon,.pc-detail .pc-editorial-persona-mark{background:color-mix(in srgb,var(--project-secondary) 18%,#fff);color:var(--project-primary)}
+.pc-detail .pc-editorial-problem{background:linear-gradient(135deg,var(--project-dark),color-mix(in srgb,var(--project-primary) 48%,var(--project-dark)))}
+.pc-detail .pc-editorial-problem>span,.pc-detail .pc-editorial-solution .pc-card-label{color:color-mix(in srgb,var(--project-secondary) 70%,#fff)}
+.pc-detail .pc-editorial-solution{background:linear-gradient(145deg,var(--project-dark),var(--project-primary))}
+.pc-detail .pc-editorial-solution p{color:#fff}
+.pc-detail .pc-editorial-direction{border-left-color:var(--project-secondary);background:color-mix(in srgb,var(--project-primary) 9%,#fff)}
+.pc-detail .pc-editorial-screens{background:linear-gradient(145deg,color-mix(in srgb,var(--project-primary) 7%,#fff),#fff 72%)!important;border-color:color-mix(in srgb,var(--project-primary) 17%,#fff)!important}
+.pc-detail .pc-color-token:hover{border-color:var(--project-primary)}
+.pc-detail .pc-next{background:linear-gradient(125deg,#fff,color-mix(in srgb,var(--project-primary) 13%,#fff))}
+
+/* Compact spacing; all existing case-study sections and screen assets remain in place. */
+.pc-story-layout{grid-template-columns:minmax(156px,184px) minmax(0,1fr);gap:clamp(20px,3vw,42px);width:min(1280px,92%);padding:22px 0 54px}
+.pc-story-sidebar{padding:13px 10px 10px;border-radius:16px}
+.pc-story-index-label{margin:0 8px 8px}
+.pc-story-sidebar .pc-secnav{gap:2px}
+.pc-story-sidebar .pc-secnav button{min-height:32px;padding:6px 8px;font-size:10px;gap:7px}
+.pc-story-project-count{margin:10px 8px 0;padding-top:9px}
+.pc-story-content .pc-editorial-section{padding:22px 0}
+.pc-story-content .pc-editorial-heading{grid-template-columns:30px minmax(0,1fr);gap:9px;margin-bottom:14px}
+.pc-story-content .pc-editorial-heading>span{width:27px;height:27px;font-size:9px}
+.pc-story-content .pc-editorial-heading h2{font-size:clamp(19px,1.8vw,25px)}
+.pc-story-content .pc-editorial-heading p{font-size:10px;line-height:1.45}
+.pc-detail .pc-editorial-section p{line-height:1.6}
+.pc-detail .pc-editorial-lead{padding:19px;border-radius:16px}
+.pc-detail .pc-editorial-lead>p{margin-top:10px;font-size:clamp(17px,1.8vw,22px);line-height:1.45}
+.pc-detail .pc-editorial-meta{gap:12px;margin:10px 0;padding:12px 3px}
+.pc-detail .pc-editorial-audience,.pc-detail .pc-editorial-persona{padding:14px;border-radius:14px;gap:11px}
+.pc-detail .pc-editorial-icon,.pc-detail .pc-editorial-persona-mark{width:34px;height:34px;border-radius:10px}
+.pc-detail .pc-editorial-audience p,.pc-detail .pc-editorial-persona p{font-size:12px}
+.pc-detail .pc-editorial-problem{padding:19px;border-radius:16px}
+.pc-detail .pc-editorial-problem>p{margin-top:10px;font-size:clamp(17px,1.8vw,22px);line-height:1.45}
+.pc-detail .pc-editorial-goal,.pc-detail .pc-editorial-feature{grid-template-columns:30px minmax(0,1fr) 15px;gap:9px;padding:11px 12px;border-radius:12px}
+.pc-detail .pc-editorial-goal p,.pc-detail .pc-editorial-feature p{font-size:11px}
+.pc-detail .pc-editorial-research{gap:10px}
+.pc-detail .pc-editorial-research-note,.pc-detail .pc-editorial-insight,.pc-detail .pc-editorial-challenge{padding:14px;border-radius:13px}
+.pc-detail .pc-editorial-insight h3,.pc-detail .pc-editorial-challenge h3{margin:6px 0 4px;font-size:13px}
+.pc-detail .pc-editorial-insight p,.pc-detail .pc-editorial-challenge p{font-size:11px}
+.pc-detail .pc-editorial-journey,.pc-detail .pc-editorial-wireframes{padding:15px;border-radius:15px}
+.pc-detail .pc-editorial-journey>p,.pc-detail .pc-wireframe-copy>p{font-size:15px}
+.pc-detail .pc-editorial-journey-goals{gap:8px;margin-top:12px}
+.pc-detail .pc-editorial-journey-goals>div{padding:10px}
+.pc-detail .pc-editorial-process{gap:8px}
+.pc-detail .pc-editorial-process li{padding:13px;border-radius:12px;gap:10px}
+.pc-detail .pc-editorial-process p{margin-top:5px;font-size:11px}
+.pc-detail .pc-editorial-section .pc-sub{margin:16px 0 9px;font-size:13px}
+.pc-detail .pc-editorial-type{gap:8px;margin-top:12px}
+.pc-detail .pc-type-specimen{padding:12px;border-radius:12px;gap:10px}
+.pc-detail .pc-type-specimen>span{font-size:36px}
+.pc-detail .pc-principle-list span{padding:7px 9px;font-size:10px}
+.pc-detail .pc-editorial-screens{padding:16px!important;border-radius:17px}
+.pc-detail .pc-editorial-screens .pc-gallery-switch{margin-bottom:10px}
+.pc-detail .pc-gallery-screen{padding:8px}
+.pc-detail .pc-editorial-challenges{gap:9px}
+.pc-detail .pc-editorial-solution{padding:16px;border-radius:14px}
+.pc-detail .pc-editorial-solution p{font-size:15px}
+.pc-detail .pc-editorial-validation{padding:14px;border-radius:13px}
+.pc-detail .pc-editorial-outcome-card{padding:18px;border-radius:16px}
+.pc-detail .pc-editorial-outcome-card>p{font-size:clamp(17px,1.8vw,23px);line-height:1.45}
+.pc-detail .pc-editorial-outcome-card>div{margin-top:14px;padding-top:12px}
+.pc-detail .pc-next{padding:26px 5vw}
+.pc-detail .pc-next strong{font-size:clamp(27px,4vw,48px)}
+@media(max-width:850px){
+ .pc-story-layout{grid-template-columns:1fr;width:min(100% - 28px,760px);gap:12px;padding-top:12px}
+ .pc-story-sidebar{position:sticky;top:58px;z-index:20;padding:8px 10px;border-radius:13px}
+ .pc-story-index-label,.pc-story-project-count{display:none}
+ .pc-story-sidebar .pc-secnav{flex-direction:row;overflow-x:auto;gap:4px;scrollbar-width:none}
+ .pc-story-sidebar .pc-secnav button{display:flex;flex:none;min-height:30px;white-space:nowrap;padding:6px 9px}
+ .pc-story-sidebar .pc-secnav button i{display:none}
+ .pc-story-content .pc-editorial-section{padding:18px 0}
+}
+@media(max-width:600px){
+ .pc-story-layout{width:calc(100% - 24px);padding-bottom:34px}
+ .pc-story-content .pc-editorial-heading h2{font-size:20px}
+ .pc-detail .pc-editorial-meta{grid-template-columns:1fr 1fr}
+ .pc-detail .pc-editorial-process,.pc-detail .pc-editorial-type{grid-template-columns:1fr}
+ .pc-detail .pc-editorial-challenges{grid-template-columns:1fr}
+ .pc-detail .pc-editorial-screens{padding:12px!important}
+ .pc-detail .pc-palette-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ---------- project-specific card personalities + responsive hero stack ---------- */
+.pc-detail{
+  --project-radius:18px;
+  --project-card-shadow:0 12px 28px color-mix(in srgb,var(--project-dark) 9%,transparent);
+  --project-dark-contrast:#fff;
+}
+.pc-detail .pc-editorial-problem,
+.pc-detail .pc-editorial-solution,
+.pc-detail .pc-editorial-outcome-card,
+.pc-detail .pc-editorial-research-note,
+.pc-detail .pc-editorial-insight,
+.pc-detail .pc-editorial-feature,
+.pc-detail .pc-editorial-goal,
+.pc-detail .pc-editorial-persona,
+.pc-detail .pc-editorial-journey,
+.pc-detail .pc-editorial-validation,
+.pc-detail .pc-type-specimen,
+.pc-detail .pc-color-token{
+  border-radius:var(--project-radius);
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,background .24s ease;
+}
+.pc-detail .pc-editorial-insight:hover,
+.pc-detail .pc-editorial-feature:hover,
+.pc-detail .pc-editorial-goal:hover,
+.pc-detail .pc-color-token:hover,
+.pc-detail .pc-type-specimen:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--project-card-shadow);
+}
+.pc-detail .pc-editorial-problem{
+  color:#fff;
+  border:1px solid color-mix(in srgb,var(--project-secondary) 34%,var(--project-dark));
+  background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 78%,var(--project-primary)));
+  box-shadow:0 18px 34px color-mix(in srgb,var(--project-dark) 18%,transparent);
+}
+.pc-detail .pc-editorial-problem>span{color:color-mix(in srgb,var(--project-secondary) 65%,#fff)}
+.pc-detail .pc-editorial-problem>p{color:#fff}
+.pc-detail .pc-editorial-problem>i{color:rgba(255,255,255,.12)}
+.pc-detail .pc-editorial-solution{
+  border:1px solid color-mix(in srgb,var(--project-secondary) 30%,var(--project-dark));
+  background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 68%,var(--project-primary)));
+  box-shadow:0 18px 34px color-mix(in srgb,var(--project-dark) 15%,transparent);
+}
+.pc-detail .pc-editorial-solution p{color:#fff}
+.pc-detail .pc-editorial-goal{
+  position:relative;
+  border:1px solid color-mix(in srgb,var(--project-primary) 18%,#fff);
+  box-shadow:0 6px 16px color-mix(in srgb,var(--project-dark) 4%,transparent);
+}
+.pc-detail .pc-editorial-feature{background:linear-gradient(135deg,#fff,color-mix(in srgb,var(--project-primary) 7%,#fff))}
+.pc-detail .pc-editorial-feature:nth-child(odd){border-left:3px solid var(--project-primary)}
+.pc-detail .pc-editorial-feature:nth-child(even){background:var(--project-dark);border-color:var(--project-dark)}
+.pc-detail .pc-editorial-feature:nth-child(even) h3,
+.pc-detail .pc-editorial-feature:nth-child(even) p{color:#fff}
+.pc-detail .pc-editorial-feature:nth-child(even)>span{color:color-mix(in srgb,var(--project-secondary) 60%,#fff)}
+.pc-detail .pc-editorial-feature:nth-child(even)>svg{color:color-mix(in srgb,var(--project-secondary) 70%,#fff)}
+.pc-detail .pc-editorial-insight{background:linear-gradient(145deg,#fff,color-mix(in srgb,var(--project-primary) 7%,#fff))}
+.pc-detail .pc-editorial-insight:nth-child(3n){background:var(--project-dark);border-color:var(--project-dark)}
+.pc-detail .pc-editorial-insight:nth-child(3n) h3,
+.pc-detail .pc-editorial-insight:nth-child(3n) p{color:#fff}
+.pc-detail .pc-editorial-insight:nth-child(3n)>span{color:color-mix(in srgb,var(--project-secondary) 70%,#fff)}
+.pc-detail .pc-editorial-outcome-card{background:linear-gradient(135deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 72%,var(--project-primary)));color:#fff;border-color:color-mix(in srgb,var(--project-primary) 35%,var(--project-dark))}
+.pc-detail .pc-editorial-outcome-card>p,
+.pc-detail .pc-editorial-outcome-card strong,
+.pc-detail .pc-editorial-outcome-card span{color:#fff}
+.pc-detail .pc-editorial-outcome-card small{color:rgba(255,255,255,.76)}
+.pc-detail .pc-editorial-journey-goals>div{border-color:color-mix(in srgb,var(--project-primary) 20%,#fff);background:linear-gradient(145deg,#fff,color-mix(in srgb,var(--project-primary) 8%,#fff))}
+.pc-detail .pc-editorial-journey-goals>div:nth-child(even){background:color-mix(in srgb,var(--project-primary) 9%,#fff)}
+.pc-detail .pc-editorial-process li{border-left:3px solid var(--project-primary);box-shadow:0 8px 18px color-mix(in srgb,var(--project-dark) 5%,transparent)}
+.pc-detail .pc-editorial-persona{background:linear-gradient(115deg,color-mix(in srgb,var(--project-primary) 10%,#fff),#fff 70%);box-shadow:var(--project-card-shadow)}
+.pc-detail .pc-editorial-audience{background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 72%,var(--project-primary)))}
+.pc-detail .pc-editorial-audience p,.pc-detail .pc-editorial-audience .pc-card-label{color:#fff}
+.pc-detail .pc-editorial-screens{background:linear-gradient(145deg,color-mix(in srgb,var(--project-primary) 6%,#fff),#fff 74%)!important}
+.pc-detail .pc-gallery-screen{border-color:color-mix(in srgb,var(--project-dark) 13%,#fff);box-shadow:0 12px 28px color-mix(in srgb,var(--project-dark) 9%,transparent)}
+.pc-detail .pc-gallery-screen:hover{border-color:var(--project-primary);box-shadow:0 20px 38px color-mix(in srgb,var(--project-dark) 15%,transparent)}
+
+/* The layered hero contains the main preview plus three original-content cards. */
+.pc-detail .pc-showcase{overflow:visible!important;isolation:isolate;}
+.pc-detail .pc-showcase-browser,
+.pc-detail .pc-showcase-hybrid,
+.pc-detail .pc-showcase-phones{position:relative;z-index:2;}
+.pc-showcase-floats{position:absolute;inset:0;z-index:5;pointer-events:none;}
+.pc-showcase-float{
+  position:absolute;display:flex;flex-direction:column;gap:7px;overflow:hidden;
+  width:clamp(138px,15vw,190px);padding:12px;
+  border:1px solid color-mix(in srgb,var(--project-primary) 24%,#fff);
+  border-radius:16px;background:rgba(255,255,255,.96);
+  box-shadow:0 16px 34px color-mix(in srgb,var(--project-dark) 16%,transparent);
+  backdrop-filter:blur(14px);pointer-events:auto;
+  transition:transform .28s ease,box-shadow .28s ease;
+}
+.pc-showcase-float:hover{transform:translateY(-5px) rotate(0deg)!important;box-shadow:0 22px 40px color-mix(in srgb,var(--project-dark) 22%,transparent)}
+.pc-showcase-float-kicker{font-size:8px;font-weight:800;letter-spacing:.13em;color:var(--project-primary)}
+.pc-showcase-float strong{font-size:12px;line-height:1.25;color:var(--project-dark)}
+.pc-showcase-float p{display:-webkit-box;overflow:hidden;margin:0;color:#666875;font-size:9px;line-height:1.45;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.pc-showcase-float img{display:block;width:100%;height:58px;object-fit:cover;object-position:top;border-radius:9px;background:var(--project-soft)}
+.pc-showcase-float-feature{top:-12px;right:-14px;transform:rotate(3deg)}
+.pc-showcase-float-highlight{bottom:10px;left:-18px;width:clamp(145px,16vw,205px);min-height:116px;justify-content:center;background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 72%,var(--project-primary)));border-color:color-mix(in srgb,var(--project-secondary) 35%,var(--project-dark));transform:rotate(-3deg)}
+.pc-showcase-float-highlight .pc-showcase-float-kicker{color:color-mix(in srgb,var(--project-secondary) 65%,#fff)}
+.pc-showcase-float-highlight strong,.pc-showcase-float-highlight p{color:#fff}
+.pc-showcase-float-highlight i{position:absolute;right:10px;bottom:5px;color:color-mix(in srgb,var(--project-secondary) 65%,#fff);font-size:22px;font-style:normal;opacity:.8}
+.pc-showcase-float-mini{right:-12px;bottom:-10px;width:clamp(112px,12vw,150px);padding:8px;transform:rotate(4deg)}
+.pc-showcase-float-mini img{height:66px}
+.pc-showcase-float-mini span{display:flex;justify-content:space-between;gap:5px;color:#656570;font-size:7px;font-weight:800;letter-spacing:.08em}
+.pc-showcase-float-mini b{color:var(--project-primary)}
+
+/* Each project gets a distinct composition; all colours still come from its own palette. */
+.pc-project-oscorm .pc-showcase-float-feature{width:clamp(150px,16vw,205px);border-radius:20px;border-top:3px solid var(--project-primary)}
+.pc-project-oscorm .pc-showcase-float-highlight{left:-24px;border-radius:22px 22px 22px 7px}
+.pc-project-oscorm .pc-editorial-insight:nth-child(odd){transform:translateY(5px)}
+.pc-project-wedding .pc-showcase-float-feature{top:-18px;right:-5px;width:clamp(145px,15vw,185px);border-radius:6px 18px 18px 18px;transform:rotate(2deg)}
+.pc-project-wedding .pc-showcase-float-highlight{left:-8px;bottom:0;background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 80%,var(--project-secondary)));border-radius:6px 22px 22px 22px}
+.pc-project-wedding .pc-editorial-goal:nth-child(odd){transform:translateX(5px)}
+.pc-project-school .pc-showcase-float-feature{top:-8px;right:-18px;width:clamp(132px,14vw,170px);border-radius:12px 24px 12px 12px}
+.pc-project-school .pc-showcase-float-highlight{left:-10px;bottom:18px;width:clamp(150px,15vw,185px);border-radius:12px 12px 24px 12px}
+.pc-project-school .pc-editorial-goal{border-left:4px solid var(--project-primary);border-radius:8px 15px 15px 8px}
+.pc-project-service .pc-showcase-float-feature{top:-16px;right:-7px;transform:rotate(1deg);border-radius:20px 20px 7px 20px}
+.pc-project-service .pc-showcase-float-highlight{left:-18px;bottom:4px;min-height:105px;border-radius:20px 7px 20px 20px}
+.pc-project-service .pc-editorial-feature:nth-child(even){background:color-mix(in srgb,var(--project-primary) 12%,#fff);border-color:color-mix(in srgb,var(--project-primary) 22%,#fff)}
+.pc-project-service .pc-editorial-feature:nth-child(even) h3,.pc-project-service .pc-editorial-feature:nth-child(even) p{color:var(--project-dark)}
+.pc-project-job .pc-showcase-float-feature{top:-8px;right:-14px;width:clamp(145px,15vw,185px);border-radius:14px}
+.pc-project-job .pc-showcase-float-highlight{left:-14px;bottom:12px;border-radius:14px;background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 70%,var(--project-primary)))}
+.pc-project-job .pc-editorial-goal{border-radius:10px 18px 18px 10px;border-left:4px solid var(--project-primary)}
+.pc-project-freshgro .pc-showcase-float-feature{top:-10px;right:-18px;border-radius:24px 24px 8px 24px}
+.pc-project-freshgro .pc-showcase-float-highlight{left:-12px;bottom:8px;border-radius:24px 8px 24px 24px;background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 75%,var(--project-primary)))}
+.pc-project-freshgro .pc-editorial-feature{border-radius:22px 22px 8px 22px}
+.pc-project-freshgro .pc-editorial-insight:nth-child(3n){border-radius:22px 8px 22px 22px}
+.pc-project-metro-buddy .pc-showcase-float-feature{top:-15px;right:-8px;border-radius:9px;border-style:dashed}
+.pc-project-metro-buddy .pc-showcase-float-highlight{left:-16px;bottom:8px;border-radius:9px;border-style:dashed}
+.pc-project-metro-buddy .pc-editorial-goal{border-style:dashed;border-radius:10px}
+.pc-project-mylocalplace .pc-showcase-float-feature{top:-8px;right:-14px;width:clamp(145px,15vw,185px);border-radius:18px 18px 5px 18px}
+.pc-project-mylocalplace .pc-showcase-float-highlight{left:-14px;bottom:2px;border-radius:18px 5px 18px 18px}
+.pc-project-mylocalplace .pc-editorial-insight:nth-child(3n){background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 70%,var(--project-secondary)))}
+.pc-project-easyskytrip .pc-showcase-float-feature{top:-18px;right:-14px;border-radius:18px 18px 5px 18px}
+.pc-project-easyskytrip .pc-showcase-float-highlight{left:-16px;bottom:0;border-radius:18px 5px 18px 18px}
+.pc-project-easyskytrip .pc-showcase-float-mini{right:-16px;bottom:-15px;width:clamp(116px,12vw,152px)}
+.pc-project-easyskytrip .pc-editorial-journey-goals>div{border-radius:8px 16px 16px 8px}
+
+@media(min-width:1200px){
+  .pc-detail .pc-d-hero-grid{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(32px,4vw,62px)}
+  .pc-detail .pc-showcase{min-height:clamp(360px,34vw,470px);margin:8px 12px 20px 0}
+  .pc-detail .pc-showcase-browser{width:92%;}
+  .pc-detail .pc-showcase-hybrid{width:90%}
+  .pc-detail .pc-showcase-floats{inset:0 -10px 0 0}
+}
+@media(min-width:768px) and (max-width:1199px){
+  .pc-detail .pc-d-hero-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:22px}
+  .pc-detail .pc-showcase{min-height:clamp(300px,34vw,390px);margin:8px 6px 18px 0;padding:10px}
+  .pc-showcase-float{width:clamp(112px,15vw,150px);padding:9px;border-radius:13px}
+  .pc-showcase-float-feature{top:-8px;right:-7px}
+  .pc-showcase-float-highlight{left:-7px;bottom:12px;width:clamp(125px,16vw,165px);min-height:96px}
+  .pc-showcase-float-mini{right:-7px;bottom:-7px;width:clamp(96px,12vw,125px)}
+  .pc-showcase-float img{height:44px}
+  .pc-showcase-float p{-webkit-line-clamp:2}
+}
+@media(max-width:767px){
+  .pc-detail .pc-d-hero{padding-bottom:16px}
+  .pc-detail .pc-d-hero-grid{grid-template-columns:minmax(0,1fr);gap:8px}
+  .pc-detail .pc-d-intro{order:0;padding:0 0 6px}
+  .pc-detail .pc-showcase{order:1;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:12px;min-height:0;height:auto;margin:0;padding:12px;overflow:visible!important;border-radius:20px}
+  .pc-detail .pc-showcase-browser,.pc-detail .pc-showcase-hybrid{width:100%;max-width:none;margin:0}
+  .pc-detail .pc-showcase-browser img{height:clamp(180px,54vw,270px);object-fit:contain}
+  .pc-detail .pc-showcase-hybrid img{max-height:280px}
+  .pc-detail .pc-showcase-phones{min-height:0;height:auto;padding:8px 0 12px;gap:8px}
+  .pc-detail .pc-showcase-phone{width:clamp(74px,24vw,116px);max-height:250px}
+  .pc-detail .pc-showcase-floats{position:relative;inset:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;width:100%;margin:0}
+  .pc-detail .pc-showcase-float,
+  .pc-detail .pc-showcase-float-feature,
+  .pc-detail .pc-showcase-float-highlight,
+  .pc-detail .pc-showcase-float-mini{position:relative;inset:auto;width:auto;min-width:0;min-height:0;transform:none!important;padding:10px;border-radius:14px}
+  .pc-detail .pc-showcase-float-feature{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 88px;align-items:center;gap:8px}
+  .pc-detail .pc-showcase-float-feature .pc-showcase-float-kicker{grid-column:1/-1}
+  .pc-detail .pc-showcase-float-feature img{grid-column:2;grid-row:2/4;height:70px}
+  .pc-detail .pc-showcase-float-copy{grid-column:1;grid-row:2/4;min-width:0}
+  .pc-detail .pc-showcase-float-highlight{grid-column:1;background:linear-gradient(145deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 72%,var(--project-primary)))}
+  .pc-detail .pc-showcase-float-mini{grid-column:2}
+  .pc-detail .pc-showcase-float-mini img{height:64px}
+  .pc-detail .pc-showcase-cover-card{top:9px;left:9px;z-index:7;max-width:42%}
+  .pc-detail .pc-showcase-caption{position:relative;right:auto;bottom:auto;align-self:flex-end;margin-top:0}
+}
+@media(max-width:420px){
+  .pc-detail .pc-showcase-float{padding:9px}
+  .pc-detail .pc-showcase-float strong{font-size:11px}
+  .pc-detail .pc-showcase-float p{font-size:8px}
+  .pc-detail .pc-showcase-float-feature{grid-template-columns:minmax(0,1fr) 72px}
+  .pc-detail .pc-showcase-float-feature img{height:58px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pc-detail .pc-editorial-insight,.pc-detail .pc-editorial-feature,.pc-detail .pc-editorial-goal,.pc-detail .pc-color-token,.pc-detail .pc-type-specimen,.pc-showcase-float{transition:none!important}
+  .pc-detail .pc-editorial-insight:hover,.pc-detail .pc-editorial-feature:hover,.pc-detail .pc-editorial-goal:hover,.pc-detail .pc-color-token:hover,.pc-detail .pc-type-specimen:hover,.pc-showcase-float:hover{transform:none!important}
+}
+
+
+/* ---------- reference-inspired editorial case-study art direction ---------- */
+/* The layout borrows the reference's presentation-board feel: crisp white canvas,
+   compact editorial headers, coloured feature panels and image-led modules.
+   Every colour is pulled from the active project's own theme variables. */
+.pc-detail .pc-story-content .pc-editorial-section{
+  position:relative;
+  isolation:isolate;
+  padding:clamp(25px,3vw,42px) clamp(14px,2vw,24px);
+  margin:0 0 14px;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--project-primary) 12%,#e9e9ed);
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(24,28,38,.035);
+}
+.pc-detail .pc-story-content .pc-editorial-section:after{
+  content:"";position:absolute;z-index:-1;right:-48px;top:-58px;width:150px;height:150px;
+  border:22px solid color-mix(in srgb,var(--project-primary) 7%,transparent);
+  border-radius:50%;pointer-events:none;
+}
+.pc-detail .pc-editorial-heading{
+  grid-template-columns:34px minmax(0,1fr);gap:11px;
+  margin-bottom:20px;position:relative;z-index:1;
+}
+.pc-detail .pc-editorial-heading>span{
+  width:30px;height:30px;border-radius:8px;
+  color:#fff;background:var(--project-primary);
+  font-size:10px;box-shadow:0 5px 12px color-mix(in srgb,var(--project-primary) 20%,transparent);
+}
+.pc-detail .pc-editorial-heading h2{
+  font-size:clamp(19px,2vw,25px);line-height:1.15;letter-spacing:-.035em;
+  color:var(--project-dark);font-weight:800;
+}
+.pc-detail .pc-editorial-heading p{margin-top:5px;font-size:11px;line-height:1.5;color:#85858d}
+.pc-detail .pc-editorial-section p{line-height:1.58}
+.pc-detail .pc-editorial-overview{
+  display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);
+  gap:12px;align-items:stretch;
+}
+.pc-detail .pc-editorial-lead{
+  min-height:150px;padding:22px;border:0;border-radius:14px 14px 14px 5px;
+  background:linear-gradient(130deg,color-mix(in srgb,var(--project-primary) 12%,#fff),#fff 76%);
+}
+.pc-detail .pc-editorial-lead>p{margin-top:12px;font-size:clamp(15px,1.6vw,19px);line-height:1.5;font-weight:650;color:var(--project-dark)}
+.pc-detail .pc-editorial-eyebrow{color:var(--project-primary)}
+.pc-detail .pc-editorial-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pc-detail .pc-editorial-meta>div{
+  padding:13px 14px;border:1px solid #ececf0;border-radius:12px;background:#fff;
+}
+.pc-detail .pc-editorial-meta>div:last-child{grid-column:1/-1}
+.pc-detail .pc-editorial-meta span,.pc-detail .pc-editorial-audience .pc-card-label{font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#92929a}
+.pc-detail .pc-editorial-meta strong{display:block;margin-top:5px;font-size:11px;line-height:1.45;color:var(--project-dark)}
+.pc-detail .pc-editorial-audience{
+  grid-column:1/-1;display:flex;gap:12px;align-items:center;padding:13px 16px;
+  border-radius:12px;background:var(--project-dark);color:#fff;
+}
+.pc-detail .pc-editorial-audience .pc-editorial-icon{display:grid;place-items:center;width:36px;height:36px;flex:none;border-radius:10px;background:color-mix(in srgb,var(--project-primary) 45%,#fff 8%);color:#fff}
+.pc-detail .pc-editorial-audience .pc-card-label{color:color-mix(in srgb,var(--project-secondary) 45%,#fff)}
+.pc-detail .pc-editorial-audience p{margin:3px 0 0;color:#fff;font-size:12px}
+.pc-detail .pc-editorial-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
+.pc-detail .pc-editorial-pair-item{min-width:0}
+.pc-detail #pc-sec-problem .pc-editorial-problem{
+  position:relative;min-height:170px;display:flex;flex-direction:column;justify-content:center;
+  padding:24px;border:0;border-radius:14px 14px 5px 14px;
+  background:linear-gradient(135deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 78%,var(--project-primary)));
+  box-shadow:0 12px 25px color-mix(in srgb,var(--project-dark) 13%,transparent);overflow:hidden;
+}
+.pc-detail #pc-sec-problem .pc-editorial-problem>span{color:color-mix(in srgb,var(--project-secondary) 60%,#fff);font-size:9px;font-weight:800;letter-spacing:.15em}
+.pc-detail #pc-sec-problem .pc-editorial-problem p{position:relative;z-index:1;margin:12px 0 0;max-width:540px;color:#fff;font-size:15px;font-weight:600;line-height:1.55}
+.pc-detail #pc-sec-problem .pc-editorial-problem i{right:15px;bottom:-38px;color:color-mix(in srgb,var(--project-primary) 55%,#fff);font-size:150px;opacity:.18}
+.pc-detail .pc-editorial-goals{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pc-detail .pc-editorial-goal{min-height:82px;display:grid;grid-template-columns:28px 1fr 14px;gap:8px;align-items:start;padding:12px;border-radius:12px;border:1px solid color-mix(in srgb,var(--project-primary) 16%,#e9e9ed);background:color-mix(in srgb,var(--project-soft) 52%,#fff);transition:transform .22s ease,border-color .22s ease}
+.pc-detail .pc-editorial-goal>span{display:grid;place-items:center;width:25px;height:25px;border-radius:7px;background:var(--project-primary);color:#fff;font-size:9px;font-weight:800}
+.pc-detail .pc-editorial-goal p{margin:2px 0 0;font-size:11px;font-weight:600;line-height:1.45;color:var(--project-dark)}
+.pc-detail .pc-editorial-goal svg{width:12px;height:12px;color:var(--project-primary)}
+.pc-detail .pc-editorial-research{display:grid;grid-template-columns:.75fr 1.25fr;gap:12px}
+.pc-detail .pc-editorial-research-note{padding:18px;border-radius:13px;background:var(--project-primary);color:#fff}
+.pc-detail .pc-editorial-research-note .pc-card-label{color:rgba(255,255,255,.75)}
+.pc-detail .pc-editorial-research-note p{margin:9px 0 0;color:#fff;font-size:13px;font-weight:650}
+.pc-detail .pc-editorial-insights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pc-detail .pc-editorial-insight{padding:14px;border-radius:12px;border:1px solid #ededf0;background:#fff;box-shadow:0 5px 13px rgba(20,24,35,.035)}
+.pc-detail .pc-editorial-insight>span{color:var(--project-primary);font-size:8px;font-weight:850;letter-spacing:.13em}
+.pc-detail .pc-editorial-insight h3{margin:7px 0 4px;color:var(--project-dark);font-size:13px}
+.pc-detail .pc-editorial-insight p{margin:0;color:#72727b;font-size:10px}
+.pc-detail .pc-editorial-persona,.pc-detail .pc-editorial-journey,.pc-detail .pc-editorial-wireframes,
+.pc-detail .pc-editorial-design,.pc-detail .pc-editorial-outcome-card{
+  border-radius:14px;border:1px solid color-mix(in srgb,var(--project-primary) 14%,#e8e8ed);background:#fff;padding:18px;
+}
+.pc-detail .pc-editorial-persona{display:flex;gap:14px;align-items:center;background:linear-gradient(110deg,color-mix(in srgb,var(--project-primary) 10%,#fff),#fff 65%)}
+.pc-detail .pc-editorial-persona-mark{width:48px;height:48px;display:grid;place-items:center;flex:none;border-radius:14px;background:var(--project-dark);color:#fff}
+.pc-detail .pc-persona-copy p{margin:5px 0;color:var(--project-dark);font-size:14px;font-weight:650}
+.pc-detail .pc-persona-copy small,.pc-detail .pc-editorial-caption{color:#85858d;font-size:10px}
+.pc-detail .pc-editorial-journey-goals{gap:8px}
+.pc-detail .pc-editorial-journey-goals>div{padding:12px;border:1px solid color-mix(in srgb,var(--project-primary) 18%,#eee);background:color-mix(in srgb,var(--project-soft) 65%,#fff);border-radius:10px}
+.pc-detail .pc-editorial-journey-goals>div>span{color:var(--project-primary);font-weight:850;font-size:10px}
+.pc-detail .pc-editorial-journey-goals p{margin:4px 0 0;font-size:11px;color:var(--project-dark)}
+.pc-detail .pc-editorial-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.pc-detail .pc-editorial-process li{padding:14px;border-radius:12px;background:var(--project-soft);border:1px solid color-mix(in srgb,var(--project-primary) 13%,#eee)}
+.pc-detail .pc-editorial-process li>span{color:var(--project-primary);font-size:19px;font-weight:850}
+.pc-detail .pc-editorial-process li small{display:block;margin:6px 0;color:var(--project-dark);font-size:9px;font-weight:850;text-transform:uppercase}
+.pc-detail .pc-editorial-process li p{margin:0;font-size:10px;color:#696a73}
+.pc-detail .pc-editorial-design{background:linear-gradient(140deg,#fff,color-mix(in srgb,var(--project-soft) 65%,#fff))}
+.pc-detail .pc-editorial-screens{background:#fff}
+.pc-detail .pc-editorial-screens .pc-gal{padding:12px;border-radius:14px;background:color-mix(in srgb,var(--project-soft) 55%,#f7f7f8);border:1px solid color-mix(in srgb,var(--project-primary) 13%,#eee)}
+.pc-detail .pc-gallery-screen{border:1px solid #e7e7eb;border-radius:11px;background:#fff;box-shadow:0 7px 18px rgba(20,24,35,.08)}
+.pc-detail .pc-gallery-browser-bar{background:#f7f7f8;border-bottom:1px solid #e7e7eb}
+.pc-detail .pc-editorial-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pc-detail .pc-editorial-feature{min-height:105px;padding:16px;border:1px solid color-mix(in srgb,var(--project-primary) 17%,#e9e9ed);border-radius:13px;background:#fff}
+.pc-detail .pc-editorial-feature:nth-child(3n+1){background:var(--project-dark);border-color:var(--project-dark)}
+.pc-detail .pc-editorial-feature:nth-child(3n+1) h3,.pc-detail .pc-editorial-feature:nth-child(3n+1) p{color:#fff}
+.pc-detail .pc-editorial-feature:nth-child(3n+1)>span,.pc-detail .pc-editorial-feature:nth-child(3n+1)>svg{color:color-mix(in srgb,var(--project-secondary) 55%,#fff)}
+.pc-detail .pc-editorial-challenges{gap:10px}
+.pc-detail .pc-editorial-challenge{padding:13px;border-radius:11px;background:var(--project-soft);border:1px solid color-mix(in srgb,var(--project-primary) 13%,#eee)}
+.pc-detail .pc-editorial-solution{padding:18px;border-radius:13px;background:var(--project-dark)}
+.pc-detail .pc-editorial-solution .pc-card-label{color:color-mix(in srgb,var(--project-secondary) 50%,#fff)}
+.pc-detail .pc-editorial-solution p{color:#fff}
+.pc-detail .pc-editorial-validation{padding:17px;border-radius:12px;background:color-mix(in srgb,var(--project-primary) 9%,#fff);border:1px solid color-mix(in srgb,var(--project-primary) 18%,#eee)}
+.pc-detail .pc-editorial-outcome-card{background:linear-gradient(130deg,var(--project-dark),color-mix(in srgb,var(--project-dark) 78%,var(--project-primary)));border:0;box-shadow:0 12px 25px color-mix(in srgb,var(--project-dark) 15%,transparent)}
+.pc-detail .pc-editorial-outcome-card .pc-card-label{color:color-mix(in srgb,var(--project-secondary) 55%,#fff)}
+.pc-detail .pc-editorial-outcome-card>p,.pc-detail .pc-editorial-outcome-card>div>p{color:#fff}
+.pc-detail .pc-editorial-outcome-card>div{border-top:1px solid rgba(255,255,255,.2)}
+.pc-detail .pc-editorial-section .pc-sub{color:var(--project-dark)}
+.pc-detail .pc-color-token{border-radius:10px;overflow:hidden}
+.pc-detail .pc-color-token>span{height:52px}
+.pc-detail .pc-type-specimen{border-radius:12px;border-color:color-mix(in srgb,var(--project-primary) 15%,#eee)}
+.pc-detail .pc-story-content .pc-editorial-section:hover{border-color:color-mix(in srgb,var(--project-primary) 25%,#e8e8ed)}
+@media(max-width:900px){
+ .pc-detail .pc-editorial-overview{grid-template-columns:1fr}
+ .pc-detail .pc-editorial-pair{grid-template-columns:1fr}
+ .pc-detail .pc-editorial-research{grid-template-columns:1fr}
+ .pc-detail .pc-editorial-process{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ .pc-detail .pc-story-content .pc-editorial-section{padding:20px 13px;margin-bottom:10px;border-radius:14px}
+ .pc-detail .pc-editorial-heading{margin-bottom:15px}
+ .pc-detail .pc-editorial-heading h2{font-size:19px}
+ .pc-detail .pc-editorial-heading p{font-size:10px}
+ .pc-detail .pc-editorial-goals,.pc-detail .pc-editorial-insights,.pc-detail .pc-editorial-features{grid-template-columns:1fr}
+ .pc-detail .pc-editorial-process{grid-template-columns:1fr 1fr}
+ .pc-detail .pc-editorial-meta{grid-template-columns:1fr 1fr}
+ .pc-detail .pc-editorial-lead{padding:17px}
+ .pc-detail .pc-editorial-problem{padding:18px!important}
+}
+
+/* ---------- editorial magazine-card redesign ---------- */
+.pc-detail .pc-story-content{min-width:0}
+.pc-detail .pc-story-content .pc-editorial-section{position:relative;isolation:isolate;margin:0 0 22px;padding:clamp(20px,2.4vw,30px);border:1px solid color-mix(in srgb,var(--project-primary) 15%,#e9e9ed);border-radius:20px;background:#fff;box-shadow:0 10px 28px rgba(25,25,40,.035);overflow:hidden}
+.pc-detail .pc-story-content .pc-editorial-section::after{content:"";position:absolute;z-index:-1;right:-45px;top:-55px;width:150px;height:150px;border:1px solid color-mix(in srgb,var(--project-primary) 13%,transparent);border-radius:50%;box-shadow:0 0 0 18px color-mix(in srgb,var(--project-primary) 3%,transparent),0 0 0 38px color-mix(in srgb,var(--project-secondary) 4%,transparent);pointer-events:none}
+.pc-detail .pc-editorial-heading{position:relative;z-index:1;grid-template-columns:34px minmax(0,1fr);gap:11px;margin-bottom:18px}
+.pc-detail .pc-editorial-heading>span{width:30px;height:30px;border-radius:9px;background:var(--project-primary);color:#fff;font-size:9px}
+.pc-detail .pc-editorial-heading h2{font-size:clamp(19px,1.7vw,25px);line-height:1.12;letter-spacing:-.04em}
+.pc-detail .pc-editorial-heading p{margin-top:5px;font-size:11px}
+.pc-detail .pc-editorial-overview-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(280px,.98fr);gap:14px;align-items:stretch}
+.pc-detail .pc-editorial-overview-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pc-detail .pc-editorial-lead{padding:20px;border-radius:15px;background:color-mix(in srgb,var(--project-primary) 7%,#fff)}
+.pc-detail .pc-editorial-lead>p{margin-top:11px;font-size:clamp(16px,1.45vw,21px);line-height:1.5}
+.pc-detail .pc-editorial-meta{margin:0;padding:13px 4px;gap:10px}
+.pc-detail .pc-editorial-meta span{margin-bottom:5px;font-size:8px}
+.pc-detail .pc-editorial-meta strong{font-size:11px}
+.pc-detail .pc-editorial-audience{padding:14px;border-radius:14px;box-shadow:none}
+.pc-detail .pc-editorial-audience p{font-size:12px;line-height:1.55}
+.pc-detail .pc-editorial-overview-visual{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-width:0;min-height:330px;margin:0;padding:13px;border-radius:16px;background:var(--project-dark);overflow:hidden}
+.pc-detail .pc-editorial-overview-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.92}
+.pc-detail .pc-editorial-overview-visual::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.72));z-index:1}
+.pc-detail .pc-overview-visual-kicker{position:absolute;z-index:2;top:13px;left:13px;padding:7px 9px;border:1px solid rgba(255,255,255,.4);border-radius:99px;background:rgba(20,20,25,.35);color:#fff;font-size:8px;font-weight:800;letter-spacing:.12em}
+.pc-detail .pc-editorial-overview-visual figcaption{position:relative;z-index:2;display:flex;align-items:center;gap:9px;padding:11px 12px;border:1px solid rgba(255,255,255,.2);border-radius:11px;background:rgba(20,20,25,.38);backdrop-filter:blur(12px);color:#fff;font-size:12px}
+.pc-detail .pc-editorial-overview-visual figcaption b{color:var(--project-secondary)}
+.pc-detail .pc-editorial-overview-visual figcaption i{margin-left:auto;font-style:normal}
+.pc-detail .pc-overview-visual-shape{position:absolute;z-index:0;right:-35px;bottom:-60px;width:170px;height:170px;border:24px solid color-mix(in srgb,var(--project-secondary) 70%,transparent);border-radius:50%;opacity:.45}
+.pc-detail .pc-editorial-pair{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:16px;align-items:stretch;margin:0 0 22px}
+.pc-detail .pc-editorial-pair-item{margin:0!important;height:100%}
+.pc-detail #pc-sec-problem .pc-editorial-problem{min-height:210px;padding:24px;border-radius:15px}
+.pc-detail #pc-sec-problem .pc-editorial-problem p{font-size:clamp(17px,1.7vw,24px);line-height:1.45}
+.pc-detail .pc-editorial-goals{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pc-detail .pc-editorial-goal{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;min-height:116px;padding:14px;border-radius:14px}
+.pc-detail .pc-editorial-goal:nth-child(2n){background:var(--project-dark);border-color:var(--project-dark)}
+.pc-detail .pc-editorial-goal:nth-child(2n) p,.pc-detail .pc-editorial-goal:nth-child(2n)>svg{color:#fff}
+.pc-detail .pc-editorial-goal:nth-child(2n)>span{color:var(--project-secondary)}
+.pc-detail .pc-editorial-goal p{font-size:12px;line-height:1.5}
+.pc-detail .pc-editorial-research{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:10px}
+.pc-detail .pc-editorial-research-note,.pc-detail .pc-editorial-insight,.pc-detail .pc-editorial-challenge{padding:16px;border-radius:14px}
+.pc-detail .pc-editorial-insights{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pc-detail .pc-editorial-insight:nth-child(3n){background:var(--project-dark);border-color:var(--project-dark)}
+.pc-detail .pc-editorial-insight:nth-child(3n) h3,.pc-detail .pc-editorial-insight:nth-child(3n) p{color:#fff}
+.pc-detail .pc-editorial-persona{padding:18px;border-radius:15px}
+.pc-detail .pc-editorial-journey{padding:18px;border-radius:15px}
+.pc-detail .pc-editorial-journey-goals{position:relative;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.pc-detail .pc-editorial-journey-goals>div{position:relative;border:1px solid color-mix(in srgb,var(--project-primary) 16%,#fff);border-radius:12px}
+.pc-detail .pc-editorial-journey-goals>div:nth-child(2n){background:var(--project-dark)}
+.pc-detail .pc-editorial-journey-goals>div:nth-child(2n) p{color:#fff}
+.pc-detail .pc-editorial-journey-goals>div:nth-child(2n) span{color:var(--project-secondary)}
+.pc-detail .pc-editorial-wireframes,.pc-detail .pc-editorial-process li{border-radius:14px}
+.pc-detail .pc-editorial-process{gap:9px}
+.pc-detail .pc-editorial-process li{padding:15px}
+.pc-detail .pc-editorial-process li:nth-child(2n){background:var(--project-dark);border-color:var(--project-dark)}
+.pc-detail .pc-editorial-process li:nth-child(2n) p,.pc-detail .pc-editorial-process li:nth-child(2n) small{color:#fff}
+.pc-detail .pc-editorial-process li:nth-child(2n)>span{color:var(--project-secondary)}
+.pc-detail .pc-editorial-design{display:grid;grid-template-columns:1fr;gap:10px}
+.pc-detail .pc-editorial-direction{margin:0;padding:15px 18px;border-radius:0 12px 12px 0;font-size:13px}
+.pc-detail .pc-editorial-section .pc-sub{margin:15px 0 9px;font-size:13px}
+.pc-detail .pc-editorial-section .pc-palette-strip{gap:8px}
+.pc-detail .pc-editorial-section .pc-color-token{padding:8px;border-radius:12px}
+.pc-detail .pc-editorial-section .pc-color-token>span{height:43px;border-radius:8px}
+.pc-detail .pc-editorial-type{gap:9px;margin-top:12px}
+.pc-detail .pc-type-specimen{padding:14px;border-radius:13px}
+.pc-detail .pc-type-specimen>span{font-size:38px}
+.pc-detail .pc-editorial-screens{padding:20px!important}
+.pc-detail .pc-gal{gap:13px}
+.pc-detail .pc-gallery-screen{border-radius:13px;box-shadow:0 12px 28px rgba(20,20,30,.1)}
+.pc-detail .pc-gallery-screen img{object-fit:contain}
+.pc-detail .pc-editorial-features{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pc-detail .pc-editorial-feature{min-height:112px;padding:15px;border-radius:14px}
+.pc-detail .pc-editorial-feature:nth-child(4n+1){grid-column:span 2;background:var(--project-dark);border-color:var(--project-dark)}
+.pc-detail .pc-editorial-feature:nth-child(4n+1) h3,.pc-detail .pc-editorial-feature:nth-child(4n+1) p,.pc-detail .pc-editorial-feature:nth-child(4n+1)>svg{color:#fff}
+.pc-detail .pc-editorial-feature:nth-child(4n+1)>span{color:var(--project-secondary)}
+.pc-detail .pc-editorial-challenges{gap:10px}
+.pc-detail .pc-editorial-challenge-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pc-detail .pc-editorial-solution{padding:19px;border-radius:14px}
+.pc-detail .pc-editorial-solution p{font-size:16px;line-height:1.5}
+.pc-detail .pc-editorial-validation{padding:16px;border-radius:14px}
+.pc-detail .pc-editorial-outcome-card{padding:22px;border-radius:16px}
+.pc-detail .pc-editorial-outcome-card>p{font-size:clamp(18px,2vw,27px)}
+@media(max-width:1050px){.pc-detail .pc-editorial-overview-grid{grid-template-columns:1fr 1fr}.pc-detail .pc-editorial-overview-visual{min-height:290px}.pc-detail .pc-editorial-pair{grid-template-columns:1fr}}
+@media(max-width:760px){
+ .pc-detail .pc-story-content .pc-editorial-section{padding:17px;margin-bottom:13px;border-radius:16px}
+ .pc-detail .pc-editorial-pair{margin-bottom:13px}
+ .pc-detail .pc-editorial-overview-grid{grid-template-columns:1fr}.pc-detail .pc-editorial-overview-visual{min-height:240px}
+ .pc-detail .pc-editorial-meta{grid-template-columns:1fr 1fr}.pc-detail .pc-editorial-meta .pc-editorial-tools{grid-column:span 2}
+ .pc-detail .pc-editorial-journey-goals{grid-template-columns:1fr}.pc-detail .pc-editorial-insights,.pc-detail .pc-editorial-challenge-list{grid-template-columns:1fr}
+ .pc-detail .pc-editorial-features{grid-template-columns:1fr}.pc-detail .pc-editorial-feature:nth-child(4n+1){grid-column:auto}
+ .pc-detail .pc-editorial-type{grid-template-columns:1fr}.pc-detail .pc-editorial-process{grid-template-columns:1fr}.pc-detail .pc-editorial-goals{grid-template-columns:1fr 1fr}
+}
+@media(max-width:420px){.pc-detail .pc-editorial-goals{grid-template-columns:1fr}.pc-detail .pc-editorial-meta{grid-template-columns:1fr}.pc-detail .pc-editorial-meta .pc-editorial-tools{grid-column:auto}}
+
+
+/* Final interaction and card refinements requested */
+.pc-detail .pc-editorial-goal,
+.pc-detail .pc-editorial-feature {
+  grid-template-columns: 30px minmax(0,1fr) !important;
+  background: #fff !important;
+  border-color: color-mix(in srgb,var(--project-primary) 18%,#e8e8ed) !important;
+  color: var(--project-dark) !important;
+}
+.pc-detail .pc-editorial-goal > svg,
+.pc-detail .pc-editorial-feature > svg { display:none !important; }
+.pc-detail .pc-editorial-goal:nth-child(2n),
+.pc-detail .pc-editorial-feature:nth-child(3n+1) {
+  background: #fff !important;
+  border-color: color-mix(in srgb,var(--project-primary) 18%,#e8e8ed) !important;
+}
+.pc-detail .pc-editorial-goal:nth-child(2n) p,
+.pc-detail .pc-editorial-feature:nth-child(3n+1) h3,
+.pc-detail .pc-editorial-feature:nth-child(3n+1) p { color: var(--project-dark) !important; }
+.pc-detail .pc-editorial-goal:hover,
+.pc-detail .pc-editorial-feature:hover {
+  background: color-mix(in srgb,var(--project-primary) 10%,#fff) !important;
+  border-color: color-mix(in srgb,var(--project-primary) 35%,#fff) !important;
+  box-shadow: 0 9px 22px color-mix(in srgb,var(--project-primary) 10%,transparent);
+}
+.pc-detail .pc-editorial-journey-goals > div {
+  transition: background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.pc-detail .pc-editorial-journey-goals > div > span {
+  display:inline-grid;
+  place-items:center;
+  width:27px;
+  height:27px;
+  margin-bottom:8px;
+  border-radius:8px;
+  background:var(--project-primary);
+  color:#fff !important;
+  font-size:10px;
+  font-weight:850;
+}
+.pc-detail .pc-editorial-journey-goals > div:nth-child(2n) {
+  background:#fff !important;
+  border-color:color-mix(in srgb,var(--project-primary) 18%,#eee) !important;
+}
+.pc-detail .pc-editorial-journey-goals > div:nth-child(2n) p { color:var(--project-dark) !important; }
+.pc-detail .pc-editorial-journey-goals > div:hover {
+  background:color-mix(in srgb,var(--project-primary) 10%,#fff) !important;
+  border-color:color-mix(in srgb,var(--project-primary) 35%,#fff) !important;
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px color-mix(in srgb,var(--project-primary) 10%,transparent);
+}
+.pc-detail .pc-editorial-overview-visual figcaption i { display:none !important; }
+@media(max-width:767px){
+  .pc-detail .pc-editorial-goal,.pc-detail .pc-editorial-feature { grid-template-columns:28px minmax(0,1fr) !important; }
+}
+
 `;

@@ -204,12 +204,18 @@ function HomePageAboutMe() {
           min-width: 0;
         }
 
+        .pr-profile {
+          max-width: 260px;
+          justify-self: center;
+        }
+
         /* Profile image */
 
         .pr-photo-frame {
           position: relative;
-          width: 100%;
-          height: clamp(340px, 35vw, 440px);
+          width: min(100%, 190px);
+          height: 230px;
+          margin: 0 auto;
           padding: 4px;
           overflow: hidden;
           border: 2px solid rgba(48, 79, 254, .16);
@@ -318,6 +324,38 @@ function HomePageAboutMe() {
           margin: 0 0 13px;
         }
 
+        .pr-about-copy > p {
+          clip-path: inset(0 0 100%);
+          opacity: 0;
+          transform: translateY(12px);
+          transition:
+            clip-path .75s cubic-bezier(.22, 1, .36, 1),
+            opacity .45s ease,
+            transform .65s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .pr-content.pr-in-view .pr-about-copy > p {
+          clip-path: inset(0);
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .pr-content.pr-in-view .pr-about-copy > p:nth-child(1) {
+          transition-delay: 160ms;
+        }
+
+        .pr-content.pr-in-view .pr-about-copy > p:nth-child(2) {
+          transition-delay: 300ms;
+        }
+
+        .pr-content.pr-in-view .pr-about-copy > p:nth-child(3) {
+          transition-delay: 440ms;
+        }
+
+        .pr-content.pr-in-view .pr-about-copy > p:nth-child(4) {
+          transition-delay: 580ms;
+        }
+
         .pr-about-copy strong {
           color: #38324f;
           font-weight: 700;
@@ -424,7 +462,7 @@ function HomePageAboutMe() {
         }
 
         .pr-exp-role {
-          padding-left: 9px;
+          padding-left: 11px;
           border-left: 2px solid var(--pink);
           color: #29263a;
           font-size: 11px;
@@ -541,10 +579,6 @@ function HomePageAboutMe() {
             gap: 18px;
           }
 
-          .pr-photo-frame {
-            height: 360px;
-          }
-
           .pr-name {
             font-size: 20px;
           }
@@ -604,7 +638,7 @@ function HomePageAboutMe() {
 
           .pr-main-grid {
             grid-template-columns: minmax(0, 1fr);
-            gap: 28px;
+            gap: 32px;
           }
 
           .pr-profile {
@@ -715,6 +749,12 @@ function HomePageAboutMe() {
           }
 
           .pr-animate {
+            opacity: 1;
+            transform: none;
+          }
+
+          .pr-about .pr-about-copy > p {
+            clip-path: none;
             opacity: 1;
             transform: none;
           }
