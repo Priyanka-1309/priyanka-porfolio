@@ -114,9 +114,9 @@ function HomePageAboutMe() {
 
         .pr-container {
           width: 100%;
-          max-width: 1600px;
+          max-width: 1500px;
           margin: 0 auto;
-          padding: 40px 100px 44px;
+          padding: 36px 64px 40px;
         }
 
         /* Scroll animation */
@@ -190,11 +190,9 @@ function HomePageAboutMe() {
 
         .pr-main-grid {
           display: grid;
-          grid-template-columns:
-            minmax(0, .78fr)
-            minmax(0, 1.22fr);
+          grid-template-columns: 260px minmax(0, 1fr);
           align-items: start;
-          gap: clamp(18px, 2.5vw, 32px);
+          gap: clamp(36px, 4vw, 60px);
           width: 100%;
         }
 
@@ -205,7 +203,8 @@ function HomePageAboutMe() {
         }
 
         .pr-profile {
-          max-width: 260px;
+          width: 100%;
+          max-width: 250px;
           justify-self: center;
         }
 
@@ -214,7 +213,7 @@ function HomePageAboutMe() {
         .pr-photo-frame {
           position: relative;
           width: min(100%, 190px);
-          height: 230px;
+          height: 250px;
           margin: 0 auto;
           padding: 4px;
           overflow: hidden;
@@ -538,12 +537,13 @@ function HomePageAboutMe() {
 
         @media (max-width: 1100px) {
           .pr-container {
-            padding-left: 28px;
-            padding-right: 28px;
+            padding-left: 32px;
+            padding-right: 32px;
           }
 
           .pr-main-grid {
-            gap: 20px;
+            grid-template-columns: 230px minmax(0, 1fr);
+            gap: 28px;
           }
 
           .pr-heading {
@@ -551,7 +551,7 @@ function HomePageAboutMe() {
           }
 
           .pr-photo-frame {
-            height: clamp(330px, 37vw, 410px);
+            height: clamp(245px, 28vw, 320px);
           }
         }
 
@@ -559,8 +559,8 @@ function HomePageAboutMe() {
 
         @media (max-width: 850px) {
           .pr-container {
-            padding-left: 22px;
-            padding-right: 22px;
+            padding-left: 20px;
+            padding-right: 20px;
           }
 
           .pr-heading-wrap {
@@ -573,10 +573,16 @@ function HomePageAboutMe() {
           }
 
           .pr-main-grid {
-            grid-template-columns:
-              minmax(0, .76fr)
-              minmax(0, 1.24fr);
-            gap: 18px;
+            grid-template-columns: 200px minmax(0, 1fr);
+            gap: 22px;
+          }
+
+          .pr-profile {
+            max-width: 200px;
+          }
+
+          .pr-photo-frame {
+            width: min(100%, 175px);
           }
 
           .pr-name {
@@ -611,7 +617,7 @@ function HomePageAboutMe() {
           }
 
           .pr-heading-wrap {
-            margin-bottom: 26px;
+            margin-bottom: 22px;
             padding: 0;
           }
 
@@ -638,17 +644,17 @@ function HomePageAboutMe() {
 
           .pr-main-grid {
             grid-template-columns: minmax(0, 1fr);
-            gap: 32px;
+            gap: 24px;
           }
 
           .pr-profile {
             width: 100%;
-            max-width: 420px;
+            max-width: 360px;
             margin: 0 auto;
           }
 
           .pr-photo-frame {
-            height: clamp(320px, 100vw, 440px);
+            height: clamp(260px, 78vw, 340px);
           }
 
           .pr-content {
@@ -665,8 +671,8 @@ function HomePageAboutMe() {
           }
 
           .pr-experience {
-            margin-top: 26px;
-            padding-top: 18px;
+            margin-top: 22px;
+            padding-top: 16px;
           }
 
           .pr-experience-row {
@@ -706,7 +712,7 @@ function HomePageAboutMe() {
           }
 
           .pr-photo-frame {
-            height: 340px;
+            height: 300px;
           }
 
           .pr-name {
@@ -720,6 +726,15 @@ function HomePageAboutMe() {
           .pr-exp-role,
           .pr-exp-company {
             font-size: 9px;
+          }
+
+          .pr-experience-row {
+            grid-template-columns: minmax(0, 1fr) auto;
+            column-gap: 8px;
+          }
+
+          .pr-exp-date {
+            overflow-wrap: anywhere;
           }
         }
 

@@ -2,20 +2,50 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion as Motion } from "framer-motion";
 import { Sparkles, Users } from "lucide-react";
 
-import weddingPlannerCover from "../../assets/images/projectsImage/weddingPlannerCover.png";
-import CrmCover from "../../assets/images/projectsImage/crmCover.png";
 import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png";
 import metroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png";
 import oscormDashboard from "../../assets/images/projectsImage/oscormDashboard.png";
-import easySkyTripCover from "../../assets/images/projectsImage/easySkyTripCover.png";
-import myLocalPlaceCover from "../../assets/images/projectsImage/mylocalPlaceCover.png";
 
-// The Oscorm cover artwork is stored in: src/cover pages/
-// Load it from the real folder instead of the old projectsImage path.
+// Updated project covers are loaded from: src/cover pages/
+// The old projectsImage folder is kept as a fallback for compatibility.
 const coverPageFiles = import.meta.glob("../../cover pages/*", {
   eager: true,
   import: "default",
 });
+const oldProjectCoverFiles = import.meta.glob(
+  "../../assets/images/projectsImage/*",
+  { eager: true, import: "default" }
+);
+
+const findCover = (pattern, fallbackPattern) => {
+  const findIn = (files, matcher) =>
+    Object.entries(files).find(([filePath]) =>
+      matcher.test(filePath.split("/").pop())
+    )?.[1];
+
+  return (
+    findIn(coverPageFiles, pattern) ||
+    findIn(oldProjectCoverFiles, fallbackPattern)
+  );
+};
+
+const weddingPlannerCover = findCover(
+  /wedding[\s_-]*planner[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /wedding[\s_-]*planner[\s_-]*cover\.(png|jpe?g|webp|avif)$/i
+);
+const myLocalPlaceCover = findCover(
+  /mlp[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /mylocalplacecover\.(png|jpe?g|webp|avif)$/i
+);
+const CrmCover = findCover(
+  /crm[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /crmcover\.(png|jpe?g|webp|avif)$/i
+);
+const easySkyTripCover = findCover(
+  /est[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /est[\s_-]*cover\.(png|jpe?g|webp|avif)$/i
+);
+
 const oscormCover =
   Object.entries(coverPageFiles).find(([filePath]) =>
     /\/(?:oscomcover|oscormcover)[^/]*\.(png|jpe?g|webp|avif)$/i.test(filePath)
@@ -291,7 +321,7 @@ const projects = [
       { name: "Mist", hex: "#F3F4F6", use: "Soft interface backgrounds" },
       { name: "White", hex: "#FFFFFF", use: "Cards and content surfaces" },
     ],
-    fonts: { display: "DM Sans", body: "Inter" },
+    fonts: { display: "Merriweather", body: "Inter" },
     principles: ["Build trust early", "Design for both sides", "Keep progress visible"],
     outcome:
       "A clearer hiring and freelance workflow that supports discovery, project delivery and payment in one place.",
@@ -1224,7 +1254,7 @@ function ProjectDetail({ project, onBack, onOpen }) {
               </div>
             </Motion.div>
 
-            <Motion.figure
+            {/* <Motion.figure
               className={`pc-showcase ${isWeb ? "is-web" : "is-app"} ${isHybrid ? "is-hybrid" : ""}`}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -1277,7 +1307,7 @@ function ProjectDetail({ project, onBack, onOpen }) {
                 </article>
               </div>
               <figcaption className="pc-showcase-caption">{project.number} <i /> Selected work</figcaption>
-            </Motion.figure>
+            </Motion.figure> */}
           </div>
 
           <dl className="pc-meta-grid">
@@ -1314,7 +1344,7 @@ function ProjectDetail({ project, onBack, onOpen }) {
         <div className="pc-story-content">
       <Motion.section id="pc-sec-overview" className="pc-editorial-section pc-case-block" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.45, ease: "easeOut" }}>
         <SectionHeading number="01" title="Project overview" kicker="The idea, its audience and how it was shaped" />
-        <div className="pc-editorial-overview pc-editorial-overview-grid">
+        <div className="pc-editorial-overview pc-editorial-overview-grid pc-editorial-overview-no-visual">
           <div className="pc-editorial-overview-copy">
             <div className="pc-editorial-lead">
               <span className="pc-editorial-eyebrow"><Sparkles size={14} /> {project.label}</span>
@@ -1330,12 +1360,6 @@ function ProjectDetail({ project, onBack, onOpen }) {
               <div><span className="pc-card-label">Intended audience</span><p>{project.audience}</p></div>
             </div>
           </div>
-          <figure className="pc-editorial-overview-visual">
-            <span className="pc-overview-visual-kicker">SELECTED PROJECT VISUAL</span>
-            <img src={project.cover || gal[0]} alt={`${project.title} original project preview`} loading="lazy" decoding="async" />
-            <figcaption><b>{project.number}</b><span>{project.title}</span></figcaption>
-            <span className="pc-overview-visual-shape" aria-hidden="true" />
-          </figure>
         </div>
       </Motion.section>
 
@@ -1525,7 +1549,7 @@ function ProjectDetail({ project, onBack, onOpen }) {
 }
 
 const STYLES = `
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@600;700&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700&family=Poppins:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@600;700&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700&family=Poppins:wght@500;600&display=swap');
 
 .pc-root{
   --ink:#16161a; --paper:#ffffff; --muted:#66666e; --line:#e9e7e2;
@@ -4685,7 +4709,7 @@ const STYLES = `
 .pc-detail .pc-editorial-heading>span{width:30px;height:30px;border-radius:9px;background:var(--project-primary);color:#fff;font-size:9px}
 .pc-detail .pc-editorial-heading h2{font-size:clamp(19px,1.7vw,25px);line-height:1.12;letter-spacing:-.04em}
 .pc-detail .pc-editorial-heading p{margin-top:5px;font-size:11px}
-.pc-detail .pc-editorial-overview-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(280px,.98fr);gap:14px;align-items:stretch}
+.pc-detail .pc-editorial-overview-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:stretch}
 .pc-detail .pc-editorial-overview-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
 .pc-detail .pc-editorial-lead{padding:20px;border-radius:15px;background:color-mix(in srgb,var(--project-primary) 7%,#fff)}
 .pc-detail .pc-editorial-lead>p{margin-top:11px;font-size:clamp(16px,1.45vw,21px);line-height:1.5}
@@ -4755,7 +4779,7 @@ const STYLES = `
 .pc-detail .pc-editorial-validation{padding:16px;border-radius:14px}
 .pc-detail .pc-editorial-outcome-card{padding:22px;border-radius:16px}
 .pc-detail .pc-editorial-outcome-card>p{font-size:clamp(18px,2vw,27px)}
-@media(max-width:1050px){.pc-detail .pc-editorial-overview-grid{grid-template-columns:1fr 1fr}.pc-detail .pc-editorial-overview-visual{min-height:290px}.pc-detail .pc-editorial-pair{grid-template-columns:1fr}}
+@media(max-width:1050px){.pc-detail .pc-editorial-overview-grid{grid-template-columns:1fr}.pc-detail .pc-editorial-pair{grid-template-columns:1fr}}
 @media(max-width:760px){
  .pc-detail .pc-story-content .pc-editorial-section{padding:17px;margin-bottom:13px;border-radius:16px}
  .pc-detail .pc-editorial-pair{margin-bottom:13px}
@@ -4823,4 +4847,68 @@ const STYLES = `
   .pc-detail .pc-editorial-goal,.pc-detail .pc-editorial-feature { grid-template-columns:28px minmax(0,1fr) !important; }
 }
 
+
+/* Requested typography: Merriweather headings + Inter body text */
+.pc-root, .pc-root * { font-family:'Inter',ui-sans-serif,system-ui,sans-serif !important; }
+.pc-root :is(h1,h2,h3,h4,h5,h6),
+.pc-root .pc-hero-title,
+.pc-root .pc-section-title,
+.pc-root .pc-project-title { font-family:'Merriweather',Georgia,serif !important; }
+.pc-project-oscorm .pc-editorial-overview-visual .pc-overview-visual-kicker,
+.pc-project-oscorm .pc-editorial-overview-visual figcaption { display:none !important; }
+/* Remove right-side hero images from all projects */
+.pc-detail .pc-d-hero-grid {
+  display: block !important;
+  grid-template-columns: 1fr !important;
+}
+
+.pc-detail .pc-showcase {
+  display: none !important;
+}
+
+/* Center all project titles and content */
+.pc-detail .pc-d-intro {
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.pc-detail .pc-d-badges,
+.pc-detail .pc-d-eyebrow,
+.pc-detail .pc-d-actions {
+  justify-content: center !important;
+}
+
+.pc-detail .pc-d-title {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.pc-detail .pc-d-lead {
+  max-width: 720px !important;
+  margin: 18px auto 22px !important;
+}
+  /* Reduce project hero height */
+.pc-detail .pc-d-hero-grid {
+  min-height: 380px !important;
+  padding-top: 35px !important;
+  padding-bottom: 35px !important;
+}
+
+.pc-detail .pc-d-intro {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.pc-detail .pc-d-title {
+  margin-top: 10px !important;
+  margin-bottom: 12px !important;
+}
+
+.pc-detail .pc-d-lead {
+  margin-top: 10px !important;
+  margin-bottom: 16px !important;
+}
 `;
