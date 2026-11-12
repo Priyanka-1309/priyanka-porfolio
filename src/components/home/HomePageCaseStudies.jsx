@@ -2,13 +2,9 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion as Motion } from "framer-motion";
 import { Sparkles, Users } from "lucide-react";
 
-import freshGroCover from "../../assets/images/projectsImage/freshGroCover.png";
-import metroBuddyCover from "../../assets/images/projectsImage/metroBuddyCover.png";
-import oscormDashboard from "../../assets/images/projectsImage/oscormDashboard.png";
-
-// Updated project covers are loaded from: src/cover pages/
-// The old projectsImage folder is kept as a fallback for compatibility.
-const coverPageFiles = import.meta.glob("../../cover pages/*", {
+// Project covers live in the current coverpages folder. Keep the legacy glob
+// as a fallback for workspaces that still have the original project images.
+const coverPageFiles = import.meta.glob("../../assets/images/coverpages/*", {
   eager: true,
   import: "default",
 });
@@ -45,11 +41,28 @@ const easySkyTripCover = findCover(
   /est[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
   /est[\s_-]*cover\.(png|jpe?g|webp|avif)$/i
 );
+const jobSeekerCover = findCover(
+  /job[\s_-]*seeker[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /job[\s_-]*seeker[\s_-]*cover\.(png|jpe?g|webp|avif)$/i
+);
+const metroClapCover = findCover(
+  /metro[\s_-]*clap[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /metro[\s_-]*clap[\s_-]*cover\.(png|jpe?g|webp|avif)$/i
+);
 
 const oscormCover =
   Object.entries(coverPageFiles).find(([filePath]) =>
     /\/(?:oscomcover|oscormcover)[^/]*\.(png|jpe?g|webp|avif)$/i.test(filePath)
-  )?.[1] || oscormDashboard;
+  )?.[1];
+const freshGroCover = findCover(
+  /fresh[\s_-]*gro[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /fresh[\s_-]*gro[\s_-]*cover\.(png|jpe?g|webp|avif)$/i
+);
+const metroBuddyCover = findCover(
+  /metro[\s_-]*buddy[\s_-]*cover\.(png|jpe?g|webp|avif)$/i,
+  /metro[\s_-]*buddy[\s_-]*cover\.(png|jpe?g|webp|avif)$/i
+);
+const oscormDashboard = oscormCover;
 
 import w1 from "../../case studies/1wedding.png";
 import w2 from "../../case studies/2wedding.png";
@@ -500,7 +513,7 @@ const projects = [
     learnings:
       "People feel safer when they can see the whole journey. A visible progress path reduced the feeling of risk in the design.",
     tools: ["Figma", "Wireframes", "User Flow", "UI Design"],
-    cover: service1,
+    cover: metroClapCover,
     accent: "#F5B971",
     gallery: [service1, service2, service3, service4],
   },
@@ -556,7 +569,7 @@ const projects = [
     learnings:
       "On mobile, every extra field costs attention. Cutting the apply flow down to the essentials made the whole app feel lighter.",
     tools: ["Figma", "Prototyping", "User Flow", "UI Design"],
-    cover: jp1,
+    cover: jobSeekerCover,
     accent: "#9BDCCB",
     gallery: [
       jp1, jp2, jp3, jp4, jp5, jp6, jp7, jp8, jp9, jp10,
@@ -1244,7 +1257,7 @@ function ProjectDetail({ project, onBack, onOpen }) {
                 <span>{project.number}</span>
                 <span>{project.projectType || project.category}</span>
               </div>
-              <p className="pc-d-eyebrow"><Sparkles size={14} aria-hidden="true" /> {project.label}</p>
+              <p className="pc-d-eyebrow"><Sparkles size={14} aria-hidden="true" /> Case Study</p>
               <h1 className={`pc-d-title ${project.title.length > 10 ? "is-long" : ""}`}>{project.title}</h1>
               <p className="pc-d-lead">{project.description}</p>
               <div className="pc-d-actions">
@@ -4910,5 +4923,8 @@ const STYLES = `
 .pc-detail .pc-d-lead {
   margin-top: 10px !important;
   margin-bottom: 16px !important;
+}
+.pc-detail .pc-d-title {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif !important;
 }
 `;
